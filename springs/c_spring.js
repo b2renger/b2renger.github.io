@@ -17,7 +17,7 @@ function Spring(x,y,m,d,k){ // mass, damping, k,
   this.k = k;
   this.damp = d;
 
-  this.radius = 50;
+  this.radius = 100;
 
   this.isOver = false;
   this.move = false;
@@ -121,6 +121,7 @@ Spring.prototype.gui = function(gx,gy,label){ //guiPositionX, guiPositionY
   this.tinput = createInput();
   this.tinput.position(gx,gy);
   this.tinput.size(30,21);
+  this.tinput.value('');
 
   this.button = createButton(label);
   this.button.position(gx+30,gy);
@@ -129,8 +130,10 @@ Spring.prototype.gui = function(gx,gy,label){ //guiPositionX, guiPositionY
 
 
 Spring.prototype.change_note = function(){
-  var val = this.tinput.value();
+  this.set_note(this.tinput.value());
 }
+
+
 
 
 

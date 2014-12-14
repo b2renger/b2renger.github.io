@@ -7,14 +7,23 @@ function setup() {
 
   frameRate(25);
   
-  createCanvas(900, 600);
+  createCanvas(windowWidth, windowHeight);
 
   for (var i=0; i<12; i++) {
-  	s1 = new Spring( 50+ 800*i/10, 600/2,  20, 0.98, 1.0);
+  	s1 = new Spring( 50+ windowWidth*i/12, windowHeight/2,  20, 0.98, 1.0);
   	s1.audio();
   	s1.set_note(60 + i);
-  	s1.gui(1000, 50+ 600 * i / 20 , 'midi note' + i);
+  	//s1.gui( windowWidth*i/12, windowHeight - 50 , 'midi note' + i);
     springs.push(s1);
+
+    input = createInput();
+    input.position(windowWidth*i/12,windowHeight-50);
+    input.size(30,21);
+    
+    var label = 'midi note'+i;
+    button = createButton(label);
+    button.position(windowWidth*i/12+30,windowHeight-50);
+    button.mousePressed(change_note);
   }
   	
   massSlider = createSlider(10, 500, 50);
@@ -29,6 +38,11 @@ function setup() {
   smooth(); 
 
 }
+
+function change_note(){
+ // this.set_note(this.tinput.value());
+}
+
 
 
 function draw() {

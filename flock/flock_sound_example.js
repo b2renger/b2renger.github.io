@@ -7,7 +7,7 @@ function setup() {
   
   flock = new Flock();
   // Add an initial set of boids into the system
-  for (var i = 0; i < 1; i++) {
+  for (var i = 0; i < 5; i++) {
     var b = new Boid(width/2,height/2);
     flock.addBoid(b);
   }
@@ -51,53 +51,7 @@ Flock.prototype.removeBoid = function() {
   this.boids.pop();
 }
 
-/////////////////////////////////////////////////////////////////////////////////////////
-// a function to adjust audio parameters of each boids
-//
-Flock.prototype.update_audio = function(){
-  // take the distance beetween mouse and every object, and adjust amp, filter (doppler effect) and pan
-  // we will also take into account the mask effect created by the head with a low pass filter
-  for (var i = 0; i < this.boids.length; i++) {
-    var distance = dist(mouseX,mouseY,this.boids[i].position.x, this.boids[i].position.y);
 
-    if (distance < sp.threshold){
-      // first we draw a line for each boid we should hear
-      stroke(0);
-      line(mouseX,mouseY,this.boids[i].position.x, this.boids[i].position.y);
-
-      // set global volume according to distance
-      this.boids[i].s_setGain(map(distance,0,250,1,0));
-      // same for the frequency of the filter to simulate doppler effect
-      this.boids[i].s_doppler(map(distance,0,250,1000,500));
-
-      // now we need to calculate an angle to deal with the panoramic
-      var mouse = createVector(mouseX,mouseY);
-      var temp = mouse.sub(this.boids[i].position);
-      var angle = temp.heading();
-      var pan_value = map(abs(angle),0,PI,-1,1); // we don't care if the boid is in front or behind us (it's just left / right)
-      this.boids[i].s_pan(pan_value);
-
-      // deal with the masking effect of our head adjusting a low pass
-      var mask = 0;
-       if (angle<0){
-        mask = 750;
-       }
-       else{
-        mask = 1000;
-       }
-       this.boids[i].s_lp(mask);
-       this.boids[i].lp.res((250-distance)/20); // resonance gets stronger when closer !
-
-      // adjust the frequency of the noise modulation to the actual object speed 
-      this.boids[i].s_adjustSpeed();
-    }
-    else{
-      this.boids[i].s_setGain(0); // just to be sure ...
-    }
-   
-  }
-
-}
 
 // The Nature of Code
 // Daniel Shiffman
@@ -111,7 +65,7 @@ function Boid(x,y) {
   this.velocity = createVector(random(-1,1),random(1));
   this.position = createVector(x,y);
   this.r = 3.0;
-  this.maxspeed = 5;    // Maximum speed
+  this.maxspeed = 4;    // Maximum speed
   this.maxforce = 0.05; // Maximum steering force
 
   // this is new !
@@ -283,6 +237,7 @@ Boid.prototype.boid_sound_engine = function(){
   // we will use the pan function of noise to place our object in a stereo field
   this.noise = new p5.Noise();
   this.noise.disconnect();
+  this.noise.amp(0.05);
   this.noise.start();
 
   // an osc to modulate the noise
@@ -321,7 +276,7 @@ Boid.prototype.s_setGain = function(value){
 }
 
 Boid.prototype.s_doppler = function(value){
-    this.filter.set(value,1);
+    this.filter.set(value,2);
 }
 
 Boid.prototype.s_pan = function(value){
@@ -333,10 +288,56 @@ Boid.prototype.s_lp = function(value){
 }
 
 Boid.prototype.s_adjustSpeed = function(){
-    this.osc.freq(map(this.velocity.mag(),0,10,5,15));
+    this.osc.freq(map(this.velocity.mag(),0.5,5,5,10));
 }
 
+/////////////////////////////////////////////////////////////////////////////////////////
+// a function to adjust audio parameters of each boids
+//
+Flock.prototype.update_audio = function(){
+  // take the distance beetween mouse and every object, and adjust amp, filter (doppler effect) and pan
+  // we will also take into account the mask effect created by the head with a low pass filter
+  for (var i = 0; i < this.boids.length; i++) {
+    var distance = dist(width/2,height/2,this.boids[i].position.x, this.boids[i].position.y);
 
+    if (distance < sp.threshold){
+      // first we draw a line for each boid we should hear
+      stroke(0);
+      line(width/2,height/2,this.boids[i].position.x, this.boids[i].position.y);
+
+      // set global volume according to distance
+      this.boids[i].s_setGain(map(distance,0,250,1,0));
+      // same for the frequency of the filter to simulate doppler effect
+      this.boids[i].s_doppler(map(distance,0,250,1000,500));
+
+      // now we need to calculate an angle to deal with the panoramic
+      var mouse = createVector(width/2,height/2);
+      var temp = mouse.sub(this.boids[i].position);
+      var angle = temp.heading();
+      var pan_value = map(abs(angle),0,PI,-1,1); // we don't care if the boid is in front or behind us (it's just left / right)
+      this.boids[i].s_pan(pan_value);
+
+      // deal with the masking effect of our head adjusting a low pass
+      var mask = 0;
+       if (angle<0){
+        mask = 1000;
+       }
+       else{
+        mask = 2500;
+       }
+       this.boids[i].s_lp(mask);
+       this.boids[i].lp.res((250-distance)/200); // resonance gets stronger when closer !
+
+      // adjust the frequency of the noise modulation to the actual object speed 
+      this.boids[i].s_adjustSpeed();
+    }
+    else{
+      this.boids[i].s_setGain(0); // just to be sure ...
+    }
+   
+  }
+
+}
 
 
 

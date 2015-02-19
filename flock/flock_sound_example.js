@@ -237,14 +237,14 @@ Boid.prototype.boid_sound_engine = function(){
   // we will use the pan function of noise to place our object in a stereo field
   this.noise = new p5.Noise();
   this.noise.disconnect();
-  this.noise.amp(0.05);
+  this.noise.amp(0.05,2);
   this.noise.start();
 
   // an osc to modulate the noise
   // we will be able to adjust the frequency according to the speed of each object
   this.osc = new p5.Oscillator('sine');
   this.osc.disconnect();
-  this.osc.amp(1);
+  this.osc.amp(1,2,0);
   this.osc.freq(random(5,15));
   this.osc.start();
 

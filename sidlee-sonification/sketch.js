@@ -1,5 +1,3 @@
-
-
 /*
 Object {date: "2015-02-18T16:47:07.811Z", value: 1, unit: "goal", _id: "red"}
 Object {date: "2015-02-18T16:43:18.710Z", value: 1, unit: "goal", _id: "blue"}
@@ -27,15 +25,15 @@ var ctrlZSound;
 
 var officeSound;
 var electricSound;
-
-
-
+var filter;
 
 var lastHour=-1;
 
 var col1=0;
 var col=255;
 var odd = true;
+
+var mute = false;
 
 function preload(){
 	soundFormats('ogg'); 
@@ -57,7 +55,7 @@ function preload(){
 	unconnectedSound =  loadSound('sounds/232210_timbre_unconnected.ogg');
 	visitsSound = loadSound('sounds/spawn.wav');
 	ctrlZSound = loadSound('sounds/glitch.wav');
-	likeSound = loadSound('sounds/claps.wav');
+	likeSound = loadSound('sounds/claps.ogg');
 
 	officeSound = loadSound('sounds/259632__stevious42__office-background-1.ogg');
 	electricSound = loadSound('sounds/187931__mrauralization__electric-humming-sound.wav');
@@ -68,8 +66,17 @@ function preload(){
 
 function setup() {
   createCanvas(320, 240);
-  textSize(15);
+  textSize(14);
+  //textFont("gothamhtf-lightcondensed");
+  smooth();
   frameRate(25);
+
+  filter = new p5.BandPass();
+  officeSound.disconnect();
+  officeSound.connect(filter);
+
+  electricSound.disconnect();
+  electricSound.connect(filter);
 
   officeSound.loop();
   electricSound.loop();
@@ -85,14 +92,19 @@ function draw() {
 	background(col1);
 	fill(col);
 	stroke(col);
-	text("Sid Lee immersive experience",10,20);
+	text("SID LEE   immersive experience",10,20);
 
-	var vol = int(map(soundValue,30,80,20,100));
+	var vol = int(map(soundValue,30,80,50,100));
 	officeSound.setVolume(vol/100,0.15,0);
 
 	var volE = constrain(int(map(wattValue,10000,100000,20,100)),20,100);
 	electricSound.setVolume(volE/100,0.15,0);
-	println(volE);
+	// println(volE);
+
+  var filterFreq = int(map(lightValue,0,40,800,2000));
+  filter.freq(filterFreq);
+  filter.res(2);
+
 	
 	var date = new Date();
 
@@ -108,18 +120,63 @@ function draw() {
 
 	}
 
-	var waveform = fft.waveform();  // analyze the waveform
+	
   	
-  	stroke(col);
-  	fill(col);
-  	strokeWeight(1);
-  	for (var i = 0; i < waveform.length; i++){
-    	var x = map(i, 0, waveform.length, 0, width);
-    	var y = map(waveform[i], 0, 256, height, 0);
-    	point(x, y);
-  	}
+  
+
+  if (odd){
+    stroke(col);
+  fill(col);
+  strokeWeight(1);
+    var waveform = fft.waveform();  // analyze the waveform
+    for (var i = 0; i < waveform.length; i++){
+   	  var x = map(i, 0, waveform.length, 0, width);
+   	  var y = map(waveform[i], 0, 256, height, 0);
+   	  point(x, y);
+    }
+  }
+  else{
+    stroke(col);
+  fill(col);
+  strokeWeight(1);
+    var spectrum = fft.analyze();
+    for (var i = 0; i < spectrum.length; i++) {
+      var x = map(i, 0, spectrum.length, 0, width);
+      var h = -height + map(spectrum[i], 0, 255, height-5, 0);
+      rect(x, height, width/spectrum.length, h);
+    }
+  }
+
+
+  rect(width-15,10,7,10);
+  quad(width-22,7,width-15,10,width-15,20,width-22,23);
+
+  if (mute){
+    push();
+    noFill();
+    stroke(255,0,0);
+    strokeWeight(2);
+    ellipse(width-15,15,15,15);
+
+    translate(width-15,15);
+    rotate(-PI/4);
+    line(-15/2,0,15/2,0);
+    pop();
+    masterVolume(0);
+  }
+  else{
+    masterVolume(.75);
+  }
+  
   	
 
+}
+
+function mousePressed(){
+
+  if(dist(mouseX,mouseY,width-15,15)<15){
+    mute = !mute;
+  }
 }
 
 

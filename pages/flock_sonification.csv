@@ -1,0 +1,8 @@
+type, data, linebreak,
+Title, Flock sonification, True,
+Tags, #p5.js #p5.sound, True,
+Image, assets/images/flock.png,True,
+Paragraph, A flocking algorithm describes the movements of a group of autonomous agents. Daniel Shiffman made a pretty neat implementation of it for processing and p5.js. So I used this base and built a sound engine on top of it using the p5.sound library : each boid becomes a tiny helicopter that you can hear when it's close enough., True,
+Web Flocking sonification, http://b2renger.github.io/pages_p5js/flock/index.html, True,
+Code (p5.js and p5.sound), https://github.com/b2renger/b2renger.github.io/tree/master/flock,True,
+Flocking algorithm by Daniel as part of p5.js examples, http://p5js.org/learn/examples/Simulate_Flocking.php, True,

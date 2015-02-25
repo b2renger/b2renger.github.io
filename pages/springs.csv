@@ -1,0 +1,10 @@
+type, data, linebreak,
+Title, Springs,True,
+Tags, #processing-android #libpd #p5.js #p5.sound,True,
+Video, assets/videos/springs.webmhd.webm,True,
+Paragraph, Spring is a simple bank of oscillators controlled by a spring simulation algorithms. It gives you control over the parameters of the simulation so you can explore the sonic possibilities of this physical modelled synth.,True,
+Android version, https://play.google.com/store/apps/details?id=processing.springs,True,
+Android Code (Processing + libpd), https://github.com/b2renger/Springs,True,
+Web version, http://b2renger.github.io/pages_p5js/springs/index.html, True,
+Web Code (p5.js + p5.sound), https://github.com/b2renger/b2renger.github.io/tree/master/springs, True,
+

@@ -1,22 +1,19 @@
 // bug : load home page on startup
-
+// bug : need better over function with no repetition 
 // improvement : player video = > find a way to force showing controls
 // improvement : hide/show labels (like over but with a much bigger radius)
-
-// content :ressources desktop (processing + pure-data => the stuff I learned from)
-
-// content : android : pendulum phases (vid + description)
-// content : android : musicBox3D (vid + description)
-// content : android : pdDroidParty
-// content : desktop : tuto and abstraction for pd
-// content : desktop : processing_blends_n_shaders
-// content : desktop : data-sonification workshop
-// content : this website + tuto+ repo dedicated
-
 // feature : filter tags in the map
 // feature : higlights concerned nodes when clicking a tag in the page. (this means events listener, and separated div for tags => good exercise)
 // feature : add sound ! and button to mute it :)
 
+// content :ressources desktop (processing + pure-data)
+// content : android : pendulum phases (vid + description +tba)
+// content : android : musicBox3D (vid + description + tba + legacy webpd version)
+// content : android : pdDroidParty (vid + links)
+// content : desktop : tuto and abstraction for pd
+// content : desktop : processing_blends_n_shaders (vid + link)
+// content : desktop : data-sonification workshop (image + description + link)
+// content : this website + tuto+ repo dedicated (description + link + tuto in readme.md)
 
 
 var nodes = [];
@@ -31,7 +28,7 @@ var cssTitle = "font-family:monospace; background-color:#000000; color:#FFFFFF; 
 var cssParagraph = "font-family:monospace; background-color:#000000; color:#FFFFFF; padding:10px;";
 var cssLink = "font-family:monospace; background-color:#000000; color:#1800FC; font-size:12pt; padding:10px;";
 
-
+var vid;
 
 function setup() {
   	
@@ -95,8 +92,6 @@ function setup() {
 
 function draw() {
 
-  
-
   background(0);
 
   for (var i = 0 ; i < springs.length ; i++){
@@ -129,16 +124,14 @@ function mouseDragged(){
 }
 
 function mouseMoved() {
-  var maxDist = 25; 
+  var maxDist = 10; 
   if(mouseX<590){ // stay in our canvas range
     for (var i = 0; i < nodes.length; i++) {
-      var checkNode = nodes[i];
-      var d = dist(mouseX, mouseY, checkNode.location.x, checkNode.location.y);
-      if (d < maxDist) {
-        selectedNode = checkNode;
-        selectedIndex = i;    
-        setPage(selectedNode.page); // set the page with a custom parser function
-      }
+      var d = dist(mouseX, mouseY, nodes[i].location.x, nodes[i].location.y);
+      if (d < maxDist && nodes[i].overMe == false) {      
+        selectedNode = nodes[i];
+        setPage(selectedNode.page); // set the page with a custom parser function      
+      }      
     }
   }
 }
@@ -176,10 +169,11 @@ function setPage(project){
     }
 
     else if (type == 'Video'){
-      var vid = createVideo(str);
+
+      vid = createVideo(str,dummy);
       vid.style(cssTitle);
       vid.size(720,350);
-      vid.time(10);
+
       vid.position(posX,posY);
 
       if (linebreak == 'True' || linebreak == ' True'){

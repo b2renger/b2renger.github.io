@@ -5,7 +5,7 @@ Image, assets/images/sidlee_white.png,False,
 Image, assets/images/sidlee_black.png,True,
 Paragraph, Sid Lee agency installed a bunch arduino based sensors in its parisian office. But they also build a server and an open api to get their data ! So here's a little experimentation with p5.js using their api and the p5.sound lib.,True,
 Live Widget, http://b2renger.github.io/pages_p5js/sidlee-sonification/index.html,True,
-Web Code, https://github.com/b2renger/b2renger.github.io/tree/master/sidlee-sonification,True,
+Web Code, https://github.com/b2renger/b2renger.github.io/tree/master/pages_p5js/sidlee-sonification,True,
 Sid lee's dashboard, https://sidlee.herokuapp.com/,True,
 Github of their dashboard , https://github.com/SidLeeParis/sidLeeAgenceConnectee,True,
 

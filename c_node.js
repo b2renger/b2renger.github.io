@@ -46,6 +46,7 @@ function Node(x,y, id){
   
   this.location = createVector(x,y,0);
 
+  this.overMe= false;
   this.page;
 
 }
@@ -129,7 +130,13 @@ Node.prototype.over = function(x,y){
     noFill();
     ellipse(this.location.x, this.location.y, this.diameter+10, this.diameter+10);
     pop();
+    this.overMe = true;
   }
+  else {
+    this.overMe = false;
+  }
+
+  
 }
 
 Node.prototype.setProject = function(str){

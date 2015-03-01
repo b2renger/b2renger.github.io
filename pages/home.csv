@@ -1,6 +1,8 @@
 type, data, linebreak,
 Title, b2renger.github.io,True,
-Tags, #code   #sound   #visuals,True,
+Tags, #code,False,
+Tags, #sound,False,
+Tags, #visuals,True,
 Image, assets/images/oreille.png,True,
 Icon, assets/icons/git.png,False,
 Github, https://github.com/b2renger,True,
@@ -8,5 +10,16 @@ Icon, assets/icons/tumblr.png,False,
 Tumblr, http://b2renger.tumblr.com/,True,
 Icon, assets/icons/twitter.png,False
 Twitter, https://twitter.com/Berenger_r,True,
+Tags, #pure-data,False,
+Tags, #libpd,False,
+Tags, #webpd,False,
+Tags, #droidparty,True,
+Tags, #processing,False,
+Tags, #processing-android,False,
+Tags, #processing.js,True,
+Tags, #p5.js,False,
+Tags, #p5.sound,False,
+Tags, #p5.dom,False,
+
 
 

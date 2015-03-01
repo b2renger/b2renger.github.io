@@ -1,6 +1,7 @@
 Title, data, linebreak,
 Title, WebPd Getting Started, True,
-Tags, #webpd #processing.js, True,
+Tags, #webpd,False,
+Tags, #processing.js, True,
 Image, assets/images/webpd_gettinstarted_drums.png,True,
 Paragraph, This is a set of examples to get started with webpd. You need to use a webserver to run those and load the necessary ressources. You'll learn how to load a sample in Pure-Data and save it for playback. Then changing it's speed and looping. After that run the sound stream through an effect. And finally build a simple drum machine.,True,
 Demo sample playback , http://b2renger.github.io/pages_webpd/webpd-simple-examples/sample_playback_oneshot/index.html, True,

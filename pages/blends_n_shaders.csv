@@ -1,0 +1,6 @@
+Title, data, linebreak,
+Title, Blends and Shaders, True,
+Tags, #processing, True,
+Video, assets/videos/Processing_n_blends_n_shaders.webm,True,
+Paragraph, This repo hosts the code for my framework to experiment with blend modes and shaders in Processing. The main goal is to be able to blend anything with anything so you've got a basic blending mechanism (blend a "top layer" with a "low layer" made of a PGraphics object) and then you have a bunch of functions to write several things in those two PGraphics objects. All the blending happens with a shader  so it's really fast !, True,
+Blends and shaders code, https://github.com/b2renger/Processing_Blends_Shaders , True,

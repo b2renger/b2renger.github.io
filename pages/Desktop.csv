@@ -1,6 +1,7 @@
 type, data, linebreak,
 Title, Desktop Ressources,True,
-Tags, #processing #pure-data, True,
+Tags, #processing,False,
+Tags, #pure-data, True,
 Processing, https://processing.org/, True,
 Processing forum, http://forum.processing.org/two/, True,
 Pure-Data, http://puredata.info/, True,

@@ -1,0 +1,9 @@
+Title, data, linebreak,
+Title, Bouncing Sequencer, True,
+Tags, #webpd, False,
+Tags, #processing.js,True,
+Image, assets/images/bouncing_sequencer_web.png,True,
+Paragraph, Click ! click and hold ! click and drag !, True,
+Bouncing Sequencer Demo, http://b2renger.github.io/pages_webpd/bouncing_sequencer/index.html, True,
+code, https://github.com/b2renger/WebPd_processingJS_Experiments,True,
+

@@ -1,6 +1,7 @@
 Title, data, linebreak,
 Title, The Midst,True,
-Tags, #webpd #processing.js,True,
+Tags, #webpd,False,
+Tags, #processing.js,True,
 Image, assets/images/themidst.png,True,
 Paragraph, The Midst is a project combining an art-game playable online and a teaching workshop to discover tools for creative coding on the web such as ProcessingJS and Webpd. As the whole game is based on pop-up windows opening : you should desactivate the pop-up blocker of your browser.,True,
 Title, Synopsis,True,

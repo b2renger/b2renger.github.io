@@ -1,30 +1,33 @@
 // bug : load home page on startup
 // bug : need better over function with no repetition 
+
 // improvement : player video = > find a way to force showing controls
 // improvement : hide/show labels (like over but with a much bigger radius)
+
 // feature : filter tags in the map
 // feature : higlights concerned nodes when clicking a tag in the page. (this means events listener, and separated div for tags => good exercise)
 // feature : add sound ! and button to mute it :)
 
 // content :ressources desktop (processing + pure-data)
 // content : android : pendulum phases (vid + description +tba)
-// content : android : musicBox3D (vid + description + tba + legacy webpd version)
-// content : android : pdDroidParty (vid + links)
 // content : desktop : tuto and abstraction for pd
-// content : desktop : processing_blends_n_shaders (vid + link)
-// content : desktop : data-sonification workshop (image + description + link)
+// content : desktop : initiation processing
 // content : this website + tuto+ repo dedicated (description + link + tuto in readme.md)
 
 
 var nodes = [];
 var springs = [];
 
+var longdistance = 120 ;
+var shortdistance = 90;
+
 var selectedNode =null;
 var selectedNodeX;
 var selectedNodeY;
 
 
-var cssTitle = "font-family:monospace; background-color:#000000; color:#FFFFFF; font-size:18pt; padding:10px;";
+var cssTitle = "font-family:monospace; background-color:#000000; color:#FFFFFF; font-size:18pt; padding:10px;text-align: center;";
+var cssTags = "font-family:monospace; background-color:#000000; color:#FFFFFF; padding:10px;text-align: center;";
 var cssParagraph = "font-family:monospace; background-color:#000000; color:#FFFFFF; padding:10px;";
 var cssLink = "font-family:monospace; background-color:#000000; color:#1800FC; font-size:12pt; padding:10px;";
 
@@ -45,41 +48,74 @@ function setup() {
 
   //1
   nodes.push(new Node(random(width),random(height),'WEB'));
-  addConnection(0,150);
+  addConnection(0,random(longdistance,longdistance+longdistance/2));
   nodes[1].setProject("pages/Web.csv");
   //2
   nodes.push(new Node(random(width),random(height),'ANDROID'));
-  addConnection(0,150);
+  addConnection(0,random(longdistance,longdistance+longdistance/2));
   nodes[2].setProject("pages/Android.csv");
   //3
   nodes.push(new Node(random(width),random(height),'DESKTOP'));
-  addConnection(0,150);
+  addConnection(0,random(longdistance,longdistance+longdistance/2));
   nodes[3].setProject("pages/Desktop.csv");
 
-  nodes.push(new Node((width/2),(height/2),'Springs'));
-  addConnection(1,75);
-  addConnection(2,75);
+  // android
+  nodes.push(new Node((nodes[2].location.x),(nodes[2].location.y),'DroidParty tutorials'));
+  addConnection(2,random(shortdistance,shortdistance+shortdistance/2));
+  nodes[nodes.length-1].setProject("pages/droidparty_tuto.csv");
+
+  nodes.push(new Node((nodes[2].location.x),(nodes[2].location.y),'Springs'));
+  addConnection(1,random(shortdistance,shortdistance+shortdistance/2));
+  addConnection(2,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/springs.csv");
 
-  nodes.push(new Node((width/2),(height/2),'Flock'));
-  addConnection(1,75);
+  nodes.push(new Node((nodes[2].location.x),(nodes[2].location.y),'Musicbox 3D'));
+  addConnection(1,random(shortdistance,shortdistance+shortdistance/2));
+  addConnection(2,random(shortdistance,shortdistance+shortdistance/2));
+  nodes[nodes.length-1].setProject("pages/musicbox3d.csv");  
+
+  // desktop
+  nodes.push(new Node((nodes[3].location.x),(nodes[3].location.y),'Data Sonification'));
+  addConnection(3,random(shortdistance,shortdistance+shortdistance/2));
+  nodes[nodes.length-1].setProject("pages/datasonification.csv");  
+
+  nodes.push(new Node((nodes[3].location.x),(nodes[3].location.y),'Blends and shaders'));
+  addConnection(3,random(shortdistance,shortdistance+shortdistance/2));
+  nodes[nodes.length-1].setProject("pages/blends_n_shaders.csv");  
+
+
+  // web
+  nodes.push(new Node((nodes[1].location.x),(nodes[1].location.y),'Flock'));
+  addConnection(1,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/flock_sonification.csv");
 
-  nodes.push(new Node((width/2),(height/2),'Sid Lee'));
-  addConnection(1,75);
+  nodes.push(new Node((nodes[1].location.x),(nodes[1].location.y),'Sid Lee'));
+  addConnection(1,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/sidlee_sonification.csv");  
 
-  nodes.push(new Node((width/2),(height/2),'Webpd getting started'));
-  addConnection(1,75);
+  nodes.push(new Node((nodes[1].location.x),(nodes[1].location.y),'Webpd getting started'));
+  addConnection(1,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/Webpd_getting_started.csv"); 
 
-  nodes.push(new Node((width/2),(height/2),'Snow Night'));
-  addConnection(1,75);
-  nodes[nodes.length-1].setProject("pages/snow_night.csv");   
+  nodes.push(new Node((nodes[1].location.x),(nodes[1].location.y),'Snow Night'));
+  addConnection(1,random(shortdistance,shortdistance+shortdistance/2));
+  nodes[nodes.length-1].setProject("pages/snow_night.csv");  
 
-  nodes.push(new Node((width/2),(height/2),'The midst ...'));
-  addConnection(1,75);
+  nodes.push(new Node((nodes[1].location.x),(nodes[1].location.y),'Bouncing Sequencer'));
+  addConnection(1,random(shortdistance,shortdistance+shortdistance/2));
+  nodes[nodes.length-1].setProject("pages/bouncing_sequencer.csv");    
+
+  nodes.push(new Node((nodes[1].location.x),(nodes[1].location.y),'FM Culture'));
+  addConnection(1,random(shortdistance,shortdistance+shortdistance/2));
+  nodes[nodes.length-1].setProject("pages/fm_culture.csv");    
+
+  nodes.push(new Node((nodes[1].location.x),(nodes[1].location.y),'The midst ...'));
+  addConnection(1,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/the_midst.csv");  
+
+  nodes.push(new Node((nodes[1].location.x),(nodes[1].location.y),'Rennes 2 soundscape'));
+  addConnection(1,random(shortdistance,shortdistance+shortdistance/2));
+  nodes[nodes.length-1].setProject("pages/Electroni-k.csv");  
   
 
 
@@ -214,8 +250,10 @@ function setPage(project){
 
     else if (type == 'Tags'){
       var p = createP(str);
-      p.style(cssParagraph);
+      p.style(cssTags);
+      p.size(140,AUTO);
       p.position(posX,posY);
+
 
       if (linebreak == 'True' || linebreak == ' True'){
         posY += p.height +40 ;

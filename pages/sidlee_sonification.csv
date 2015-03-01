@@ -1,6 +1,7 @@
 type, data, linebreak,
 Title, SID LEE sonification,True,
-Tags, #p5.js #p5.sound,True,
+Tags, #p5.js,False,
+Tags, #p5.sound,True,
 Image, assets/images/sidlee_white.png,False,
 Image, assets/images/sidlee_black.png,True,
 Paragraph, Sid Lee agency installed a bunch arduino based sensors in its parisian office. But they also build a server and an open api to get their data ! So here's a little experimentation with p5.js using their api and the p5.sound lib.,True,

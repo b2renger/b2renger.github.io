@@ -1,0 +1,12 @@
+type, data, linebreak,
+Title, DroidParty Examples,True,
+Tags, #droidparty,False,
+Tags, #libpd, True,
+Video,assets/videos/markov_piano.webm,True,
+Paragraph, Droidparty is a free android app by Chris McCormick. It lets you load a Pure-Data patch on your android phone effort less : it reproduces the gui and gives you access to sensors and multi-touch among other features.,True,
+Paragraph, The app shown above is part of a series of tutorials about droidparty. It is the last one... what's fun about it is that it uses an implementation of markov chains. It enables the app to track your inputs on the piano keys and analyse the notes and rythmicity to be able to improvise with you.,True,
+Droidparty main site, http://droidparty.net/,True,
+How to get started, http://forum.pdpatchrepo.info/topic/5496/running-your-patches-on-android-usind-pddroidparty-in-10-steps,True,
+My Droidparty tutorials, https://github.com/b2renger/PdDroidParty_some_examples, True,
+
+

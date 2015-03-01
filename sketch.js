@@ -1,5 +1,3 @@
-// bug : load home page on startup
-
 // feature : filter tags in the map
 // feature : higlights concerned nodes when clicking a tag in the page. (this means events listener, and separated div for tags => good exercise)
 // feature : add sound ! and button to mute it :)
@@ -30,6 +28,13 @@ var cssParagraph = "font-family:monospace; background-color:#000000; color:#FFFF
 var cssLink = "font-family: 'Open Sans Condensed', sans-serif;; background-color:#000000; color:#FFFFFF; font-size:10pt; padding:10px;";
 
 var vid;
+
+
+
+function init(){
+
+  setPage(nodes[0].page);
+}
 
 function setup() {
   	
@@ -116,7 +121,7 @@ function setup() {
   nodes[nodes.length-1].setProject("pages/Electroni-k.csv");  
   
   selectedNode = nodes[0];
-  setPage(nodes[0].page);
+
 }
 
 

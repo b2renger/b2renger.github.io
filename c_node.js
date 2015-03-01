@@ -19,7 +19,7 @@
 // limitations under the License.
 */
 
-function Node(x,y, id){
+function Node(x,y, id, anchor){
 	// ------   properties ------
   // if needed, an ID for the node
   this.id = id;
@@ -48,6 +48,9 @@ function Node(x,y, id){
 
   this.overMe= false;
   this.page;
+
+  this.displayLabel = true;
+  this.anchor = anchor;
 
 }
 
@@ -117,14 +120,26 @@ Node.prototype.display = function(){
   fill(255,50);
   ellipse(this.location.x, this.location.y, this.diameter, this.diameter);
   fill(255);
-  text(this.id,this.location.x-this.diameter/2, this.location.y - this.diameter );
+
+  if(this.displayLabel == true){
+  	text(this.id,this.location.x-this.diameter/2, this.location.y - this.diameter );
+  }
   pop();
 }
 
 Node.prototype.over = function(x,y){
   //println(this.id , this.snd.isPlaying());
   var delta = dist(x,y,this.location.x,this.location.y);
-  if (delta < 10 ){
+  if (this.anchor == false){
+  	if (delta < 150){
+  		this.displayLabel = true;
+  	}
+  	else{
+  		this.displayLabel = false;
+  	}
+  }
+
+  if (delta < 9 ){
     push();
     stroke(255);
     noFill();

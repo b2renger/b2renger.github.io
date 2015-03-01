@@ -2,7 +2,6 @@
 // bug : need better over function with no repetition 
 
 // improvement : player video = > find a way to force showing controls
-// improvement : hide/show labels (like over but with a much bigger radius)
 
 // feature : filter tags in the map
 // feature : higlights concerned nodes when clicking a tag in the page. (this means events listener, and separated div for tags => good exercise)
@@ -18,6 +17,8 @@
 var nodes = [];
 var springs = [];
 
+var tags = [];
+
 var longdistance = 120 ;
 var shortdistance = 90;
 
@@ -26,10 +27,10 @@ var selectedNodeX;
 var selectedNodeY;
 
 
-var cssTitle = "font-family:monospace; background-color:#000000; color:#FFFFFF; font-size:18pt; padding:10px;text-align: center;";
-var cssTags = "font-family:monospace; background-color:#000000; color:#FFFFFF; padding:10px;text-align: center;";
+var cssTitle = "font-family: 'Open Sans Condensed', sans-serif; background-color:#000000; color:#FFFFFF; font-size:18pt; padding:10px;text-align: center;";
+var cssTags = "font-family: 'Open Sans Condensed', sans-serif; background-color:#000000; color:#FFFFFF; padding:10px;text-align: center;";
 var cssParagraph = "font-family:monospace; background-color:#000000; color:#FFFFFF; padding:10px;";
-var cssLink = "font-family:monospace; background-color:#000000; color:#1800FC; font-size:12pt; padding:10px;";
+var cssLink = "font-family: 'Open Sans Condensed', sans-serif;; background-color:#000000; color:#FFFFFF; font-size:10pt; padding:10px;";
 
 var vid;
 
@@ -38,91 +39,87 @@ function setup() {
   createCanvas(600, 1080);
   smooth();
 
+  textFont("Open Sans Condensed");
+
   nodes = [];
   springs = [];
   //0
-  nodes.push(new Node((width/2),(height/2),'HOME'));
+  nodes.push(new Node((width/2),(height/2),'HOME',true));
   nodes[0].setProject("pages/home.csv");
-  selectedNode = nodes[0];
-  setPage(nodes[0].page);
 
   //1
-  nodes.push(new Node(random(width),random(height),'WEB'));
+  nodes.push(new Node(random(width),random(height),'WEB',true));
   addConnection(0,random(longdistance,longdistance+longdistance/2));
   nodes[1].setProject("pages/Web.csv");
   //2
-  nodes.push(new Node(random(width),random(height),'ANDROID'));
+  nodes.push(new Node(random(width),random(height),'ANDROID',true));
   addConnection(0,random(longdistance,longdistance+longdistance/2));
   nodes[2].setProject("pages/Android.csv");
   //3
-  nodes.push(new Node(random(width),random(height),'DESKTOP'));
+  nodes.push(new Node(random(width),random(height),'DESKTOP',true));
   addConnection(0,random(longdistance,longdistance+longdistance/2));
   nodes[3].setProject("pages/Desktop.csv");
 
   // android
-  nodes.push(new Node((nodes[2].location.x),(nodes[2].location.y),'DroidParty tutorials'));
+  nodes.push(new Node((nodes[2].location.x),(nodes[2].location.y),'DroidParty tutorials',false));
   addConnection(2,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/droidparty_tuto.csv");
 
-  nodes.push(new Node((nodes[2].location.x),(nodes[2].location.y),'Springs'));
+  nodes.push(new Node((nodes[2].location.x),(nodes[2].location.y),'Springs',false));
   addConnection(1,random(shortdistance,shortdistance+shortdistance/2));
   addConnection(2,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/springs.csv");
 
-  nodes.push(new Node((nodes[2].location.x),(nodes[2].location.y),'Musicbox 3D'));
+  nodes.push(new Node((nodes[2].location.x),(nodes[2].location.y),'Musicbox 3D',false));
   addConnection(1,random(shortdistance,shortdistance+shortdistance/2));
   addConnection(2,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/musicbox3d.csv");  
 
   // desktop
-  nodes.push(new Node((nodes[3].location.x),(nodes[3].location.y),'Data Sonification'));
+  nodes.push(new Node((nodes[3].location.x),(nodes[3].location.y),'Data Sonification',false));
   addConnection(3,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/datasonification.csv");  
 
-  nodes.push(new Node((nodes[3].location.x),(nodes[3].location.y),'Blends and shaders'));
+  nodes.push(new Node((nodes[3].location.x),(nodes[3].location.y),'Blends and shaders',false));
   addConnection(3,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/blends_n_shaders.csv");  
 
 
   // web
-  nodes.push(new Node((nodes[1].location.x),(nodes[1].location.y),'Flock'));
+  nodes.push(new Node((nodes[1].location.x),(nodes[1].location.y),'Flock',false));
   addConnection(1,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/flock_sonification.csv");
 
-  nodes.push(new Node((nodes[1].location.x),(nodes[1].location.y),'Sid Lee'));
+  nodes.push(new Node((nodes[1].location.x),(nodes[1].location.y),'Sid Lee',false));
   addConnection(1,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/sidlee_sonification.csv");  
 
-  nodes.push(new Node((nodes[1].location.x),(nodes[1].location.y),'Webpd getting started'));
+  nodes.push(new Node((nodes[1].location.x),(nodes[1].location.y),'Webpd getting started',false));
   addConnection(1,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/Webpd_getting_started.csv"); 
 
-  nodes.push(new Node((nodes[1].location.x),(nodes[1].location.y),'Snow Night'));
+  nodes.push(new Node((nodes[1].location.x),(nodes[1].location.y),'Snow Night',false));
   addConnection(1,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/snow_night.csv");  
 
-  nodes.push(new Node((nodes[1].location.x),(nodes[1].location.y),'Bouncing Sequencer'));
+  nodes.push(new Node((nodes[1].location.x),(nodes[1].location.y),'Bouncing Sequencer',false));
   addConnection(1,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/bouncing_sequencer.csv");    
 
-  nodes.push(new Node((nodes[1].location.x),(nodes[1].location.y),'FM Culture'));
+  nodes.push(new Node((nodes[1].location.x),(nodes[1].location.y),'FM Culture',false));
   addConnection(1,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/fm_culture.csv");    
 
-  nodes.push(new Node((nodes[1].location.x),(nodes[1].location.y),'The midst ...'));
+  nodes.push(new Node((nodes[1].location.x),(nodes[1].location.y),'The midst ...',false));
   addConnection(1,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/the_midst.csv");  
 
-  nodes.push(new Node((nodes[1].location.x),(nodes[1].location.y),'Rennes 2 soundscape'));
+  nodes.push(new Node((nodes[1].location.x),(nodes[1].location.y),'Rennes 2 soundscape',false));
   addConnection(1,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/Electroni-k.csv");  
   
-
-
-
-    
-    
-  
+  selectedNode = nodes[0];
+  setPage(nodes[0].page);
 }
 
 
@@ -177,6 +174,7 @@ function mouseMoved() {
 function setPage(project){
 
   removeElements();
+  tags = [];
 
   var row ;
   var str ;
@@ -197,7 +195,7 @@ function setPage(project){
       title.position(posX,posY);
 
       if (linebreak == 'True' || linebreak == ' True'){
-        posY += title.height +25 ;
+        posY += title.height  ;
         posX = 600;
       } else {
         posX += title.width;
@@ -227,7 +225,7 @@ function setPage(project){
       description.position(posX,posY);
 
       if (linebreak == 'True' || linebreak == ' True'){
-        posY += description.height +25 ;
+        posY += description.height ;
         posX = 600;
       } else {
         posX += description.width;
@@ -241,7 +239,7 @@ function setPage(project){
       image.position(posX,posY);
 
       if (linebreak == 'True' || linebreak == ' True'){
-        posY += image.height +25 ;
+        posY += image.height;
         posX = 600;
       } else {
         posX += image.width;
@@ -254,9 +252,8 @@ function setPage(project){
       p.size(140,AUTO);
       p.position(posX,posY);
 
-
       if (linebreak == 'True' || linebreak == ' True'){
-        posY += p.height +40 ;
+        posY += p.height ;
         posX = 600;
       } else {
         posX += p.width;
@@ -269,20 +266,23 @@ function setPage(project){
       ic.position(posX,posY);
 
        if (linebreak == 'True' || linebreak == ' True'){
-        posY += ic.height +25 ;
+        posY += ic.height  ;
         posX = 600;
       } else{
         posX += ic.width;
       }
     }
+    else if (type =='Jump'){
+      posY+=25;
+    }
     else {
       var link = createA(str,row.getString(0)); // create an anchor element 
-      link.style(cssParagraph);
+      link.style(cssLink);
       link.size(AUTO,18);
       link.position(posX,posY);
 
       if (linebreak == 'True'|| linebreak == ' True'){
-        posY += link.height +25 ;
+        posY += link.height  ;
         posX = 600;
       } else {
         posX += link.width;

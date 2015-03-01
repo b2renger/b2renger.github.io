@@ -1,7 +1,4 @@
 // bug : load home page on startup
-// bug : need better over function with no repetition 
-
-// improvement : player video = > find a way to force showing controls
 
 // feature : filter tags in the map
 // feature : higlights concerned nodes when clicking a tag in the page. (this means events listener, and separated div for tags => good exercise)
@@ -204,7 +201,7 @@ function setPage(project){
 
     else if (type == 'Video'){
 
-      vid = createVideo(str,dummy);
+      vid = createDiv(str,dummy);
       vid.style(cssTitle);
       vid.size(720,350);
 

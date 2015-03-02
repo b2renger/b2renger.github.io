@@ -52,6 +52,8 @@ function Node(x,y, id, anchor){
   this.displayLabel = true;
   this.anchor = anchor;
 
+  this.alpha = 50;
+  this.highlight = false;
 }
 
 
@@ -110,6 +112,20 @@ Node.prototype.update = function() {
     } */
 
   this.velocity.mult(1 - this.damping);
+
+  if (this.highlight == true){
+  	this.displayLabel = true;
+  	this.pulse();
+
+  }
+  else{
+  	this.alpha = 50;
+  }
+}
+
+Node.prototype.pulse = function(){
+	this.alpha = 50 + 100*abs(sin(t));
+
 }
 
 Node.prototype.display = function(){
@@ -117,7 +133,7 @@ Node.prototype.display = function(){
   noStroke();
   fill(255);
   ellipse(this.location.x, this.location.y, this.diameter/4, this.diameter/4);
-  fill(255,50);
+  fill(255,this.alpha);
   ellipse(this.location.x, this.location.y, this.diameter, this.diameter);
   fill(255);
 

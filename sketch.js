@@ -27,7 +27,7 @@ var cssTags = "font-family: 'Open Sans Condensed', sans-serif; background-color:
 var cssParagraph = "font-family:monospace; background-color:#000000; color:#FFFFFF; padding:10px;";
 var cssLink = "font-family: 'Open Sans Condensed', sans-serif;; background-color:#000000; color:#FFFFFF; font-size:10pt; padding:10px;";
 
-var vid;
+var t = 0;
 
 
 
@@ -126,7 +126,7 @@ function setup() {
 
 
 function draw() {
-
+  t+=0.1;
   background(0);
 
   for (var i = 0 ; i < springs.length ; i++){
@@ -208,8 +208,6 @@ function setPage(project){
 
       vid = createDiv(str,dummy);
       vid.style(cssTitle);
-      vid.size(720,350);
-
       vid.position(posX,posY);
 
       if (linebreak == 'True' || linebreak == ' True'){
@@ -253,6 +251,8 @@ function setPage(project){
       p.style(cssTags);
       p.size(140,AUTO);
       p.position(posX,posY);
+  
+      p.mouseOver(check);
 
       if (linebreak == 'True' || linebreak == ' True'){
         posY += p.height ;
@@ -292,9 +292,51 @@ function setPage(project){
     }
   }
 
-  console.log("new page loaded");
+  //console.log("new page loaded");
 }
 
+function check(param){
+  console.log("over" + param.currentTarget.innerHTML);
+
+  for (var i = 0 ; i < nodes.length ; i++){
+    var checkpage = nodes[i].page;
+    nodes[i].highlight = false;
+    //println(checkpage.getRowCount());
+    for (var j = 0 ; j < checkpage.getRowCount() ; j++){
+      var checkrow = checkpage.getRow(j);
+      //println(checkrow.getString(1));
+
+      if(checkrow.getString(0) == 'Tags'){
+        if(checkrow.getString(1) == param.currentTarget.innerHTML){
+          nodes[i].highlight = true;
+        }
+        else if (nodes[i].highlight != true){
+
+        }
+
+      }
+    }
+    /*
+    if (nodes[i].highlight == true){
+      nodes[i].col = color(255,0,0);
+      nodes[i].displayLabel = true;
+    }
+    else {
+      nodes[i].col = color(255);
+    }
+    */
+
+  }
+
+  /*
+  var tags = getElement('#processing');
+  //println(tags.length);
+  
+  for (var i=0; i<tags.length; i++) {
+    println(" "+tags[i].elt().value());
+  }*/
+
+}
 
 
 function addConnection(index,l){

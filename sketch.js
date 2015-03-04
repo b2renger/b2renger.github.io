@@ -1,5 +1,4 @@
-// feature : filter tags in the map
-// feature : higlights concerned nodes when clicking a tag in the page. (this means events listener, and separated div for tags => good exercise)
+// add bounding box for nodes
 // feature : add sound ! and button to mute it :)
 
 // content :ressources desktop (processing + pure-data)
@@ -27,7 +26,7 @@ var cssTags = "font-family: 'Open Sans Condensed', sans-serif; background-color:
 var cssParagraph = "font-family:monospace; background-color:#000000; color:#FFFFFF; padding:10px;";
 var cssLink = "font-family: 'Open Sans Condensed', sans-serif;; background-color:#000000; color:#FFFFFF; font-size:10pt; padding:10px;";
 
-var t = 0;
+var t = 0; // for pulsing nodes
 
 
 
@@ -38,7 +37,7 @@ function init(){
 
 function setup() {
   	
-  createCanvas(600, 1080);
+  createCanvas(600, 1280);
   smooth();
 
   textFont("Open Sans Condensed");
@@ -119,6 +118,11 @@ function setup() {
   nodes.push(new Node((nodes[1].location.x),(nodes[1].location.y),'Rennes 2 soundscape',false));
   addConnection(1,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/Electroni-k.csv");  
+
+  nodes.push(new Node((nodes[1].location.x),(nodes[1].location.y),'this website',false));
+  addConnection(1,random(shortdistance,shortdistance+shortdistance/2));
+  addConnection(0,random(shortdistance,shortdistance+shortdistance/2));
+  nodes[nodes.length-1].setProject("pages/algae-dom.csv");  
   
   selectedNode = nodes[0];
 
@@ -296,7 +300,8 @@ function setPage(project){
 }
 
 function check(param){
-  console.log("over" + param.currentTarget.innerHTML);
+  console.log("over " + param.currentTarget.innerHTML);
+ 
 
   for (var i = 0 ; i < nodes.length ; i++){
     var checkpage = nodes[i].page;

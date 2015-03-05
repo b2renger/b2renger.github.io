@@ -122,7 +122,7 @@ function setup() {
   nodes.push(new Node((nodes[1].location.x),(nodes[1].location.y),'this website',false));
   addConnection(1,random(shortdistance,shortdistance+shortdistance/2));
   addConnection(0,random(shortdistance,shortdistance+shortdistance/2));
-  nodes[nodes.length-1].setProject("pages/algae-dom.csv");  
+  nodes[nodes.length-1].setProject("pages/algae-DOM.csv");  
   
   selectedNode = nodes[0];
 

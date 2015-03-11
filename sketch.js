@@ -1,3 +1,4 @@
+
 // add bounding box for nodes
 // feature : add sound ! and button to mute it :)
 
@@ -5,7 +6,7 @@
 // content : android : pendulum phases (vid + description +tba)
 // content : desktop : tuto and abstraction for pd
 // content : desktop : initiation processing
-// content : this website + tuto+ repo dedicated (description + link + tuto in readme.md)
+
 
 
 var nodes = [];
@@ -22,12 +23,14 @@ var selectedNodeY;
 
 
 var cssTitle = "font-family: 'Open Sans Condensed', sans-serif; background-color:#000000; color:#FFFFFF; font-size:18pt; padding:10px;text-align: center;";
+var cssButton = "font-family: 'Open Sans Condensed', sans-serif; background-color:#000000; color:#FFFFFF; font-size:9pt; padding:2px;text-align: center;";
 var cssTags = "font-family: 'Open Sans Condensed', sans-serif; background-color:#000000; color:#FFFFFF; padding:10px;text-align: center;";
 var cssParagraph = "font-family:monospace; background-color:#000000; color:#FFFFFF; padding:10px;";
 var cssLink = "font-family: 'Open Sans Condensed', sans-serif;; background-color:#000000; color:#FFFFFF; font-size:10pt; padding:10px;";
 
 var t = 0; // for pulsing nodes
 
+var input, button;
 
 
 function init(){
@@ -45,20 +48,20 @@ function setup() {
   nodes = [];
   springs = [];
   //0
-  nodes.push(new Node((width/2),(height/2),'HOME',true));
+  nodes.push(new Node((width*2/5),(height/12),'HOME',true));
   nodes[0].setProject("pages/home.csv");
 
   //1
-  nodes.push(new Node(random(width),random(height),'WEB',true));
-  addConnection(0,random(longdistance,longdistance+longdistance/2));
+  nodes.push(new Node(width*3/5,height/4,'WEB',true));
+  addConnection(0,200);
   nodes[1].setProject("pages/Web.csv");
   //2
-  nodes.push(new Node(random(width),random(height),'ANDROID',true));
-  addConnection(0,random(longdistance,longdistance+longdistance/2));
+  nodes.push(new Node(width*2/5,height/4,'ANDROID',true));
+  addConnection(0,200);
   nodes[2].setProject("pages/Android.csv");
   //3
-  nodes.push(new Node(random(width),random(height),'DESKTOP',true));
-  addConnection(0,random(longdistance,longdistance+longdistance/2));
+  nodes.push(new Node(width*1/6,random(height/8,height/3),'DESKTOP',true));
+  addConnection(0,200);
   nodes[3].setProject("pages/Desktop.csv");
 
   // android
@@ -123,6 +126,11 @@ function setup() {
   addConnection(1,random(shortdistance,shortdistance+shortdistance/2));
   addConnection(0,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/algae-DOM.csv");  
+
+  nodes.push(new Node((nodes[1].location.x),(nodes[1].location.y),'Organic motion equations',false));
+  addConnection(1,random(shortdistance,shortdistance+shortdistance/2));
+  nodes[nodes.length-1].setProject("pages/organic_motion.csv");  
+  
   
   selectedNode = nodes[0];
 
@@ -180,6 +188,18 @@ function mouseMoved() {
 function setPage(project){
 
   removeElements();
+
+  input = createInput();
+  input.position(50, 0);
+  input.size(150,20);
+  input.style(cssParagraph);
+
+  button = createButton('search');
+  button.position(0, 0);
+  button.size(50,24);
+  button.style(cssButton);
+  button.mousePressed(search);
+
   tags = [];
 
   var row ;
@@ -239,7 +259,7 @@ function setPage(project){
     else if (type == 'Image'){
       var image = createImg(str);
       image.style(cssParagraph);
-      image.size(AUTO,200);
+      image.size(350,200);
       image.position(posX,posY);
 
       if (linebreak == 'True' || linebreak == ' True'){
@@ -316,30 +336,26 @@ function check(param){
           nodes[i].highlight = true;
         }
         else if (nodes[i].highlight != true){
-
         }
-
       }
     }
-    /*
-    if (nodes[i].highlight == true){
-      nodes[i].col = color(255,0,0);
-      nodes[i].displayLabel = true;
-    }
-    else {
-      nodes[i].col = color(255);
-    }
-    */
-
   }
+}
 
-  /*
-  var tags = getElement('#processing');
-  //println(tags.length);
-  
-  for (var i=0; i<tags.length; i++) {
-    println(" "+tags[i].elt().value());
-  }*/
+function search(param){
+  var name = input.value();
+   for (var i = 0 ; i < nodes.length ; i++){
+    var checkpage = nodes[i].page;
+    nodes[i].highlight = false;
+    for (var j = 0 ; j < checkpage.getRowCount() ; j++){
+      var checkrow = checkpage.getRow(j);
+      if(checkrow.getString(1).match(name) !=null){
+          nodes[i].highlight = true;
+      }
+      else if (nodes[i].highlight != true){
+      }
+    }
+  }
 
 }
 

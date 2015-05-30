@@ -97,7 +97,7 @@ Spring.prototype.set_k=function(k){
 //////////////////////////////////////////////////////////////////////////////////////////
 // audio specific methods
 Spring.prototype.audio = function(){
-  this.osc = new p5.SinOsc();
+  this.osc = new p5.SinOsc( midiToFreq(60));
   this.osc.amp (0.5);
 
   this.freq = midiToFreq(60);

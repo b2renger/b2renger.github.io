@@ -147,7 +147,7 @@ Node.prototype.over = function(x,y){
   //println(this.id , this.snd.isPlaying());
   var delta = dist(x,y,this.location.x,this.location.y);
   if (this.anchor == false){
-  	if (delta < 150){
+  	if (delta < 100){
   		this.displayLabel = true;
   	}
   	else{

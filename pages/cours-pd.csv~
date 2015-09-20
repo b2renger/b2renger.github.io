@@ -1,0 +1,12 @@
+Title, data, linebreak,
+Title, Pure-Data Introduction, True,
+Jump, , ,
+Tags,#pure-data,True,
+
+Jump, , , 
+Image, assets/images/cours-pd.png,True,
+Jump, , ,
+Paragraph, This page links to a repository containing a french introduction to audio programming language Pure-Data, True,
+Jump, , ,
+Jump, , ,
+Github repo, https://github.com/b2renger/Introduction_Pure_Data,True,

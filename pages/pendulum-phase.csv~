@@ -1,0 +1,19 @@
+type, data, linebreak,
+Title, PendulumPhases,True,
+Jump, , ,
+Tags,#processing-android,False,
+Tags,#libpd,True,
+Jump, , ,
+Video,<iframe width="720" height="350" src="https://www.youtube.com/embed/E_nnjXkPYok" frameborder="0" allowfullscreen></iframe>,True,
+Jump, , ,
+Paragraph, This app is an audio-visual synthetizer based on harmonic motion. It enables to explore a physical simulation of pendulum oscillations through random motion / beating / travelling waves or standing waves are at the tips of your finger.,True,
+Jump, , ,
+Jump, , ,
+Paragraph, Parameters of the simulation such as synchronisation or travelling speed are tweakable. Sound parameters will enable you to explore several harmonic mapping from consonant to most 'bizarre' ones.,True,
+Jump, , ,
+Jump, , ,
+Android version, https://play.google.com/store/apps/details?id=processing.test.pendulum_phases_0_3,True,
+Jump, , ,
+
+
+

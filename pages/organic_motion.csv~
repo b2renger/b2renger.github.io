@@ -1,0 +1,21 @@
+type, data, linebreak,
+Title, Equations for organic motion with sound,True,
+Jump, , ,
+Tags,#p5.js,False,
+Tags,#p5.dom,False,
+Tags,#p5.sound,True,
+Jump, , ,
+Image,assets/images/organic_motion_original.png,False,
+Image,assets/images/organic_motion.png,True,
+Jump, , ,
+Paragraph, Equations for organic motion is a codepen.io sketch made by Justin Windle. I added sound to the mix. Since I discovered this link hidden in the code of a project with the mention : this could be interesting here ... I always wondered what it sounds like. Headphones recommended !	,True,
+Jump, , ,
+Jump, , ,
+Live Widget, http://b2renger.github.io/pages_p5js/organic_motion/index.html,True,
+Jump, , ,
+Web Code, https://github.com/b2renger/p5js_p5sound_examples#organic,True,
+Jump, , ,
+Original codepen code by Justin Windle, http://codepen.io/soulwire/full/kqHxB/,True,
+
+
+

@@ -72,91 +72,95 @@ function setup() {
   nodes[5].setProject("pages/Desktop.csv");
 
   // android
-  nodes.push(new Node((nodes[4].location.x),(nodes[4].location.y),'DroidParty tutorials',false));
+  nodes.push(new Node((nodes[4].location.x),(nodes[4].location.y+20),'DroidParty tutorials',false));
   addConnection(4,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/droidparty_tuto.csv");
 
-  nodes.push(new Node((nodes[4].location.x),(nodes[4].location.y),'Springs',false));
+  nodes.push(new Node((nodes[4].location.x),(nodes[4].location.y+20),'Springs',false));
   addConnection(4,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/springs.csv");
 
-  nodes.push(new Node((nodes[4].location.x),(nodes[4].location.y),'Musicbox 3D',false));
+  nodes.push(new Node((nodes[4].location.x),(nodes[4].location.y+20),'Musicbox 3D',false));
   addConnection(4,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/musicbox3d.csv");  
 
-  nodes.push(new Node((nodes[4].location.x),(nodes[4].location.y),'Pendulum Phase',false));
+  nodes.push(new Node((nodes[4].location.x),(nodes[4].location.y+20),'Pendulum Phase',false));
   addConnection(4,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/pendulum-phase.csv");  
 
   // desktop
-  nodes.push(new Node((nodes[5].location.x),(nodes[5].location.y),'Data Sonification',false));
+  nodes.push(new Node((nodes[5].location.x),(nodes[5].location.y+20),'Data Sonification',false));
   addConnection(5,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/datasonification.csv");  
 
-  nodes.push(new Node((nodes[5].location.x),(nodes[5].location.y),'Blends and shaders',false));
+  nodes.push(new Node((nodes[5].location.x),(nodes[5].location.y+20),'Blends and shaders',false));
   addConnection(5,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/blends_n_shaders.csv");  
 
-  nodes.push(new Node((nodes[5].location.x),(nodes[5].location.y),'Pure-Data Intro',false));
+  nodes.push(new Node((nodes[5].location.x),(nodes[5].location.y+20),'Pure-Data Intro',false));
   addConnection(5,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/cours-pd.csv");  
 
-  nodes.push(new Node((nodes[5].location.x),(nodes[5].location.y),'Processing Intro',false));
+  nodes.push(new Node((nodes[5].location.x),(nodes[5].location.y+20),'Processing Intro',false));
   addConnection(5,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/cours-processing.csv");  
 
 
 
   // web
-  nodes.push(new Node((nodes[3].location.x),(nodes[3].location.y),'Flock',false));
+  nodes.push(new Node((nodes[3].location.x),(nodes[3].location.y+20),'Flock',false));
   addConnection(3,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/flock_sonification.csv");
 
-  nodes.push(new Node((nodes[3].location.x),(nodes[3].location.y),'Springs-web',false));
+  nodes.push(new Node((nodes[3].location.x),(nodes[3].location.y+20),'Springs-web',false));
   addConnection(3,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/springs-web.csv");
 
-  nodes.push(new Node((nodes[3].location.x),(nodes[3].location.y),'Sid Lee',false));
+  nodes.push(new Node((nodes[3].location.x),(nodes[3].location.y+20),'Sid Lee',false));
   addConnection(3,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/sidlee_sonification.csv");  
 
-  nodes.push(new Node((nodes[2].location.x),(nodes[2].location.y),'Webpd getting started',false));
+  nodes.push(new Node((nodes[2].location.x),(nodes[2].location.y+20),'Webpd getting started',false));
   addConnection(2,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/Webpd_getting_started.csv"); 
 
-  nodes.push(new Node((nodes[2].location.x),(nodes[2].location.y),'Snow Night',false));
+  nodes.push(new Node((nodes[2].location.x),(nodes[2].location.y+20),'Snow Night',false));
   addConnection(2,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/snow_night.csv");  
 
-  nodes.push(new Node((nodes[2].location.x),(nodes[2].location.y),'Bouncing Sequencer',false));
+  nodes.push(new Node((nodes[2].location.x),(nodes[2].location.y+20),'Bouncing Sequencer',false));
   addConnection(2,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/bouncing_sequencer.csv");    
 
-  nodes.push(new Node((nodes[2].location.x),(nodes[2].location.y),'FM Culture',false));
+  nodes.push(new Node((nodes[2].location.x),(nodes[2].location.y+20),'FM Culture',false));
   addConnection(2,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/fm_culture.csv");    
 
-  nodes.push(new Node((nodes[2].location.x),(nodes[2].location.y),'The midst ...',false));
+  nodes.push(new Node((nodes[2].location.x),(nodes[2].location.y+20),'The midst ...',false));
   addConnection(2,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/the_midst.csv");  
 
-  nodes.push(new Node((nodes[2].location.x),(nodes[2].location.y),'Rennes soundscape',false));
+  nodes.push(new Node((nodes[2].location.x),(nodes[2].location.y+20),'Rennes soundscape',false));
   addConnection(2,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/Electroni-k.csv");  
 
-  nodes.push(new Node((nodes[2].location.x),(nodes[2].location.y),'MusicBox3d',false));
+  nodes.push(new Node((nodes[2].location.x),(nodes[2].location.y+20),'MusicBox3d',false));
   addConnection(2,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/musicbox3d-web.csv");
 
 
-  nodes.push(new Node((nodes[3].location.x),(nodes[3].location.y),'this website',false));
+  nodes.push(new Node((nodes[3].location.x),(nodes[3].location.y)-20,'this website',false));
   addConnection(3,200);
   addConnection(0,200);
   nodes[nodes.length-1].setProject("pages/algae-DOM.csv");  
 
-  nodes.push(new Node((nodes[3].location.x),(nodes[3].location.y),'Organic motion equations',false));
+  nodes.push(new Node((nodes[3].location.x),(nodes[3].location.y+20),'Organic motion equations',false));
   addConnection(3,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/organic_motion.csv");  
+
+  nodes.push(new Node((nodes[1].location.x),(nodes[1].location.y+20),'Openprocessing - Reinetiere',false));
+  addConnection(1,random(shortdistance,shortdistance+shortdistance/2));
+  nodes[nodes.length-1].setProject("pages/reinetiere.csv");  
   
   
   selectedNode = nodes[0];

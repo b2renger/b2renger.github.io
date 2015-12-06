@@ -1,0 +1,19 @@
+type, data, linebreak,
+Title, PPP,True,
+Jump, , ,
+Tags,#android,False,
+Tags,#pure-data,False,
+Tags,#libpd,True,
+Jump, , ,
+Video,<iframe width="720" height="350" src="https://www.youtube.com/embed/XEymJGuHoMU" frameborder="0" allowfullscreen></iframe>,True,
+Jump, , ,
+Paragraph, PPP is an android framework to publish Pure-Data based application with jamming features.,True,
+Jump, , ,
+Paragraph, PPP uses a midi clock paradigm making it compatible with many other hardware or software gears. ,True,
+Jump, , ,
+Jump, , ,
+PPP website, http://ppp.mgsx.net,True,
+Jump, , ,
+
+
+

@@ -88,6 +88,10 @@ function setup() {
   addConnection(4,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/pendulum-phase.csv");  
 
+    nodes.push(new Node((nodes[4].location.x),(nodes[4].location.y+20),'PPP',false));
+  addConnection(4,random(shortdistance,shortdistance+shortdistance/2));
+  nodes[nodes.length-1].setProject("pages/ppp.csv");  
+
   // desktop
   nodes.push(new Node((nodes[5].location.x),(nodes[5].location.y+20),'Data Sonification',false));
   addConnection(5,random(shortdistance,shortdistance+shortdistance/2));

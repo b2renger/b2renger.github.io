@@ -1,0 +1,20 @@
+type, data, linebreak,
+Title, Codelab Sonification,True,
+Jump, , ,
+Tags,#p5.js,False,
+Tags,#webpd,True,
+Tags,#ruby,True,
+Jump, , ,
+Image, assets/images/codelab_sonification.png,True,
+Jump, , ,
+Paragraph, This repo is about sonifying a twitter feed. It was created for the 2nd aniversary of the french creative coding forum codelab. The visual is inspired by the forum skin. The data representation takes into account the last year. Each frame corresponds to an hour. It's probably best to use headphones !,True,
+Jump, , ,
+Jump, , ,
+Codelab sonification, http://b2renger.github.io/pages_codelab/index.html,True,
+Jump, , ,
+Codelab, http://codelab.fr,True,
+Jump, , ,
+Code on github, https://github.com/b2renger/codelab-sonification,True,
+
+
+

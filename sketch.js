@@ -56,11 +56,11 @@ function setup() {
   nodes[1].setProject("pages/Web.csv");
    //2
   nodes.push(new Node(width*3/5,height/4,'WEBPD',true));
-  addConnection(1,100);
+  addConnection(1,150);
   nodes[2].setProject("pages/Web.csv");
   //3
   nodes.push(new Node(width*4/5,height/4,'P5JS',true));
-  addConnection(1,100);
+  addConnection(1,150);
   nodes[3].setProject("pages/Web.csv");
   //4
   nodes.push(new Node(width*2/5,height/4,'ANDROID',true));
@@ -124,6 +124,11 @@ function setup() {
   addConnection(3,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/sidlee_sonification.csv");  
 
+  nodes.push(new Node((nodes[3].location.x),(nodes[3].location.y+20),'Happy Birthday codelab',false));
+  addConnection(3,random(shortdistance,longdistance));
+  addConnection(2,random(shortdistance,longdistance));
+  nodes[nodes.length-1].setProject("pages/codelab_sonification.csv");  
+
   nodes.push(new Node((nodes[2].location.x),(nodes[2].location.y+20),'Webpd getting started',false));
   addConnection(2,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/Webpd_getting_started.csv"); 
@@ -153,16 +158,16 @@ function setup() {
   nodes[nodes.length-1].setProject("pages/musicbox3d-web.csv");
 
 
-  nodes.push(new Node((nodes[3].location.x),(nodes[3].location.y)-20,'this website',false));
-  addConnection(3,200);
-  addConnection(0,200);
+  nodes.push(new Node((nodes[3].location.x)+20,(nodes[3].location.y-50),'this website',false));
+  addConnection(3,230);
+  addConnection(0,230);
   nodes[nodes.length-1].setProject("pages/algae-DOM.csv");  
 
   nodes.push(new Node((nodes[3].location.x),(nodes[3].location.y+20),'Organic motion equations',false));
   addConnection(3,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/organic_motion.csv");  
 
-  nodes.push(new Node((nodes[1].location.x),(nodes[1].location.y+20),'Openprocessing - Reinetiere',false));
+  nodes.push(new Node((nodes[1].location.x),(nodes[1].location.y-40),'Openprocessing - Reinetiere',false));
   addConnection(1,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/reinetiere.csv");  
   

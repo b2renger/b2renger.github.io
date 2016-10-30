@@ -133,17 +133,9 @@ function setup() {
   addConnection(2,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/Webpd_getting_started.csv"); 
 
-  nodes.push(new Node((nodes[2].location.x),(nodes[2].location.y+20),'Snow Night',false));
+  nodes.push(new Node((nodes[2].location.x),(nodes[2].location.y+20),'Webpd experiments',false));
   addConnection(2,random(shortdistance,shortdistance+shortdistance/2));
-  nodes[nodes.length-1].setProject("pages/snow_night.csv");  
-
-  nodes.push(new Node((nodes[2].location.x),(nodes[2].location.y+20),'Bouncing Sequencer',false));
-  addConnection(2,random(shortdistance,shortdistance+shortdistance/2));
-  nodes[nodes.length-1].setProject("pages/bouncing_sequencer.csv");    
-
-  nodes.push(new Node((nodes[2].location.x),(nodes[2].location.y+20),'FM Culture',false));
-  addConnection(2,random(shortdistance,shortdistance+shortdistance/2));
-  nodes[nodes.length-1].setProject("pages/fm_culture.csv");    
+  nodes[nodes.length-1].setProject("pages/Webpd_experiments.csv");    
 
   nodes.push(new Node((nodes[2].location.x),(nodes[2].location.y+20),'The midst ...',false));
   addConnection(2,random(shortdistance,shortdistance+shortdistance/2));
@@ -152,10 +144,6 @@ function setup() {
   nodes.push(new Node((nodes[2].location.x),(nodes[2].location.y+20),'Rennes soundscape',false));
   addConnection(2,random(shortdistance,shortdistance+shortdistance/2));
   nodes[nodes.length-1].setProject("pages/Electroni-k.csv");  
-
-  nodes.push(new Node((nodes[2].location.x),(nodes[2].location.y+20),'MusicBox3d',false));
-  addConnection(2,random(shortdistance,shortdistance+shortdistance/2));
-  nodes[nodes.length-1].setProject("pages/musicbox3d-web.csv");
 
 
   nodes.push(new Node((nodes[3].location.x)+20,(nodes[3].location.y-50),'this website',false));

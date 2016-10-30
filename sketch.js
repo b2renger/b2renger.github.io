@@ -39,7 +39,7 @@ function init(){
 
 function setup() {
   	
-  createCanvas(600, 1080);
+  createCanvas(windowWidth/3  , 1080);
   smooth();
 
   textFont("Open Sans Condensed");
@@ -55,7 +55,7 @@ function setup() {
   addConnection(0,200);
   nodes[1].setProject("pages/Web.csv");
    //2
-  nodes.push(new Node(width*3/5,height/4,'WEBPD',true));
+  nodes.push(new Node(width*3/5,height*2/4,'WEBPD',true));
   addConnection(1,150);
   nodes[2].setProject("pages/Web.csv");
   //3
@@ -112,18 +112,7 @@ function setup() {
 
 
   // web
-  nodes.push(new Node((nodes[3].location.x),(nodes[3].location.y+20),'Flock',false));
-  addConnection(3,random(shortdistance,shortdistance+shortdistance/2));
-  nodes[nodes.length-1].setProject("pages/flock_sonification.csv");
-
-  nodes.push(new Node((nodes[3].location.x),(nodes[3].location.y+20),'Springs-web',false));
-  addConnection(3,random(shortdistance,shortdistance+shortdistance/2));
-  nodes[nodes.length-1].setProject("pages/springs-web.csv");
-
-  nodes.push(new Node((nodes[3].location.x),(nodes[3].location.y+20),'Sid Lee',false));
-  addConnection(3,random(shortdistance,shortdistance+shortdistance/2));
-  nodes[nodes.length-1].setProject("pages/sidlee_sonification.csv");  
-
+ 
   nodes.push(new Node((nodes[3].location.x),(nodes[3].location.y+20),'Happy Birthday codelab',false));
   addConnection(3,random(shortdistance,longdistance));
   addConnection(2,random(shortdistance,longdistance));
@@ -151,9 +140,9 @@ function setup() {
   addConnection(0,230);
   nodes[nodes.length-1].setProject("pages/algae-DOM.csv");  
 
-  nodes.push(new Node((nodes[3].location.x),(nodes[3].location.y+20),'Organic motion equations',false));
+  nodes.push(new Node((nodes[3].location.x),(nodes[3].location.y+20),'P5js sound experiments',false));
   addConnection(3,random(shortdistance,shortdistance+shortdistance/2));
-  nodes[nodes.length-1].setProject("pages/organic_motion.csv");  
+  nodes[nodes.length-1].setProject("pages/p5js_sound_experiments.csv");  
 
   nodes.push(new Node((nodes[1].location.x),(nodes[1].location.y-40),'Openprocessing - Reinetiere',false));
   addConnection(1,random(shortdistance,shortdistance+shortdistance/2));

@@ -9,6 +9,6 @@ Jump, , ,
 Paragraph, This is about this website and its code. The website works with main canvas on the left which is a map of my github repos. When you over a node it loads the content of csv file in the right hand side creating DOM elements. To add an article you just have to write a csv file and add three lines of code to a javascript file., True,
 Jump, , ,
 Jump, , ,
-Code, https://github.com/b2renger/p5js_algae_dom, True,
+Project page and code, http://b2renger.github.io/p5js_algae_dom/index.html, True,
 Jump, , ,
-Live example used in the repo's tutotial, , True,
+

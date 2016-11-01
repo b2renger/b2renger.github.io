@@ -53,7 +53,7 @@ function Node(x,y,id, anchor, diam,type){
   this.displayLabel = true;
   this.anchor = anchor;
 
-  this.alpha = 75;
+  this.alpha = 50;
   this.highlight = false;
 }
 
@@ -149,8 +149,8 @@ Node.prototype.display = function(){
     rectMode(CENTER);
     noStroke();
     fill(44,147*2,167*2);
-    rect(this.location.x, this.location.y, this.diameter/8, this.diameter/8);
-    fill(22*2,147*2,167*2,this.alpha+25);
+    rect(this.location.x, this.location.y, this.diameter/4, this.diameter/4);
+    fill(22*2,147*2,167*2,this.alpha);
     rect(this.location.x, this.location.y, this.diameter*2/3, this.diameter*2/3);
     fill(22*2,147*2,167*2);
     if(this.displayLabel == true){
@@ -160,7 +160,7 @@ Node.prototype.display = function(){
   else if(this.type == 2){
     noStroke();
     fill(230,120,30);
-    this.tri(this.location.x, this.location.y, this.diameter/4, this.diameter/4);
+    this.tri(this.location.x, this.location.y, this.diameter/3, this.diameter/3);
     fill(230,120,30,this.alpha+25);
     this.tri(this.location.x, this.location.y, this.diameter, this.diameter);
     fill(230,120,30);
@@ -171,19 +171,15 @@ Node.prototype.display = function(){
   else if(this.type == 3){
     rectMode(CENTER);
     noStroke();
-    fill(204,12,57);
-    this.star(this.location.x, this.location.y, this.diameter/4, this.diameter/4);
-    fill(204,12,57,this.alpha+25);
-    this.star(this.location.x, this.location.y, this.diameter, this.diameter);
-    fill(204,12,57);
+    fill(204,24,100);
+    this.star(this.location.x, this.location.y, this.diameter/3, this.diameter/3);
+    fill(204,24,100,this.alpha+25);
+    this.star(this.location.x, this.location.y, this.diameter*0.8, this.diameter*0.8);
+    fill(204,24,100);
     if(this.displayLabel == true){
       text(this.id,this.location.x-this.diameter/2, this.location.y - this.diameter );
     }
   }
-
-
-  
- 
   pop();
 }
 
@@ -203,10 +199,10 @@ Node.prototype.star = function(x,y,w,h){
   for (var i = -PI/2 ; i < PI/2+2*PI ; i+=2*PI/6){
       var xpos = x + 2  *w*cos(i);
       var ypos = y + 2  *w*sin(i);   
-      var xin1 = x + 2*w/4*cos(i);
-      var yin1 = y + 2*w/4*sin(i);   
-      var xin2 = x - 2*w/4*cos(i);
-      var yin2 = y - 2*w/4*sin(i);  
+      var xin1 = x + 2*w/3.5*cos(i);
+      var yin1 = y + 2*w/3.5*sin(i);   
+      var xin2 = x - 2*w/3.5*cos(i);
+      var yin2 = y - 2*w/3.5*sin(i);  
       curveVertex(xin2,yin2); 
       curveVertex(xpos,ypos);
       curveVertex(xin1,yin1);

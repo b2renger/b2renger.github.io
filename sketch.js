@@ -5,8 +5,9 @@ var nodes = [];
 var springs = [];
 var tags = [];
 
-var longdistance = 300 ;
-var shortdistance = 100;
+
+var shortdistance = 50;
+var distmult = 3;
 
 var selectedNode =null;
 var selectedNodeX;
@@ -31,7 +32,7 @@ var splitfactor = 3;
 
 var bigSize = 60;
 var medSize = 50;
-var smallSize= 30;
+var smallSize= 35;
 
 var node = 0;
 var desktop = 1;
@@ -55,7 +56,7 @@ function setup() {
   springs = [];
 
   //0
-  nodes.push(new Node((width*4/5),(height*3/12),'HOME',true,smallSize,node));
+  nodes.push(new Node((width*4/5),(height/5),'HOME',true,smallSize,node));
   nodes[0].setProject("pages/home.csv");
 
   //1
@@ -63,88 +64,109 @@ function setup() {
   nodes[1].setProject("pages/home.csv");
 
   //2
-  nodes.push(new Node(width*1/10,height*1/4,'Commissionned work',true,smallSize,node));
+  nodes.push(new Node(width*2/10,height*1/4,'Commissionned work',true,smallSize,node));
   nodes[2].setProject("pages/home.csv");
   
   //3
-  nodes.push(new Node(width*3/10,height*2/4,'Personal work',true,smallSize,node ));
+  nodes.push(new Node(width*4/10,height*2/4,'Personal work',true,smallSize,node ));
   nodes[3].setProject("pages/home.csv");
   
 
   // android
-  nodes.push(new Node((nodes[teach].location.x+random(-20,20)),(nodes[teach].location.y+random(-20,20)),'DroidParty tutorials',false,smallSize,android));
-  addConnection(teach,random(shortdistance,shortdistance+shortdistance/2));
+  nodes.push(new Node((nodes[teach].location.x+rand()),(nodes[teach].location.y+rand()),'DroidParty tutorials',false,smallSize,android));
+  addConnection(teach,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/droidparty_tuto.csv");
 
-  nodes.push(new Node((nodes[perso].location.x+random(-20,20)),(nodes[perso].location.y+random(-20,20)),'Springs',false,smallSize,android));
-  addConnection(perso,random(shortdistance,shortdistance+shortdistance/2));
+  nodes.push(new Node((nodes[perso].location.x+rand()),(nodes[perso].location.y+rand()),'Springs',false,smallSize,android));
+  addConnection(perso,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/springs.csv");
 
-  nodes.push(new Node((nodes[perso].location.x)+random(-20,20),(nodes[perso].location.y+random(-20,20)),'Musicbox 3D',false,smallSize,android));
-  addConnection(perso,random(shortdistance,shortdistance+shortdistance/2));
+  nodes.push(new Node((nodes[perso].location.x)+rand(),(nodes[perso].location.y+rand()),'Musicbox 3D',false,smallSize,android));
+  addConnection(perso,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/musicbox3d.csv");  
 
-  nodes.push(new Node((nodes[perso].location.x)+random(-20,20),(nodes[perso].location.y+random(-20,20)),'Pendulum Phase',false,smallSize,android));
-  addConnection(perso,random(shortdistance,shortdistance+shortdistance/2));
+  nodes.push(new Node((nodes[perso].location.x)+rand(),(nodes[perso].location.y+rand()),'Pendulum Phase',false,smallSize,android));
+  addConnection(perso,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/pendulum-phase.csv");  
 
-  nodes.push(new Node((nodes[perso].location.x+random(-20,20)),(nodes[perso].location.y+random(-20,20)),'PPP',false,medSize,android));
-  addConnection(perso,random(shortdistance,shortdistance+shortdistance/2));
+  nodes.push(new Node((nodes[perso].location.x+rand()),(nodes[perso].location.y+rand()),'PPP',false,medSize,android));
+  addConnection(perso,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/ppp.csv");  
 
   // desktop
-  nodes.push(new Node((nodes[teach].location.x+random(-20,20)),(nodes[teach].location.y+random(-20,20)),'Data Sonification',false,smallSize,desktop));
-  addConnection(teach,random(shortdistance,shortdistance+shortdistance/2));
+  nodes.push(new Node((nodes[teach].location.x+rand()),(nodes[teach].location.y+rand()),'Data Sonification',false,smallSize,desktop));
+  addConnection(teach,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/datasonification.csv");  
 
-  nodes.push(new Node((nodes[perso].location.x+random(-20,20)),(nodes[perso].location.y+random(-20,20)),'Blends and shaders',false,smallSize,desktop));
-  addConnection(perso,random(shortdistance,shortdistance+shortdistance/2));
+  nodes.push(new Node((nodes[perso].location.x+rand()),(nodes[perso].location.y+rand()),'Blends and shaders',false,smallSize,desktop));
+  addConnection(perso,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/blends_n_shaders.csv");  
 
-  nodes.push(new Node((nodes[teach].location.x+random(-20,20)),(nodes[teach].location.y+random(-20,20)),'Pure-Data Intro',false,medSize,desktop));
-  addConnection(teach,random(shortdistance,shortdistance+shortdistance/2));
+  nodes.push(new Node((nodes[teach].location.x+rand()),(nodes[teach].location.y+rand()),'Pure-Data Intro',false,medSize,desktop));
+  addConnection(teach,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/cours-pd.csv");  
 
-  nodes.push(new Node((nodes[teach].location.x+random(-20,20)),(nodes[teach].location.y+random(-20,20)),'Processing Intro',false,medSize,desktop));
-  addConnection(teach,random(shortdistance,shortdistance+shortdistance/2));
+  nodes.push(new Node((nodes[teach].location.x+rand()),(nodes[teach].location.y+rand()),'Processing Intro',false,medSize,desktop));
+  addConnection(teach,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/cours-processing.csv");  
 
+  nodes.push(new Node((nodes[com].location.x+rand()),(nodes[com].location.y+rand()),'Li-iL',false,medSize,desktop));
+  addConnection(com,random(shortdistance,shortdistance*distmult));
+  nodes[nodes.length-1].setProject("pages/liil.csv");  
+
+    nodes.push(new Node((nodes[com].location.x+rand()),(nodes[com].location.y+rand()),'Open House',false,smallSize,desktop));
+  addConnection(com,random(shortdistance,shortdistance*distmult));
+  nodes[nodes.length-1].setProject("pages/openhouse.csv");  
+
+    nodes.push(new Node((nodes[com].location.x+rand()),(nodes[com].location.y+rand()),'Neurokiff',false,smallSize,desktop));
+  addConnection(com,random(shortdistance,shortdistance*distmult));
+  nodes[nodes.length-1].setProject("pages/neurokiff.csv");  
+
+    nodes.push(new Node((nodes[com].location.x+rand()),(nodes[com].location.y+rand()),'Fresques Numériques',false,smallSize,desktop));
+  addConnection(com,random(shortdistance,shortdistance*distmult));
+  nodes[nodes.length-1].setProject("pages/fresquesnumeriques.csv");  
+
   // web
-  nodes.push(new Node((nodes[perso].location.x+random(-20,20)),(nodes[perso].location.y+random(-20,20)),'Happy Birthday codelab',false,smallSize,web));
-  addConnection(perso,random(shortdistance,shortdistance+shortdistance/2));
+  nodes.push(new Node((nodes[perso].location.x+rand()),(nodes[perso].location.y+rand()),'Happy Birthday codelab',false,smallSize,web));
+  addConnection(perso,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/codelab_sonification.csv");  
 
-  nodes.push(new Node((nodes[teach].location.x+random(-20,20)),(nodes[teach].location.y+random(-20,20)),'Webpd getting started',false,smallSize,web));
-  addConnection(teach,random(shortdistance,shortdistance+shortdistance/2));
+  nodes.push(new Node((nodes[teach].location.x+rand()),(nodes[teach].location.y+rand()),'Webpd getting started',false,smallSize,web));
+  addConnection(teach,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/Webpd_getting_started.csv"); 
 
-  nodes.push(new Node((nodes[perso].location.x+random(-20,20)),(nodes[perso].location.y+random(-20,20)),'Webpd experiments',false,smallSize,web));
-  addConnection(perso,random(shortdistance,shortdistance+shortdistance/2));
+  nodes.push(new Node((nodes[perso].location.x+rand()),(nodes[perso].location.y+rand()),'Webpd experiments',false,smallSize,web));
+  addConnection(perso,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/Webpd_experiments.csv");    
 
-  nodes.push(new Node((nodes[com].location.x+random(-20,20)),(nodes[com].location.y+random(-20,20)),'The midst ...',false,smallSize,web));
-  addConnection(com,random(shortdistance,shortdistance+shortdistance/2));
+  nodes.push(new Node((nodes[com].location.x+rand()),(nodes[com].location.y+rand()),'The midst ...',false,smallSize,web));
+  addConnection(com,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/the_midst.csv");  
 
-  nodes.push(new Node((nodes[com].location.x+ random(-20,20)),(nodes[com].location.y+random(-20,20)),'Rennes soundscape',false,smallSize,web));
-  addConnection(com,random(shortdistance,shortdistance+shortdistance/2));
+  nodes.push(new Node((nodes[com].location.x+ rand()),(nodes[com].location.y+rand()),'Rennes soundscape',false,smallSize,web));
+  addConnection(com,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/Electroni-k.csv");  
 
   nodes.push(new Node((nodes[0].location.x),(nodes[0].location.y+50),'this website',false,smallSize,web));
   addConnection(0,75);
   nodes[nodes.length-1].setProject("pages/algae-DOM.csv");  
 
-  nodes.push(new Node((nodes[perso].location.x+random(-20,20)),(nodes[perso].location.y+random(-20,20)),'P5js sound experiments',false,smallSize,web));
-  addConnection(3,random(shortdistance,shortdistance+shortdistance/2));
+  nodes.push(new Node((nodes[perso].location.x+rand()),(nodes[perso].location.y+rand()),'P5js sound experiments',false,smallSize,web));
+  addConnection(3,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/p5js_sound_experiments.csv");  
 
-  nodes.push(new Node((nodes[teach].location.x+random(-20,20)),(nodes[teach].location.y+random(-20,20)),'Openprocessing - Reinetiere',false,smallSize,web));
-  addConnection(1,random(shortdistance,shortdistance+shortdistance/2));
+  nodes.push(new Node((nodes[teach].location.x+rand()),(nodes[teach].location.y+rand()),'Openprocessing - Reinetiere',false,smallSize,web));
+  addConnection(1,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/reinetiere.csv");  
   
-  
   selectedNode = nodes[0];
+ 
 
+}
+
+function rand(){
+
+  return random(-50,50);
 }
 
 
@@ -200,6 +222,7 @@ function setPage(project){
 
   removeElements();
 
+  /*
   input = createInput();
   input.position(0, 0);
 
@@ -210,7 +233,7 @@ function setPage(project){
   button.style("font-family: 'Open Sans Condensed', sans-serif; background-color:#000000; color:#FFFFFF; font-size:10pt; padding:2px;text-align: center;");
   button.size(AUTO,10);
   button.position(input.width, 0);
-  button.mousePressed(search);
+  button.mousePressed(search);*/
 
   tags = [];
 
@@ -223,9 +246,9 @@ function setPage(project){
 
   for (var i = 1 ; i < project.getRowCount(); i++){
     row = project.getRow(i);
-    type = row.getString(0);
-    str = row.getString(1); 
-    linebreak = row.getString(2);
+    type = project.getRow(i).getString(0);
+    str = project.getRow(i).getString(1); 
+    linebreak = project.getRow(i).getString(2);
 
     if (type == 'Title'){
       var title = createElement('h1',str);
@@ -271,7 +294,7 @@ function setPage(project){
     else if (type == 'Image'){
       var image = createImg(str);
       image.style(cssParagraph);
-      image.size(AUTO,300);
+      image.size(AUTO,275);
       image.position(posX,posY);
 
       if (linebreak == 'True' || linebreak == ' True'){
@@ -327,14 +350,13 @@ function setPage(project){
       }
     }
   }
-
-  //console.log("new page loaded");
 }
+
+
 
 function check(param){
   console.log("over " + param.currentTarget.innerHTML);
- 
-  for (var i = 0 ; i < nodes.length ; i++){
+  for (var i = 4 ; i < nodes.length ; i++){
     var checkpage = nodes[i].page;
     nodes[i].highlight = false;
     //println(checkpage.getRowCount());
@@ -355,16 +377,21 @@ function check(param){
 
 function search(param){
   var name = input.value();
+  console.log(name);
    for (var i = 0 ; i < nodes.length ; i++){
     var checkpage = nodes[i].page;
     nodes[i].highlight = false;
+    console.log(i)
     for (var j = 0 ; j < checkpage.getRowCount() ; j++){
-      var checkrow = checkpage.getRow(j);
-      if(checkrow.getString(1).match(name) !=null){
-          nodes[i].highlight = true;
+      var checkrow = checkpage.getRow(j).getString(1);
+     //console.log(checkrow);
+      if(match(checkrow, name) !=null){
+        console.log("match",i)
+        //nodes[i].highlight = true;
       }
-      else if (nodes[i].highlight != true){
-      }
+     // else if (nodes[i].highlight != true){
+
+     // }
     }
   }
 

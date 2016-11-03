@@ -158,6 +158,11 @@ function setup() {
   nodes.push(new Node((nodes[teach].location.x+rand()),(nodes[teach].location.y+rand()),'Openprocessing - Reinetiere',false,smallSize,web));
   addConnection(1,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/reinetiere.csv");  
+
+
+  nodes.push(new Node((nodes[teach].location.x+rand()),(nodes[teach].location.y+rand()),'P5js typographic experiments',false,smallSize,web));
+  addConnection(1,random(shortdistance,shortdistance*distmult));
+  nodes[nodes.length-1].setProject("pages/p5js_typo.csv");  
   
   selectedNode = nodes[0];
  

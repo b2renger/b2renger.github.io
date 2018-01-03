@@ -93,6 +93,11 @@ function setup() {
   addConnection(perso,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/ppp.csv");  
 
+  nodes.push(new Node((nodes[perso].location.x+rand()),(nodes[perso].location.y+rand()),'Rainstick',false,medSize,android));
+  addConnection(perso,random(shortdistance,shortdistance*distmult));
+  nodes[nodes.length-1].setProject("pages/rainstick.csv");
+
+
   // desktop
   nodes.push(new Node((nodes[teach].location.x+rand()),(nodes[teach].location.y+rand()),'Data Sonification',false,smallSize,desktop));
   addConnection(teach,random(shortdistance,shortdistance*distmult));
@@ -102,15 +107,19 @@ function setup() {
   addConnection(perso,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/blends_n_shaders.csv");  
 
-  nodes.push(new Node((nodes[teach].location.x+rand()),(nodes[teach].location.y+rand()),'Pure-Data Intro',false,medSize,desktop));
+  nodes.push(new Node((nodes[teach].location.x+rand()),(nodes[teach].location.y+rand()),'Pure-Data Intro',false,smallSize,desktop));
   addConnection(teach,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/cours-pd.csv");  
 
-  nodes.push(new Node((nodes[teach].location.x+rand()),(nodes[teach].location.y+rand()),'Processing Intro',false,medSize,desktop));
+  nodes.push(new Node((nodes[teach].location.x+rand()),(nodes[teach].location.y+rand()),'Processing Intro',false,smallSize,desktop));
   addConnection(teach,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/cours-processing.csv");  
 
-  nodes.push(new Node((nodes[com].location.x+rand()),(nodes[com].location.y+rand()),'Li-iL',false,medSize,desktop));
+    nodes.push(new Node((nodes[teach].location.x+rand()),(nodes[teach].location.y+rand()),'p5js Intro',false,medSize,desktop));
+  addConnection(teach,random(shortdistance,shortdistance*distmult));
+  nodes[nodes.length-1].setProject("pages/cours-p5js.csv");
+
+  nodes.push(new Node((nodes[com].location.x+rand()),(nodes[com].location.y+rand()),'Li-iL',false,smallSize,desktop));
   addConnection(com,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/liil.csv");  
 

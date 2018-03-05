@@ -93,7 +93,7 @@ function setup() {
   addConnection(perso,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/ppp.csv");  
 
-  nodes.push(new Node((nodes[perso].location.x+rand()),(nodes[perso].location.y+rand()),'Rainstick',false,medSize,android));
+  nodes.push(new Node((nodes[perso].location.x+rand()),(nodes[perso].location.y+rand()),'Rainstick',false,bigSize,android));
   addConnection(perso,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/rainstick.csv");
 
@@ -156,6 +156,11 @@ function setup() {
   addConnection(com,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/Electroni-k.csv");  
 
+
+  nodes.push(new Node((nodes[com].location.x+rand()),(nodes[com].location.y+rand()),'La_bibliothèque',false,medSize,web));
+  addConnection(com,random(shortdistance,shortdistance*distmult));
+  nodes[nodes.length-1].setProject("pages/labibliotheque.csv");
+
   nodes.push(new Node((nodes[0].location.x),(nodes[0].location.y+50),'this website',false,smallSize,web));
   addConnection(0,75);
   nodes[nodes.length-1].setProject("pages/algae-DOM.csv");  
@@ -172,6 +177,8 @@ function setup() {
   nodes.push(new Node((nodes[teach].location.x+rand()),(nodes[teach].location.y+rand()),'P5js typographic experiments',false,smallSize,web));
   addConnection(1,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/p5js_typo.csv");  
+
+
   
   selectedNode = nodes[0];
  

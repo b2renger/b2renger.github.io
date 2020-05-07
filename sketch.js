@@ -60,7 +60,7 @@ function setup() {
   nodes[0].setProject("pages/home.csv");
 
   //1
-  nodes.push(new Node((width*3/5),(height*3/4),'Teaching and ressources',true,smallSize,node));
+  nodes.push(new Node((width*3/5),(height*3/4),'Coding ressources',true,smallSize,node));
   nodes[1].setProject("pages/home.csv");
 
   //2
@@ -106,18 +106,6 @@ function setup() {
   nodes.push(new Node((nodes[perso].location.x+rand()),(nodes[perso].location.y+rand()),'Blends and shaders',false,smallSize,desktop));
   addConnection(perso,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/blends_n_shaders.csv");  
-
-  nodes.push(new Node((nodes[teach].location.x+rand()),(nodes[teach].location.y+rand()),'Pure-Data Intro',false,smallSize,desktop));
-  addConnection(teach,random(shortdistance,shortdistance*distmult));
-  nodes[nodes.length-1].setProject("pages/cours-pd.csv");  
-
-  nodes.push(new Node((nodes[teach].location.x+rand()),(nodes[teach].location.y+rand()),'Processing Intro',false,smallSize,desktop));
-  addConnection(teach,random(shortdistance,shortdistance*distmult));
-  nodes[nodes.length-1].setProject("pages/cours-processing.csv");  
-
-    nodes.push(new Node((nodes[teach].location.x+rand()),(nodes[teach].location.y+rand()),'p5js Intro',false,medSize,desktop));
-  addConnection(teach,random(shortdistance,shortdistance*distmult));
-  nodes[nodes.length-1].setProject("pages/cours-p5js.csv");
 
   nodes.push(new Node((nodes[com].location.x+rand()),(nodes[com].location.y+rand()),'Li-iL',false,smallSize,desktop));
   addConnection(com,random(shortdistance,shortdistance*distmult));
@@ -180,7 +168,10 @@ function setup() {
 
 
   
-  selectedNode = nodes[0];
+  setInterval(1, function(){
+    selectedNode = nodes[0]
+    setPage(selectedNode.page);
+  });
  
 
 }

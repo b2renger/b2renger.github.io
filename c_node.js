@@ -135,11 +135,11 @@ Node.prototype.display = function(){
 
   if(this.type == 0){
     noStroke();
-    fill(248,252,193);
+    fill(225,255,255);
     ellipse(this.location.x, this.location.y, this.diameter/4, this.diameter/4);
-    fill(248,252,193,this.alpha);
+    fill(225,255,255,this.alpha);
     ellipse(this.location.x, this.location.y, this.diameter, this.diameter);
-    fill(248,252,193);
+    fill(225,255,255);
     if(this.displayLabel == true){
       textSize(20)
       text(this.id,this.location.x-this.diameter/2, this.location.y - this.diameter);

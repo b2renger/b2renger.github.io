@@ -128,6 +128,10 @@ function setup() {
   addConnection(projects,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/fresquesnumeriques.csv");  
 
+  nodes.push(new Node((nodes[apps].location.x+rand()),(nodes[apps].location.y+rand()),'Chronophotography',true,medSize,desktop));
+  addConnection(apps,random(shortdistance,shortdistance*distmult));
+  nodes[nodes.length-1].setProject("pages/chronophotography.csv");  
+
   // web
   nodes.push(new Node((nodes[experiments].location.x+rand()),(nodes[experiments].location.y+rand()),'Happy Birthday codelab',false,smallSize,web));
   addConnection(experiments,random(shortdistance,shortdistance*distmult));

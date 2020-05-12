@@ -29,7 +29,7 @@ var projects = 2
 var experiments = 3
 var coding = 4
 
-var splitfactor = 3;
+var splitfactor = 2.5;
 
 var bigSize = 60;
 var medSize = 50;
@@ -57,7 +57,7 @@ function setup() {
   springs = [];
 
   //0
-  nodes.push(new Node((width*4/5),(height/5),'HOME',true,smallSize,node));
+  nodes.push(new Node((width*4/5),(height/10),'HOME',true,smallSize,node));
   nodes[0].setProject("pages/home.csv");
 
   //1
@@ -65,11 +65,11 @@ function setup() {
   nodes[1].setProject("pages/home.csv");
 
   //2
-  nodes.push(new Node(width*2/10,height*1/4,'PROJECTS',true,smallSize,node));
+  nodes.push(new Node(width*2/10,height*1/5,'PROJECTS',true,smallSize,node));
   nodes[2].setProject("pages/home.csv");
   
   //3
-  nodes.push(new Node(width*4/10,height*2/4,'EXPERIMENTS',true,smallSize,node ));
+  nodes.push(new Node(width*3/10,height*2.25/4,'EXPERIMENTS',true,smallSize,node ));
   nodes[3].setProject("pages/home.csv");
 
     //4

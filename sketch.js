@@ -24,9 +24,10 @@ var t = 0; // for pulsing nodes
 var input, button;
 
 var home = 0
-var teach = 1
-var com = 2
-var perso = 3
+var apps = 1
+var projects = 2
+var experiments = 3
+var coding = 4
 
 var splitfactor = 3;
 
@@ -60,111 +61,119 @@ function setup() {
   nodes[0].setProject("pages/home.csv");
 
   //1
-  nodes.push(new Node((width*3/5),(height*3/4),'Coding ressources',true,smallSize,node));
+  nodes.push(new Node((width*3/5),(height*1.5/4),'APPS',true,smallSize,node));
   nodes[1].setProject("pages/home.csv");
 
   //2
-  nodes.push(new Node(width*2/10,height*1/4,'Commissionned work',true,smallSize,node));
+  nodes.push(new Node(width*2/10,height*1/4,'PROJECTS',true,smallSize,node));
   nodes[2].setProject("pages/home.csv");
   
   //3
-  nodes.push(new Node(width*4/10,height*2/4,'Personal work',true,smallSize,node ));
+  nodes.push(new Node(width*4/10,height*2/4,'EXPERIMENTS',true,smallSize,node ));
   nodes[3].setProject("pages/home.csv");
-  
+
+    //4
+    nodes.push(new Node(width*6/10,height*3/4,'CODING RESSOURCES',true,smallSize,node ));
+    nodes[4].setProject("pages/home.csv");
+    
 
   // android
-  nodes.push(new Node((nodes[teach].location.x+rand()),(nodes[teach].location.y+rand()),'DroidParty tutorials',false,smallSize,android));
-  addConnection(teach,random(shortdistance,shortdistance*distmult));
+  nodes.push(new Node((nodes[coding].location.x+rand()),(nodes[coding].location.y+rand()),'DroidParty tutorials',false,smallSize,android));
+  addConnection(coding,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/droidparty_tuto.csv");
 
-  nodes.push(new Node((nodes[perso].location.x+rand()),(nodes[perso].location.y+rand()),'Springs',false,smallSize,android));
-  addConnection(perso,random(shortdistance,shortdistance*distmult));
+  nodes.push(new Node((nodes[apps].location.x+rand()),(nodes[apps].location.y+rand()),'Springs',false,smallSize,android));
+  addConnection(apps,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/springs.csv");
 
-  nodes.push(new Node((nodes[perso].location.x)+rand(),(nodes[perso].location.y+rand()),'Musicbox 3D',false,smallSize,android));
-  addConnection(perso,random(shortdistance,shortdistance*distmult));
+  nodes.push(new Node((nodes[apps].location.x)+rand(),(nodes[apps].location.y+rand()),'Musicbox 3D',false,smallSize,android));
+  addConnection(apps,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/musicbox3d.csv");  
 
-  nodes.push(new Node((nodes[perso].location.x)+rand(),(nodes[perso].location.y+rand()),'Pendulum Phase',false,smallSize,android));
-  addConnection(perso,random(shortdistance,shortdistance*distmult));
+  nodes.push(new Node((nodes[apps].location.x)+rand(),(nodes[apps].location.y+rand()),'Pendulum Phase',false,smallSize,android));
+  addConnection(apps,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/pendulum-phase.csv");  
 
-  nodes.push(new Node((nodes[perso].location.x+rand()),(nodes[perso].location.y+rand()),'PPP',false,medSize,android));
-  addConnection(perso,random(shortdistance,shortdistance*distmult));
+  nodes.push(new Node((nodes[projects].location.x+rand()),(nodes[projects].location.y+rand()),'PPP',false,medSize,android));
+  addConnection(projects,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/ppp.csv");  
 
-  nodes.push(new Node((nodes[perso].location.x+rand()),(nodes[perso].location.y+rand()),'Rainstick',false,bigSize,android));
-  addConnection(perso,random(shortdistance,shortdistance*distmult));
+  nodes.push(new Node((nodes[apps].location.x+rand()),(nodes[apps].location.y+rand()),'Rainstick',false,bigSize,android));
+  addConnection(apps,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/rainstick.csv");
 
 
   // desktop
-  nodes.push(new Node((nodes[teach].location.x+rand()),(nodes[teach].location.y+rand()),'Data Sonification',false,smallSize,desktop));
-  addConnection(teach,random(shortdistance,shortdistance*distmult));
+  nodes.push(new Node((nodes[experiments].location.x+rand()),(nodes[experiments].location.y+rand()),'Data Sonification',false,smallSize,desktop));
+  addConnection(experiments,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/datasonification.csv");  
 
-  nodes.push(new Node((nodes[perso].location.x+rand()),(nodes[perso].location.y+rand()),'Blends and shaders',false,smallSize,desktop));
-  addConnection(perso,random(shortdistance,shortdistance*distmult));
+  nodes.push(new Node((nodes[experiments].location.x+rand()),(nodes[experiments].location.y+rand()),'Blends and shaders',false,smallSize,desktop));
+  addConnection(experiments,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/blends_n_shaders.csv");  
 
-  nodes.push(new Node((nodes[com].location.x+rand()),(nodes[com].location.y+rand()),'Li-iL',false,smallSize,desktop));
-  addConnection(com,random(shortdistance,shortdistance*distmult));
+  nodes.push(new Node((nodes[projects].location.x+rand()),(nodes[projects].location.y+rand()),'Li-iL',false,smallSize,desktop));
+  addConnection(projects,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/liil.csv");  
 
-    nodes.push(new Node((nodes[com].location.x+rand()),(nodes[com].location.y+rand()),'Open House',false,smallSize,desktop));
-  addConnection(com,random(shortdistance,shortdistance*distmult));
+    nodes.push(new Node((nodes[projects].location.x+rand()),(nodes[projects].location.y+rand()),'Open House',false,smallSize,desktop));
+  addConnection(projects,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/openhouse.csv");  
 
-    nodes.push(new Node((nodes[com].location.x+rand()),(nodes[com].location.y+rand()),'Neurokiff',false,smallSize,desktop));
-  addConnection(com,random(shortdistance,shortdistance*distmult));
+    nodes.push(new Node((nodes[projects].location.x+rand()),(nodes[projects].location.y+rand()),'Neurokiff',false,smallSize,desktop));
+  addConnection(projects,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/neurokiff.csv");  
 
-    nodes.push(new Node((nodes[com].location.x+rand()),(nodes[com].location.y+rand()),'Fresques Numériques',false,smallSize,desktop));
-  addConnection(com,random(shortdistance,shortdistance*distmult));
+    nodes.push(new Node((nodes[projects].location.x+rand()),(nodes[projects].location.y+rand()),'Fresques Numériques',false,smallSize,desktop));
+  addConnection(projects,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/fresquesnumeriques.csv");  
 
   // web
-  nodes.push(new Node((nodes[perso].location.x+rand()),(nodes[perso].location.y+rand()),'Happy Birthday codelab',false,smallSize,web));
-  addConnection(perso,random(shortdistance,shortdistance*distmult));
+  nodes.push(new Node((nodes[experiments].location.x+rand()),(nodes[experiments].location.y+rand()),'Happy Birthday codelab',false,smallSize,web));
+  addConnection(experiments,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/codelab_sonification.csv");  
 
-  nodes.push(new Node((nodes[teach].location.x+rand()),(nodes[teach].location.y+rand()),'Webpd getting started',false,smallSize,web));
-  addConnection(teach,random(shortdistance,shortdistance*distmult));
+  nodes.push(new Node((nodes[coding].location.x+rand()),(nodes[coding].location.y+rand()),'Webpd getting started',false,smallSize,web));
+  addConnection(coding,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/Webpd_getting_started.csv"); 
 
-  nodes.push(new Node((nodes[perso].location.x+rand()),(nodes[perso].location.y+rand()),'Webpd experiments',false,smallSize,web));
-  addConnection(perso,random(shortdistance,shortdistance*distmult));
+  nodes.push(new Node((nodes[coding].location.x+rand()),(nodes[coding].location.y+rand()),'Webpd experiments',false,smallSize,web));
+  addConnection(coding,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/Webpd_experiments.csv");    
 
-  nodes.push(new Node((nodes[com].location.x+rand()),(nodes[com].location.y+rand()),'The midst ...',false,smallSize,web));
-  addConnection(com,random(shortdistance,shortdistance*distmult));
+  nodes.push(new Node((nodes[projects].location.x+rand()),(nodes[projects].location.y+rand()),'The midst ...',false,smallSize,web));
+  addConnection(projects,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/the_midst.csv");  
 
-  nodes.push(new Node((nodes[com].location.x+ rand()),(nodes[com].location.y+rand()),'Rennes soundscape',false,smallSize,web));
-  addConnection(com,random(shortdistance,shortdistance*distmult));
+  nodes.push(new Node((nodes[projects].location.x+ rand()),(nodes[projects].location.y+rand()),'Rennes soundscape',false,smallSize,web));
+  addConnection(projects,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/Electroni-k.csv");  
 
 
-  nodes.push(new Node((nodes[com].location.x+rand()),(nodes[com].location.y+rand()),'La_bibliothèque',false,medSize,web));
-  addConnection(com,random(shortdistance,shortdistance*distmult));
+  nodes.push(new Node((nodes[projects].location.x+rand()),(nodes[projects].location.y+rand()),'La_bibliothèque',false,medSize,web));
+  addConnection(projects,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/labibliotheque.csv");
 
-  nodes.push(new Node((nodes[0].location.x),(nodes[0].location.y+50),'this website',false,smallSize,web));
-  addConnection(0,75);
+  nodes.push(new Node((nodes[home].location.x),(nodes[home].location.y+50),'this website',false,smallSize,web));
+  addConnection(home,75);
   nodes[nodes.length-1].setProject("pages/algae-DOM.csv");  
 
-  nodes.push(new Node((nodes[perso].location.x+rand()),(nodes[perso].location.y+rand()),'P5js sound experiments',false,smallSize,web));
-  addConnection(3,random(shortdistance,shortdistance*distmult));
+  nodes.push(new Node((nodes[coding].location.x+rand()),(nodes[coding].location.y+rand()),'P5js sound experiments',false,smallSize,web));
+  addConnection(coding,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/p5js_sound_experiments.csv");  
 
-  nodes.push(new Node((nodes[teach].location.x+rand()),(nodes[teach].location.y+rand()),'Openprocessing - Reinetiere',false,smallSize,web));
-  addConnection(1,random(shortdistance,shortdistance*distmult));
+  nodes.push(new Node((nodes[coding].location.x+rand()),(nodes[coding].location.y+rand()),'Openprocessing - Reinetiere',false,smallSize,web));
+  addConnection(coding,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/reinetiere.csv");  
 
 
-  nodes.push(new Node((nodes[teach].location.x+rand()),(nodes[teach].location.y+rand()),'P5js typographic experiments',false,smallSize,web));
-  addConnection(1,random(shortdistance,shortdistance*distmult));
+  nodes.push(new Node((nodes[experiments].location.x+rand()),(nodes[experiments].location.y+rand()),'P5js typographic experiments',false,smallSize,web));
+  addConnection(experiments,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/p5js_typo.csv");  
+
+  nodes.push(new Node((nodes[apps].location.x+rand()),(nodes[apps].location.y+rand()),'Chromateque',true,medSize,web));
+  addConnection(apps,random(shortdistance,shortdistance*distmult));
+  nodes[nodes.length-1].setProject("pages/p5js_chromateque.csv");  
 
 
   

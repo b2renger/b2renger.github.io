@@ -170,7 +170,6 @@ function setup() {
   addConnection(coding,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/reinetiere.csv");  
 
-
   nodes.push(new Node((nodes[experiments].location.x+rand()),(nodes[experiments].location.y+rand()),'P5js typographic experiments',false,smallSize,web));
   addConnection(experiments,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/p5js_typo.csv");  
@@ -178,6 +177,10 @@ function setup() {
   nodes.push(new Node((nodes[apps].location.x+rand()),(nodes[apps].location.y+rand()),'Chromateque',true,medSize,web));
   addConnection(apps,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/p5js_chromateque.csv");  
+
+  nodes.push(new Node((nodes[experiments].location.x+rand()),(nodes[experiments].location.y+rand()),'Weekly Challenge',true,medSize,web));
+  addConnection(experiments,random(shortdistance,shortdistance*distmult));
+  nodes[nodes.length-1].setProject("pages/WTC.csv");  
 
 
   

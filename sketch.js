@@ -178,9 +178,14 @@ function setup() {
   addConnection(apps,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/p5js_chromateque.csv");  
 
-  nodes.push(new Node((nodes[experiments].location.x+rand()),(nodes[experiments].location.y+rand()),'Weekly Challenge',true,medSize,web));
+  nodes.push(new Node((nodes[experiments].location.x+rand()),(nodes[experiments].location.y+rand()),'Weekly Challenge',false,smallSize,web));
   addConnection(experiments,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/WTC.csv");  
+
+  nodes.push(new Node((nodes[experiments].location.x+rand()),(nodes[experiments].location.y+rand()),'Super x16 resolution',true,medSize,web));
+  addConnection(experiments,random(shortdistance,shortdistance*distmult));
+  nodes[nodes.length-1].setProject("pages/superresolution.csv");  
+
 
 
   

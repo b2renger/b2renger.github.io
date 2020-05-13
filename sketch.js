@@ -98,7 +98,7 @@ function setup() {
   addConnection(projects,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/ppp.csv");  
 
-  nodes.push(new Node((nodes[apps].location.x+rand()),(nodes[apps].location.y+rand()),'Rainstick',false,bigSize,android));
+  nodes.push(new Node((nodes[apps].location.x+rand()),(nodes[apps].location.y+rand()),'Rainstick',false,smallSize,android));
   addConnection(apps,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/rainstick.csv");
 
@@ -186,6 +186,9 @@ function setup() {
   addConnection(experiments,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/superresolution.csv");  
 
+  nodes.push(new Node((nodes[apps].location.x+rand()),(nodes[apps].location.y+rand()),'PI',true,medSize,web));
+  addConnection(apps,random(shortdistance,shortdistance*distmult));
+  nodes[nodes.length-1].setProject("pages/PI.csv");  
 
 
   

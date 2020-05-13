@@ -199,6 +199,11 @@ function setup() {
   addConnection(experiments,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/p5js_shaders.csv");  
 
+  nodes.push(new Node((nodes[experiments].location.x+rand()),(nodes[experiments].location.y+rand()),'Pixel Spirit',true,medSize,web));
+  addConnection(experiments,random(shortdistance,shortdistance*distmult));
+  nodes[nodes.length-1].setProject("pages/p5js_psd.csv");  
+
+
 
 
 

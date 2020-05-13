@@ -190,6 +190,19 @@ function setup() {
   addConnection(apps,random(shortdistance,shortdistance*distmult));
   nodes[nodes.length-1].setProject("pages/PI.csv");  
 
+  nodes.push(new Node((nodes[experiments].location.x+rand()),(nodes[experiments].location.y+rand()),'Patterns',true,medSize,web));
+  addConnection(experiments,random(shortdistance,shortdistance*distmult));
+  nodes[nodes.length-1].setProject("pages/p5js_patterns.csv");  
+
+
+  nodes.push(new Node((nodes[experiments].location.x+rand()),(nodes[experiments].location.y+rand()),'Shaders',true,medSize,web));
+  addConnection(experiments,random(shortdistance,shortdistance*distmult));
+  nodes[nodes.length-1].setProject("pages/p5js_shaders.csv");  
+
+
+
+
+
 
   
   setInterval(1, function(){

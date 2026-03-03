@@ -447,7 +447,7 @@ All the blending happens with a shader  so it's really fast !
     title: `Li-iL`,
     category: "Installations",
     tags: ["#new", "#image", "#simulation", "#data-art", "#mapping", "#installation", "#processing", "#ruby"],
-    thumbnail: "assets/images/liil.png",
+    thumbnail: "assets/images/Liil.png",
     description: `This installation was build for the 10th anniversary of the "pole image et réseaux" in the Lieu Unique at Nantes.`,
     content: `
 # LiiL

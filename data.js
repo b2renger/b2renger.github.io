@@ -3,8 +3,8 @@ const projects = [
     id: "irrational-duets",
     year: "2016",
     title: `Irrational Duets`,
-    category: "Audio Tools, data-art",
-    tags: ["#p5js, #waa"],
+    category: "Audio Toys, data-art",
+    tags: ["web", "#p5js", "#waa"],
     thumbnail: "assets/images/irrational_duets2.png",
     description: `Making music with irrational numbers`,
     content: `# Irrational Duets
@@ -24,8 +24,8 @@ const projects = [
     id: "poolanoid",
     year: "2026",
     title: `Poolanoid`,
-    category: "Games",
-    tags: ["#Threejs", "#cannonjs", "#waa", "#vibecoding"],
+    category: "Games,",
+    tags: ["web", "#Threejs", "#cannonjs", "#waa", "#vibecoding"],
     thumbnail: "assets/images/poolanoid2.png",
     description: `A 3D pool-breakout hybrid game. Aim, shoot, and destroy all the walls using pool-style physics on a top-down table.`,
     content: `# Poolanoid
@@ -60,8 +60,8 @@ A 3D pool-breakout hybrid game. Aim, shoot, and destroy all the walls using pool
     id: "design-quizz",
     year: "2025",
     title: `Design Quizz`,
-    category: "Game",
-    tags: ["#js", "#vibecoding"],
+    category: "Games",
+    tags: ["web", "#js", "#vibecoding"],
     thumbnail: "assets/images/design_quizz3.png",
     description: `A quizz about design an innovation !`,
     content: `# Design Quizz
@@ -87,8 +87,8 @@ I just wanted to try vibecoding ;) and created this quizz to share some knowledg
     id: "droidparty-tutorials",
     year: "2015",
     title: `DroidParty tutorials`,
-    category: "Workshops, Creative Coding, Audio Tools",
-    tags: ["#sound", "#pure-data", "#libpd", "#tutorial"],
+    category: "Teaching, Audio Tools",
+    tags: ["android", "#sound", "#pure-data", "#libpd", "#tutorial"],
     thumbnail: "assets/images/droidparty_tutorials4.png",
     description: `Droidparty is a free android app by Chris McCormick. It lets you load a Pure-Data patch on your android phone effortlessly. This project is a series of tutorials about droidparty, including an implementation of markov chains for musical improvisation.`,
     content: `# DroidParty Examples
@@ -125,7 +125,7 @@ Tutorials are availables as readmes in this [github repository](https://github.c
     year: "2025",
     title: `Springs`,
     category: "Audio Tools",
-    tags: ["#sound", "#image", "#simulation", "p5js", "#waa"],
+    tags: ["web", "#sound", "#image", "#simulation", "p5js", "#waa"],
     thumbnail: "assets/images/springs-web2.png",
     description: `Spring is a simple bank of oscillators controlled by a spring simulation algorithms. It gives you control over the parameters of the simulation so you can explore the sonic possibilities of this physical modelled synth.`,
     content: `# Springs
@@ -149,7 +149,7 @@ If you don't have an android phone you can check out the web version.`
     year: "2025",
     title: `Musicbox 3D`,
     category: "Audio Tools",
-    tags: ["#image", "#sound", "#p5js", "#simulation", "#waa"],
+    tags: ["web""#image", "#sound", "#p5js", "#simulation", "#waa"],
     thumbnail: "assets/images/musicbox-web2.png",
     description: `This a simulation of music box : each time a cube executes a full revolution it emits a note.`,
     content: `
@@ -169,7 +169,7 @@ This a simulation of music box : each time a cube executes a full revolution it 
     year: "2015",
     title: `Pendulum Phase`,
     category: "Audio Tools",
-    tags: ["#sound", "#image", "#simulation", "#processing", "#pure-data", "#libpd"],
+    tags: ["android", "#sound", "#image", "#simulation", "#processing", "#pure-data", "#libpd"],
     thumbnail: "assets/images/pendulumphases.png",
     description: `Android application for music making with networking features and physics simulation.`,
     content: `# PendulumPhases
@@ -188,7 +188,7 @@ It is sadly not available anymore - maybe I will recode it one day with web tech
     year: "2015",
     title: `PPP`,
     category: "Audio Tools",
-    tags: ["#new", "#sound", "#pure-data", "#libpd"],
+    tags: ["android", "#sound", "#pure-data", "#libpd"],
     thumbnail: "assets/images/PPP.png",
     description: `Android application for music making with networking features and physics simulation.`,
     content: `# PPP
@@ -206,7 +206,7 @@ Have a look at the [PPP website](http://ppp.mgsx.net)`
     year: "2016",
     title: `Rainstick`,
     category: "Audio Tools",
-    tags: ["#sound", "#simulation", "#android", "#libgdx", "#pure-data", "#gdx-pd"],
+    tags: ["android", "#sound", "#simulation", "#android", "#libgdx", "#pure-data", "#gdx-pd"],
     thumbnail: "assets/images/rainstick.png",
     description: `Android application for music making with networking features and physics simulation.`,
     content: `
@@ -227,7 +227,7 @@ The graphic and physics engine are based on libgdx.`
     year: "2013",
     title: `Webpd experiments`,
     category: "Experiments",
-    tags: ["#sound", "#image", "#simulation", "#pure-data", "#processing"],
+    tags: ["web", "#sound", "#image", "#simulation", "#pure-data", "#processing"],
     thumbnail: "assets/images/snowflakes_web.png",
     description: `This repo contains some old experiments at the start of webpd and when p5js didn't exist. ,True`,
     content: `
@@ -260,8 +260,8 @@ FM Culture : Click and drag then fiddle with the controls.
     id: "Organic-motions",
     year: "2026",
     title: `Organic motions`,
-    category: "Experiments, Audio Tools",
-    tags: ["#sound", "#image", "#p5*js", "#p5.sound", "#motion", "#simulation"],
+    category: "Creative Coding, Audio Tools",
+    tags: ["web", "#sound", "#image", "#p5*js", "#p5.sound", "#motion", "#simulation"],
     thumbnail: "assets/images/organic_motions.png",
     description: `A sonification of organic motions`,
     content: `
@@ -289,8 +289,8 @@ I always wondered what it sounds like. Recoded in 2026.
     id: "p5js-sound-experiments",
     year: "2015",
     title: `P5js sound experiments`,
-    category: "Experiments, Tutorial",
-    tags: ["#sound", "#image", "#p5*js", "#p5.sound", "#motion", "#simulation"],
+    category: "Experiments, Teaching",
+    tags: ["web", "#sound", "#image", "#p5*js", "#p5.sound", "#motion", "#simulation"],
     thumbnail: "assets/images/flock.png",
     description: `This repo contains some experiments with p5.sound library for p5js`,
     content: `
@@ -326,7 +326,7 @@ Sadly the project has ended and Sid Lee removed the sensors. The code stays here
     year: "2016",
     title: `Happy Birthday codelab`,
     category: "Experiments, Data-art",
-    tags: ["#data-art", "#image", "#sound", "#p5*js", "#pure-data", "#ruby"],
+    tags: ["web", "#data-art", "#image", "#sound", "#p5*js", "#pure-data", "#ruby"],
     thumbnail: "assets/images/codelab_sonification.png",
     description: `This repo is about sonifying a twitter feed. It was created for the 2nd aniversary of the french creative coding forum codelab.`,
     content: `# Codelab Sonification
@@ -347,8 +347,8 @@ Each frame corresponds to an hour.
     id: "rennes-soundscape",
     year: "2015",
     title: `Rennes2 Soundscape`,
-    category: "Audio Tools",
-    tags: ["#webpd", "#processing.js"],
+    category: "Audio Tools, Data-art",
+    tags: ["web", "#webpd", "#processing.js"],
     thumbnail: "assets/images/electronik.png",
     description: `Click and drag then fiddle with the controls.`,
     content: `# Rennes2 Soundscape
@@ -369,8 +369,8 @@ Beware that the loading time for this page will probably be long as it load raw 
     id: "the-midst",
     year: "2015",
     title: `The midst ...`,
-    category: "Audio Tools",
-    tags: ["#sound", "#image", "#simulation", "#pure-data", "#processing"],
+    category: "Games, Teaching, Experiments",
+    tags: ["web", "#sound", "#image", "#simulation", "#pure-data", "#processing"],
     thumbnail: "assets/images/themidst.png",
     description: `The Midst is a project combining an art-game playable online and a teaching workshop to discover tools for creative coding on the web such as ProcessingJS and W...`,
     content: `# The Midst
@@ -392,7 +392,7 @@ Synopsis : As it often happens to heroes of videos games : Hero's girlfriend has
     year: "2017",
     title: `La_bibliothèque`,
     category: "Creative Coding, Data Art",
-    tags: ["#new", "#image", "#simulation", "#data-art", "#p5js", "#p5-sound"],
+    tags: ["web", "#image", "#simulation", "#data-art", "#p5js", "#p5-sound"],
     thumbnail: "assets/images/labibliotheque_landscape.jpeg",
     description: `This project has been made possible through a collaboration with La_Bibliothèque : a french library / mediatheque. They gave me "carte blanche" to represent the...`,
     content: `
@@ -424,8 +424,8 @@ A fun part of the project is the backend. I didn't want to write code for a serv
     id: "blends-and-shaders",
     year: "2015",
     title: `Blends and shaders`,
-    category: "Creative Coding",
-    tags: ["#image", "#processing", "#shader"],
+    category: "Experiments",
+    tags: ["desktop", "#image", "#processing", "#shader"],
     thumbnail: "assets/images/blends.png",
     description: `Desktop application for installation / performance / workshop.`,
     content: `
@@ -446,7 +446,7 @@ All the blending happens with a shader  so it's really fast !
     year: "2015",
     title: `Li-iL`,
     category: "Installations",
-    tags: ["#new", "#image", "#simulation", "#data-art", "#mapping", "#installation", "#processing", "#ruby"],
+    tags: ["desktop", "#image", "#simulation", "#data-art", "#mapping", "#installation", "#processing", "#ruby"],
     thumbnail: "assets/images/Liil.png",
     description: `This installation was build for the 10th anniversary of the "pole image et réseaux" in the Lieu Unique at Nantes.`,
     content: `
@@ -500,7 +500,7 @@ This installation is inspired by [Nightingale floors](https://en.wikipedia.org/w
     year: "2016",
     title: `Neurokiff`,
     category: "Data-art",
-    tags: ["#image", "#data-art", "#simulation", "#processing"],
+    tags: ["desktop", "#image", "#data-art", "#simulation", "#processing"],
     thumbnail: "assets/images/neurokiff.png",
     description: `Desktop application for installation / performance / workshop.`,
     content: `
@@ -528,8 +528,8 @@ This third representation is field-force map. It uses all the data collected and
     id: "chronophotography",
     year: "2020",
     title: `Chronophotography`,
-    category: "Experiments",
-    tags: ["#video", "#shaders", "#processing"],
+    category: "Creative Coding, Experiments",
+    tags: ["desktop", "#video", "#shaders", "#processing"],
     thumbnail: "assets/images/chronophoto.gif",
     description: `Desktop application for installation / performance / post processing.`,
     content: `
@@ -547,8 +547,8 @@ The app is based on contributed libraries : you'll need to have ffmpeg installed
     id: "openprocessing-reinetiere",
     year: "2013",
     title: `Openprocessing - Reinetiere`,
-    category: "Teaching",
-    tags: ["#image", "#openprocessing", "#processing", "#workshop"],
+    category: "Teaching, Installations",
+    tags: ["web", "#image", "#openprocessing", "#processing"],
     thumbnail: "assets/images/reinetiere2.png",
     description: `This is a page of a one year project made with kids from 11 to 16 at the collège La Reinetière. We worked with openprocessing 1h per week and in the end we show...`,
     content: `# OpenProcessing - La Reinetiere
@@ -567,8 +567,8 @@ We worked with openprocessing 1h per week and in the end we showed an interactiv
     id: "p5js-typographic-experiments",
     year: "2016",
     title: `P5js typographic experiments`,
-    category: "Creative Coding, Experiments, Tutorial",
-    tags: ["#image", "#simulation", "#p5*js", "#typography"],
+    category: "Creative Coding, Experiments, Teaching, Graphics",
+    tags: ["web", "#image", "#simulation", "#p5*js", "#typography"],
     thumbnail: "assets/images/typo_3d.png",
     description: `This repo contains some typographic experiments with p5js and Rune.js ,True`,
     content: `# P5js typographic experiments
@@ -595,7 +595,7 @@ It features some explanations and the base code for each experiment.
     year: "2017",
     title: `Chromateque`,
     category: "Games",
-    tags: ["#colors", "#game", "#p5*js"],
+    tags: ["web", "#colors", "#game", "#p5*js"],
     thumbnail: "assets/images/Chromateque1.png",
     description: `This repo contains the code for "Chromateque" game. You are given a grid of similars colors and should find the matching color to a reference tile. Go fast and ...`,
     content: `
@@ -621,13 +621,14 @@ Good luck !
     id: "weekly-challenge",
     year: "2018",
     title: `Weekly Challenge`,
-    category: "Creative Coding, Experiments",
-    tags: ["#p5*js"],
+    category: "Creative Coding, Experiments, IA",
+    tags: ["web", "#p5*js"],
     thumbnail: "assets/images/WTC1.gif",
     description: `Some students created a weekly theme challenge based on artistic creations. I used code and p5js.`,
     content: `# Weekly Theme Challenge
 
 Students created a weekly theme challenge based on artistic creations. I used code and p5js.
+There is a early live style transfer using OG machine learning in the mix ;)
 
 **[Check out the code and live examples](https://github.com/b2renger/weekly-theme-challenge )**
 
@@ -643,7 +644,7 @@ Students created a weekly theme challenge based on artistic creations. I used co
     id: "super-x16-resolution",
     year: "2019",
     title: `Super x16 resolution`,
-    category: "Experiments",
+    category: "Experiments, IA",
     tags: ["#runwayml", "#image", "#machine-learning"],
     thumbnail: "assets/images/Supersupersuperresolution1.png",
     description: `Playing with machine learningand trying to find some artistic value in super resolution algo.`,
@@ -665,7 +666,7 @@ Images were broken down to 16x16px and upscaled to 4K letting the ml algo guess 
     year: "2019",
     title: `PI`,
     category: "Creative Coding, Data-art",
-    tags: ["#p5*js", "#dataviz"],
+    tags: ["web", "#p5*js", "#dataviz"],
     thumbnail: "assets/images/PI1.png",
     description: `This is a visualisation of Pi.Decimals are layed out in a grid and if two digits that are next to each other they are joint together.The colors follow a graph...`,
     content: `
@@ -685,8 +686,8 @@ The colors follow a grapheme - color synesthesic rule. Code by Pascaline Chevrel
     id: "patterns",
     year: "2016",
     title: `Patterns`,
-    category: "Creative Coding",
-    tags: ["#image", "#patterns", "#p5*js"],
+    category: "Creative Coding, Graphics",
+    tags: ["web", "#image", "#patterns", "#p5*js"],
     thumbnail: "assets/images/patterns1.png",
     description: `This repo contains some graphic pattern experiments with p5js ,True`,
     content: `
@@ -707,8 +708,8 @@ This repo contains some graphic pattern experiments with p5js with explanations 
     id: "shaders",
     year: "2019",
     title: `Shaders`,
-    category: "Experiments",
-    tags: ["#image", "#simulation", "#p5*js", "#shaders"],
+    category: "Experiments, Graphics",
+    tags: ["web", "#image", "#simulation", "#p5*js", "#shaders"],
     thumbnail: "assets/images/shader1.gif",
     description: `This repo contains some shader experiments with p5js.`,
     content: `
@@ -727,8 +728,8 @@ This repo contains some graphic shader experiments with p5js.
     id: "pixel-spirit",
     year: "2020",
     title: `Pixel Spirit`,
-    category: "Creative Coding",
-    tags: ["#image", "#p5*js", "#shaders", "motion-design"],
+    category: "Creative Coding, Graphics",
+    tags: ["web", "#image", "#p5*js", "#shaders", "motion-design"],
     thumbnail: "assets/images/psd1.gif",
     description: `This repo contains a recode of the pixel spirit deck for p5js with animated cards`,
     content: `

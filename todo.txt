@@ -1,17 +1,8 @@
 
 Audio Toys
 https://github.com/b2renger/granul8
-
-
-https://github.com/b2renger/p5js_irrational_duets
-
-
 https://github.com/b2renger/Harmonicizer
 
-
-Games 
-https://github.com/b2renger/Poolanoid
-https://github.com/b2renger/Design-Quiz
 
 
 Utilities
@@ -54,10 +45,8 @@ Installations
 https://github.com/b2renger/MotionMotion_2022_Franck_Lascombes
 
 
-
 OLD
 https://berengerrecoules.wordpress.com/2015/12/06/2015-pendulum-phases/
-
 https://berengerrecoules.wordpress.com/2013/05/30/2013-neurokiff/
 https://berengerrecoules.wordpress.com/2013/05/29/designing-musical-interaction-for-mobile-systems/
 https://berengerrecoules.wordpress.com/2011/08/21/2011-bd-sonore/

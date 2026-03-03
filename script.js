@@ -68,7 +68,7 @@ const app = {
             </section>
 
             <div class="filter-bar">
-                ${['All', 'Installations', 'Creative Coding', 'Audio Tools', 'Workshops', 'Teaching', 'Experiments', 'Games'].map(cat => {
+                ${['All', 'Creative Coding', 'Audio Tools', 'Audio Toys', 'Teaching', 'Experiments', 'Games', 'IA'].map(cat => {
                                     const isActive = cat === 'All'
                                         ? this.state.filters.length === 0
                                         : this.state.filters.includes(cat);

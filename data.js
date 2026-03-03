@@ -1,5 +1,89 @@
 const projects = [
   {
+    id: "irrational-duets",
+    year: "2016",
+    title: `Irrational Duets`,
+    category: "Audio Tools, data-art",
+    tags: ["#p5js, #waa"],
+    thumbnail: "assets/images/irrational_duets2.png",
+    description: `Making music with irrational numbers`,
+    content: `# Irrational Duets
+
+  Creating music with irrational numbers and mathematical sequences.
+  
+[Try it !](https://b2renger.github.io/irrational-duets/)
+
+  ![Homescren image](assets/images/irrational_duets.png)
+  ![in game image](assets/images/irrational_duets2.png)
+   
+[Code](https://github.com/b2renger/p5js_irrational_duets)
+
+`
+  },
+  {
+    id: "poolanoid",
+    year: "2026",
+    title: `Poolanoid`,
+    category: "Games",
+    tags: ["#Threejs, #cannonjs, #waa, #vibecoding"],
+    thumbnail: "assets/images/poolanoid2.png",
+    description: `A 3D pool-breakout hybrid game. Aim, shoot, and destroy all the walls using pool-style physics on a top-down table.`,
+    content: `# Poolanoid
+  ![Homescren image](assets/images/poolanoid.png)
+    ![in game image](assets/images/poolanoid2.png)
+   
+A 3D pool-breakout hybrid game. Aim, shoot, and destroy all the walls using pool-style physics on a top-down table.
+
+[Play now:](https://b2renger.github.io/Poolanoid/)
+
+## Gameplay
+
+- Drag on the ball to aim, release to shoot
+- Clear all walls before running out of shots
+- Break multiple walls in one shot to build combos and earn bonus shots
+- Special walls have unique physics (extra-bounce, sticky, low-bounce) and power-ups (extra shot, bomb, multi-ball)
+- Unused shots carry over to the next level
+
+## Stack
+
+- **Three.js** -- 3D rendering, post-processing (bloom)
+- **cannon-es** -- Physics simulation
+- **Web Audio API** -- Synthesized sound effects (no audio files)
+- Vanilla JavaScript ES modules, no build step
+
+[Code](https://github.com/b2renger/Poolanoid)
+
+`
+  },
+
+  {
+    id: "design-quizz",
+    year: "2025",
+    title: `Design Quizz`,
+    category: "Game",
+    tags: ["#js", "#vibecoding"],
+    thumbnail: "assets/images/design_quizz3.png",
+    description: `A quizz about design an innovation !`,
+    content: `# Design Quizz
+
+As I mentionned I work in a design school : [l'école de design Nantes Atlantique](https://lecolededesign.com/fr/la-une/visite-des-ateliers-et-studios-numeriques-avec-berenger-recoules). With [Valetin Dupas](https://valentindupas.com/). We do have a bunch of classrooms named after famous designers and innovators.
+
+I just wanted to try vibecoding ;) and created this quizz to share some knowledge with my students.
+  
+
+[Play now](https://b2renger.github.io/Design-Quiz/)
+
+  ![Homescren image](assets/images/design_quizz.png)
+  ![in game image](assets/images/design_quizz2.png)
+  ![in game image](assets/images/design_quizz3.png)
+
+
+   
+[Code](https://github.com/b2renger/Design-Quiz)
+
+`
+  },
+  {
     id: "droidparty-tutorials",
     year: "2015",
     title: `DroidParty tutorials`,

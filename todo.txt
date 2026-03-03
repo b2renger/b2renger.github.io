@@ -1,14 +1,10 @@
 
 Audio Toys
 https://github.com/b2renger/granul8
-https://github.com/b2renger/MusicbBox3D-web
-https://github.com/b2renger/Springs-web
+
 
 https://github.com/b2renger/p5js_irrational_duets
 
-
-https://b2renger.github.io/PdDroidPublisher/
-https://github.com/b2renger/ppp-samples
 
 https://github.com/b2renger/Harmonicizer
 

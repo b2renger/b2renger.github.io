@@ -25,7 +25,7 @@ const projects = [
     year: "2026",
     title: `Poolanoid`,
     category: "Games",
-    tags: ["#Threejs, #cannonjs, #waa, #vibecoding"],
+    tags: ["#Threejs", "#cannonjs", "#waa", "#vibecoding"],
     thumbnail: "assets/images/poolanoid2.png",
     description: `A 3D pool-breakout hybrid game. Aim, shoot, and destroy all the walls using pool-style physics on a top-down table.`,
     content: `# Poolanoid
@@ -66,7 +66,7 @@ A 3D pool-breakout hybrid game. Aim, shoot, and destroy all the walls using pool
     description: `A quizz about design an innovation !`,
     content: `# Design Quizz
 
-As I mentionned I work in a design school : [l'école de design Nantes Atlantique](https://lecolededesign.com/fr/la-une/visite-des-ateliers-et-studios-numeriques-avec-berenger-recoules). With [Valetin Dupas](https://valentindupas.com/). We do have a bunch of classrooms named after famous designers and innovators.
+As I mentionned I work in a design school : [l'école de design Nantes Atlantique](https://lecolededesign.com/fr/la-une/visite-des-ateliers-et-studios-numeriques-avec-berenger-recoules). We do have a bunch of classrooms named after famous designers and innovators.
 
 I just wanted to try vibecoding ;) and created this quizz to share some knowledge with my students.
   

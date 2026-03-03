@@ -149,7 +149,7 @@ If you don't have an android phone you can check out the web version.`
     year: "2025",
     title: `Musicbox 3D`,
     category: "Audio Tools",
-    tags: ["web""#image", "#sound", "#p5js", "#simulation", "#waa"],
+    tags: ["web", "#image", "#sound", "#p5js", "#simulation", "#waa"],
     thumbnail: "assets/images/musicbox-web2.png",
     description: `This a simulation of music box : each time a cube executes a full revolution it emits a note.`,
     content: `

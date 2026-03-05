@@ -1,5 +1,39 @@
 const projects = [
   {
+    id: "motion-motion",
+    year: "2022",
+    title: `Motion motion : Ateliernum x Franck Lascombes`,
+    category: "Installations",
+    tags: ["installation", "#motion-design", "#arduino"],
+    thumbnail: "assets/images/motionmotion1.png",
+    description: `Collaboration with Franck Lascombes for motion motion festival`,
+    content: `# Motion motion
+
+  ![Image](assets/images/motionmotion1.png)
+
+  We worked with Franck Lascombes on a motion design installation for the motion motion festival in 2022.
+
+  We created a serie of modules inspired by [Franck's graphic animation work](https://www.instagram.com/franck_lascombes/)
+
+  <video width="720" controls>
+  <source src="assets/videos/motionmotion1.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+  <video width="720" controls>
+  <source src="assets/videos/motionmotion2.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+  <video width="720" controls>
+  <source src="assets/videos/motionmotion3.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+  <video width="720" controls>
+  <source src="assets/videos/motionmotion4.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+`
+  },
+  {
     id: "irrational-duets",
     year: "2016",
     title: `Irrational Duets`,

@@ -1,7 +1,4 @@
 
-Audio Toys
-https://github.com/b2renger/granul8
-https://github.com/b2renger/Harmonicizer
 
 
 
@@ -33,7 +30,7 @@ https://github.com/b2renger/Introduction_Pure_Data
 
 
 Experiments
-https://github.com/b2renger/Fluid-simulation
+
 https://github.com/b2renger/penplotter_experiments
 
 
@@ -42,7 +39,7 @@ https://github.com/b2renger/processing_catalog
 https://github.com/b2renger/Irreverent
 
 Installations
-https://github.com/b2renger/MotionMotion_2022_Franck_Lascombes
+https://github.com/b2renger/airstream
 
 
 OLD

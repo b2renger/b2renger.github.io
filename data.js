@@ -1,5 +1,90 @@
 const projects = [
   {
+    id: "FluidSim",
+    year: "2025",
+    title: `FluidSim `,
+    category: "Creative Coding, Experiments",
+    tags: ["web", "#vibecoding"],
+    thumbnail: "assets/images/fluidsim.png",
+    description: `A fluid simulation for multi touch`,
+    content: `# FluidSim
+
+  A simple fluid simulation for multi touch based on this article : https://mofu-dev.com/en/blog/stable-fluids/
+  
+  [Live Demo](https://b2renger.github.io/Fluid-simulation/) and [code](https://github.com/b2renger/Fluid-simulation)
+
+  <video width="720" controls>
+  <source src="assets/videos/fluidsim.mp4" type="video/mp4">
+  Your browser does not support the video tag.    
+
+  fdljsd
+ 
+ 
+`
+  },
+  {
+    id: "Harmonicizer",
+    year: "2026",
+    title: `Harmonicizer`,
+    category: "Audio Tools",
+    tags: ["web", "#sound", "#waa", "#vibecoding"],
+    thumbnail: "assets/images/harmonicizer.png",
+    description: `A web based tool to create harmonic sequences. WIP`,
+    content: `# Harmonicizer
+
+  ![Image](assets/images/harmonicizer.png)
+  
+  A web based tool to create harmonic sequences. 
+  
+  You can compose and edit chords, create chord progressions, generate sound with the built in synths and export them as MIDI files.
+
+  **This work is a Work In Progress.**
+
+  [Live Demo](https://b2renger.github.io/Harmonicizer/)
+  
+  ![Image](assets/images/harmonicizer4.png)
+
+  ![Image](assets/images/harmonicizer2.png)
+  
+  ![Image](assets/images/harmonicizer3.png)
+
+ 
+
+  And the [code](https://github.com/b2renger/harmonicizer)
+`
+  },
+
+  {
+    id: "granul8",
+    year: "2026",
+    title: `Granul8`,
+    category: "Audio Tools",
+    tags: ["web", "#sound", "#waa", "#vibecoding"],
+    thumbnail: "assets/images/granul8.png",
+    description: `A web based granular sampler with loop station ! WIP`,
+    content: `# Granul8
+
+  ![Image](assets/images/granul8.png)
+  
+  A granular sampler is a sampler that chops up audio into tiny pieces (grains) and plays them back in different ways. 
+  It's a great way to create interesting textures and sounds.
+  
+  This one supports several tabs, a loop station to record traces of inputs and play them back, there are also options to randomize or organize the grains and make patterns.
+
+  **This work is a Work In Progress.**
+
+  [Live Demo](https://b2renger.github.io/granul8/)
+
+  Here is a small peak.
+  <video width="720" controls>
+  <source src="assets/videos/granul8.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+
+  And the [code](https://github.com/b2renger/granul8)
+</video>
+`
+  },
+  {
     id: "motion-motion",
     year: "2022",
     title: `Motion motion : Ateliernum x Franck Lascombes`,
@@ -58,7 +143,7 @@ const projects = [
     id: "poolanoid",
     year: "2026",
     title: `Poolanoid`,
-    category: "Games,",
+    category: "Games",
     tags: ["web", "#Threejs", "#cannonjs", "#waa", "#vibecoding"],
     thumbnail: "assets/images/poolanoid2.png",
     description: `A 3D pool-breakout hybrid game. Aim, shoot, and destroy all the walls using pool-style physics on a top-down table.`,

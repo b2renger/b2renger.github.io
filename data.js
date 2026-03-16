@@ -276,7 +276,7 @@ If you don't have an android phone you can check out the web version.`
 
 ![image](assets/images/musicbox-web2.png)
 
-Recoded in 2025 with a web version. **[Check it out](https://b2renger.github.io/MusicBox3D-web/)**
+Recoded in 2025 with a web version. **[Check it out](https://b2renger.github.io/MusicbBox3D-web/)**
 
 Here is a video of the android app back from 2013
 <iframe width="720" height="350" src="https://www.youtube.com/embed/VOWR4pS67l0" frameborder="0" allowfullscreen></iframe>

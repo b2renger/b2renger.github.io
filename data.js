@@ -130,7 +130,7 @@ const projects = [
 
   Creating music with irrational numbers and mathematical sequences.
   
-[Try it !](https://b2renger.github.io/irrational-duets/)
+[Try it !](https://b2renger.github.io/p5js_irrational_duets/)
 
   ![Homescren image](assets/images/irrational_duets.png)
   ![in game image](assets/images/irrational_duets2.png)

@@ -1,5 +1,58 @@
 const projects = [
   {
+    id: "Chromatika",
+    year: "2026",
+    title: `Chromatika `,
+    category: "Creative Coding, Games",
+    tags: ["web", "#vibecoding"],
+    thumbnail: "assets/images/Chromatika_3.png",
+    description: `A color mixer game for mobile where you have to mix colors to match the target color.`,
+    content: `# Chromatika
+
+  A color mixer game for mobile where you have to mix colors to match the target color. 
+  
+  You can import your own images or take a picture from your camera to generate a level.
+
+  Everything is stored client side, so no data is collected, if refresh your cache the levels are gone, but you can save the png image of the level.
+
+  Play it here : [Chromatika](https://b2renger.github.io/Chromatika/)
+
+  ![Image](assets/images/Chromatika_1.png)
+  ![Image](assets/images/Chromatika_2.png)
+  ![Image](assets/images/Chromatika_3.png)
+  ![Image](assets/images/Chromatika_4.png)
+ 
+ 
+`
+  },
+  {
+    id: "XR808",
+    year: "2026",
+    title: `XR808 `,
+    category: "Creative Coding, Experiments, Audio",
+    tags: ["web", "#vibecoding", "audio"],
+    thumbnail: "assets/images/XR808_1.png",
+    description: `A simple web drum machine that lets you sample sound from your microphone .`,
+    content: `# XR808
+
+  A simple drum machine based on the TR-808 drum computer, 
+  - it lets you record sounds from your microphone and assign them to the different drum pads.
+  - It also has several interesting subdivisions of the beat options.
+
+  It was build as a live videcoding teaching session about web and audio instruments.
+
+    
+  [Live Demo](https://b2renger.github.io/step-sequenceur/) and [code](https://github.com/b2renger/step-sequenceur)
+
+  ![Image](assets/images/XR808_1.png)
+  ![Image](assets/images/XR808_2.png)
+  ![Image](assets/images/XR808_3.png)
+
+
+ 
+`
+  },
+  {
     id: "FluidSim",
     year: "2025",
     title: `FluidSim `,
@@ -16,9 +69,6 @@ const projects = [
   <video width="720" controls>
   <source src="assets/videos/fluidsim.mp4" type="video/mp4">
   Your browser does not support the video tag.    
-
-  fdljsd
- 
  
 `
   },

@@ -1,5 +1,163 @@
 const projects = [
   {
+    id: "voice-interaction-kit",
+    year: "2026",
+    title: `Voice interaction kit`,
+    category: "IA, Audio, Teaching",
+    tags: ["desktop", "#voice-ux", "#local-ai", "#p5js", "#cables"],
+    thumbnail: "assets/images/voice_kit_1.png",
+    description: `A kit for design students to shape the identity of a voice agent and the basic vocabulary of voice UX: taking turns, interrupting, thinking, not understanding.`,
+    content: `# Voice interaction kit
+
+A kit that lets design students work on the **identity of a voice agent** (its voice, its personality) and on the **basic vocabulary of voice UX**: taking turns, knowing when someone has finished, interrupting, thinking, not understanding, visual and sound feedback, and calls to action.
+
+![The Voice Lab app: engine, persona and voice settings, the agent's face, subtitles and turn timings](assets/images/voice_kit_1.png)
+
+## One brain, several clients
+
+- **Voice Lab** is the brain: a Windows / Mac app that listens, thinks and speaks, either 100% locally with open models (QVAC, no key needed) or online with Gemini Live. It holds the persona, its knowledge and every setting.
+- **Its clients** follow the conversation and drive it: a cables.gl op, and p5.js or plain HTML/CSS/JS examples to design your own interface (visuals, animations, subtitles, buttons). Several clients can follow the same conversation at once.
+
+Both engines produce the same states and the same events, so an interface designed with the local engine works with Gemini, and the other way round.
+
+![A typed exchange: the agent answers and offers on-screen choices](assets/images/voice_kit_2.png)
+
+## What you can explore
+
+- **Who is the agent?** Name, persona, creativity, greeting, and a knowledge file next to it (a menu, opening hours, the artworks of a room).
+- **Which voice?** 30 Gemini voices or, locally, Supertonic presets, a voice described in words with Parler, or Chatterbox.
+- **When have you finished speaking?** How patient the end-of-turn silence is, and the Smart Turn model that hears whether a sentence sounds finished.
+- **Can you interrupt it?** A "mm-hm" lets it carry on, "stop" makes it stop and listen.
+- **What happens while it thinks?** Reply delay as a design material, thinking sounds, filler lines.
+- **What if it didn't understand, or nobody answers?** Repair lines, away events and reprompts.
+
+Every turn is measured (how long the person spoke, the wait you feel before the agent's voice), so design choices can be compared with numbers.
+
+[Code](https://github.com/b2renger/voice-interaction-kit)
+`
+  },
+  {
+    id: "moire-motion",
+    year: "2026",
+    title: `Moiré motion`,
+    category: "Graphics, Creative Coding",
+    tags: ["web", "#print", "#barrier-grid", "#processing"],
+    thumbnail: "assets/images/moire_motion_3.png",
+    description: `Turn a short video into a barrier-grid animation: print the combined image, lay the striped grid on top, slide it and the picture moves.`,
+    content: `# Moiré motion
+
+Tools for making barrier-grid animations, also called scanimations or "moiré motion": a combined image made of interleaved strips of several frames, and a black grid with clear slits that you lay on top. Slide the grid and the picture moves.
+
+![A barrier-grid animation in motion](assets/images/moire_motion_1.gif)
+
+It started in 2021 as a small Processing sketch, and became in 2026 a web app that runs entirely in the browser (nothing is uploaded):
+
+1. **Frames**: open a short video and set the start and end of one loop, or open a few images.
+2. **Pattern**: straight or curved lines in any direction, or a radial grid that animates by turning instead of sliding. Curved and radial grids follow [FabObscura](https://hcie.csail.mit.edu/research/fabobscura/fabobscura.html) (Sethapakdi et al., UIST 2025).
+3. **Print**: download the combined image and the grid at the same dpi, and print the grid on transparency film.
+
+A quick tour: open a video, preview the animation, switch from straight lines to a radial grid.
+
+<video controls muted loop playsinline preload="metadata"><source src="assets/videos/moire_motion.mp4" type="video/mp4"></video>
+
+![A radial grid turning over the silhouette of a fish](assets/images/moire_motion_3.png)
+
+[Open the web app](https://b2renger.github.io/Processing_moire_motion/docs/) [Code](https://github.com/b2renger/Processing_moire_motion)
+`
+  },
+  {
+    id: "llm-on-lan",
+    year: "2026",
+    title: `LlmOnLan (LOL)`,
+    category: "IA, Teaching",
+    tags: ["desktop", "#local-llm", "#ollama", "#open-webui", "#electron"],
+    thumbnail: "assets/images/llmonlan_2.png",
+    description: `A desktop client and a LAN inference farm: anyone on the school Wi-Fi can chat with a local model, with zero setup, and all data stays on their machine.`,
+    content: `# LlmOnLan (LOL)
+
+A desktop client plus a LAN inference farm. The client bundles a pinned, unmodified [Open WebUI](https://github.com/open-webui/open-webui) and connects to the farm by itself, so anyone on the office or school Wi-Fi can chat with a local model with **zero setup**: no URL, no account, no Docker. Chats, documents and RAG data stay on the user's machine; the farm is stateless.
+
+![The LOL client connected to a farm, chatting through Open WebUI](assets/images/llmonlan_1.png)
+
+## The pieces
+
+- **The farm**: a GPU box serves a model with Ollama (or llama.cpp as an opt-in speed engine) behind a single, load-balanced LiteLLM endpoint, and announces itself on the network with a UDP beacon. The **Farm app** installs everything for a non-technical operator and doubles as the admin panel: which model is served, under which name, for how many people at once.
+- **The client**: an Electron shell that discovers the farm, runs the bundled Open WebUI and stores everything in a folder you choose. It also hosts **LOL Vibe**, a chat with a coding agent that builds web projects you can preview and push to GitHub, and **the Computer**, boxes wired into small programs that read data, see, hear, speak and drive boards and lights.
+
+![The Computer: boxes wired into small programs, with step-by-step lessons](assets/images/llmonlan_2.png)
+
+## Features
+
+Image understanding and voice (Whisper speech-to-text runs on the device), web search through a shared SearXNG, neural voices with Kokoro, OCR for images and scanned PDFs, an opt-in bridge to drive a local Blender over MCP, and several GPU boxes balanced as one fleet.
+
+It is a sibling of [ComfyQ](#project/comfyq): same visual language, same network discovery and auto-update conventions.
+
+[Code](https://github.com/b2renger/LlmOnLan)
+`
+  },
+  {
+    id: "comfyq",
+    year: "2026",
+    title: `ComfyQ`,
+    category: "IA, Teaching",
+    tags: ["web", "#comfyui", "#generative-ai", "#scheduler"],
+    thumbnail: "assets/images/comfyq_2.jpg",
+    description: `A job scheduler and workflow manager for ComfyUI that turns one GPU into a room full of people making things.`,
+    content: `# ComfyQ
+
+**ComfyQ turns one GPU into a room full of people making things.**
+
+It is a web-based job scheduler and workflow manager for [ComfyUI](https://github.com/comfyanonymous/ComfyUI), built for classrooms, labs and studios where a dozen people want the same expensive graphics card at once. Students book a slot on a shared timeline, fill in a simple form and watch their job run. Nobody installs anything; nobody touches ComfyUI.
+
+It serves a library of **61 ready-made workflows** (image generation and editing, video generation and editing, 3D, audio, captioning and utilities), each one measured on the machine so the timeline knows how long it really takes.
+
+## For students
+
+- **Book a slot**, or ask for *as soon as possible* and the job queues into the next gap.
+- **Fill in the form**: prompts, dropdowns, sliders, file uploads, and for some workflows a mask painter or a visual prompt composer.
+- **Watch it run**, with live progress and an ETA from the measured timing, not a guess.
+- **Collect the result**: images, video, audio, 3D models and Gaussian splats each have their own viewer, and *Use these settings* refills the form to iterate.
+
+![A machine's page: the session's results, and your own generations on the side](assets/images/comfyq_2.jpg)
+
+## For admins
+
+An admin mode prepares the machine: pick and calibrate workflows, see which models are missing and fetch them onto the rig, update ComfyUI and its node packs, run the whole library as a test (about 2½ hours for 61 workflows on an RTX 5090) and prune unused models. A small desktop app, **ComfyQ Discovery**, finds every ComfyQ machine on the network and shows what each one is doing.
+
+![ComfyQ Discovery: six machines of the lab, each serving a workflow](assets/images/comfyq_1.png)
+
+[Code](https://github.com/b2renger/ComfyQ)
+`
+  },
+  {
+    id: "aframe-8thwall-webar",
+    year: "2026",
+    title: `WebAR examples : A-Frame + 8th Wall`,
+    category: "Creative Coding, Teaching",
+    tags: ["web", "#webar", "#aframe", "#threejs", "#8thwall"],
+    thumbnail: "assets/images/aframe_8thwall_1.png",
+    description: `Augmented reality in a phone's browser: 4 sets of 9 progressive examples for image targets and world effects, with A-Frame or raw Three.js.`,
+    content: `# WebAR examples : A-Frame + 8th Wall
+
+Augmented reality experiences that run directly in a phone's web browser: no app to download, no app store. A teaching repository built on a self-hosted 8th Wall engine.
+
+It covers the two classic kinds of WebAR:
+
+- **Image targets**: print an image, point your phone at it, and 3D content appears on top of it and follows it. Think of an interactive poster.
+- **World effects**: no image needed, tap the floor on your screen and the content is placed in the room.
+
+Each kind comes in two flavours, **A-Frame** (3D described with HTML tags, the easiest start) and **raw Three.js** (more control, newer libraries), which makes 4 sets of the same 9 progressive examples: primitives, text and fonts, images, 3D models, green-screen video, audio, a live p5.js texture, Gaussian splats and multiple targets.
+
+![The landing page listing every example](assets/images/aframe_8thwall_1.png)
+
+The README is written for beginners: how to fork the repository, test on your phone over HTTPS, publish to GitHub Pages and read errors with an on-phone console.
+
+![The image target used by most examples: print it and point your phone at it](assets/images/aframe_8thwall_target.jpg)
+
+[Open the examples](https://b2renger.github.io/Aframe_8thwall_binary/) [Code](https://github.com/b2renger/Aframe_8thwall_binary)
+`
+  },
+  {
     id: "Chromatika",
     year: "2026",
     title: `Chromatika `,
@@ -53,6 +211,27 @@ const projects = [
 `
   },
   {
+    id: "video2flipbook",
+    year: "2025",
+    title: `Video2FlipBook`,
+    category: "Graphics, Creative Coding",
+    tags: ["web", "#print", "#react", "#pdf"],
+    thumbnail: "assets/images/video2flipbook_1.png",
+    description: `Drop in a video, get print-ready PDF pages to cut and bind into a flipbook.`,
+    content: `# Video2FlipBook
+
+A small web app to turn a video into a printed flipbook: choose a video, set the number of frames, their size and the binding margin, and export PDF pages with cut marks, ready to print, cut and bind.
+
+An interactive imposition plan shows the animated result and how the frames are laid out on each sheet.
+
+![Video2FlipBook with frames extracted from a video](assets/images/video2flipbook_1.png)
+
+![The imposition plan](assets/images/video2flipbook_2.png)
+
+[Open the app](https://b2renger.github.io/Video2FlipBook/) [Code](https://github.com/b2renger/Video2FlipBook)
+`
+  },
+  {
     id: "FluidSim",
     year: "2025",
     title: `FluidSim `,
@@ -68,8 +247,8 @@ const projects = [
 
   <video width="720" controls>
   <source src="assets/videos/fluidsim.mp4" type="video/mp4">
-  Your browser does not support the video tag.    
- 
+  Your browser does not support the video tag.
+</video>
 `
   },
   {
@@ -125,13 +304,13 @@ const projects = [
 
   [Live Demo](https://b2renger.github.io/granul8/)
 
-  Here is a small peak.
+  Here is a small peek.
   <video width="720" controls>
   <source src="assets/videos/granul8.mp4" type="video/mp4">
   Your browser does not support the video tag.
+</video>
 
   And the [code](https://github.com/b2renger/granul8)
-</video>
 `
   },
   {
@@ -172,7 +351,7 @@ const projects = [
     id: "irrational-duets",
     year: "2016",
     title: `Irrational Duets`,
-    category: "Audio, data-art",
+    category: "Audio, Data Art",
     tags: ["web", "#p5js", "#waa"],
     thumbnail: "assets/images/irrational_duets2.png",
     description: `Making music with irrational numbers`,
@@ -340,7 +519,7 @@ This a simulation of music box : each time a cube executes a full revolution it 
     category: "Audio",
     tags: ["android", "#sound", "#image", "#simulation", "#processing", "#pure-data", "#libpd"],
     thumbnail: "assets/images/pendulumphases.png",
-    description: `Android application for music making with networking features and physics simulation.`,
+    description: `An Android audio-visual synthesizer based on pendulum waves: random motion, beatings, travelling or standing waves at your fingertips.`,
     content: `# PendulumPhases
 
 <iframe width="720" height="350" src="https://www.youtube.com/embed/E_nnjXkPYok" frameborder="0" allowfullscreen></iframe>
@@ -359,7 +538,7 @@ It is sadly not available anymore - maybe I will recode it one day with web tech
     category: "Audio",
     tags: ["android", "#sound", "#pure-data", "#libpd"],
     thumbnail: "assets/images/PPP.png",
-    description: `Android application for music making with networking features and physics simulation.`,
+    description: `An Android framework to publish Pure Data apps that jam together on the same wifi network, synced by a MIDI clock.`,
     content: `# PPP
 
 <iframe width="720" height="350" src="https://www.youtube.com/embed/XEymJGuHoMU" frameborder="0" allowfullscreen></iframe>
@@ -377,7 +556,7 @@ Have a look at the [PPP website](http://ppp.mgsx.net)`
     category: "Audio",
     tags: ["android", "#sound", "#simulation", "#android", "#libgdx", "#pure-data", "#gdx-pd"],
     thumbnail: "assets/images/rainstick.png",
-    description: `Android application for music making with networking features and physics simulation.`,
+    description: `An Android audio/visual physics simulation of a rainstick, with procedural sound generated by Pure Data.`,
     content: `
 # Rainstick
 
@@ -393,12 +572,12 @@ The graphic and physics engine are based on libgdx.`
   },
   {
     id: "webpd-experiments",
-    year: "2013",
+    year: "2012",
     title: `Webpd experiments`,
     category: "Experiments",
     tags: ["web", "#sound", "#image", "#simulation", "#pure-data", "#processing"],
     thumbnail: "assets/images/snowflakes_web.png",
-    description: `This repo contains some old experiments at the start of webpd and when p5js didn't exist. ,True`,
+    description: `Old experiments from the start of WebPd, when p5js didn't exist yet.`,
     content: `
 # WebPd Experiments
 
@@ -494,7 +673,7 @@ Sadly the project has ended and Sid Lee removed the sensors. The code stays here
     id: "happy-birthday-codelab",
     year: "2016",
     title: `Happy Birthday codelab`,
-    category: "Experiments, Data-art",
+    category: "Experiments, Data Art",
     tags: ["web", "#data-art", "#image", "#sound", "#p5*js", "#pure-data", "#ruby"],
     thumbnail: "assets/images/codelab_sonification.png",
     description: `This repo is about sonifying a twitter feed. It was created for the 2nd aniversary of the french creative coding forum codelab.`,
@@ -514,12 +693,12 @@ Each frame corresponds to an hour.
   },
   {
     id: "rennes-soundscape",
-    year: "2015",
+    year: "2013",
     title: `Rennes2 Soundscape`,
-    category: "Audio, Data-art",
+    category: "Audio, Data Art",
     tags: ["web", "#webpd", "#processing.js"],
     thumbnail: "assets/images/electronik.png",
-    description: `Click and drag then fiddle with the controls.`,
+    description: `A sound postcard of the Rennes 2 campus for Electroni-k: an interactive map where you mix field recordings with effects.`,
     content: `# Rennes2 Soundscape
 
 ![Image](assets/images/electronik.png)
@@ -536,7 +715,7 @@ Beware that the loading time for this page will probably be long as it load raw 
   },
   {
     id: "the-midst",
-    year: "2015",
+    year: "2013",
     title: `The midst ...`,
     category: "Games, Teaching, Experiments",
     tags: ["web", "#sound", "#image", "#simulation", "#pure-data", "#processing"],
@@ -591,12 +770,12 @@ A fun part of the project is the backend. I didn't want to write code for a serv
   },
   {
     id: "blends-and-shaders",
-    year: "2015",
+    year: "2014",
     title: `Blends and shaders`,
     category: "Experiments",
     tags: ["desktop", "#image", "#processing", "#shader"],
     thumbnail: "assets/images/blends.png",
-    description: `Desktop application for installation / performance / workshop.`,
+    description: `A Processing framework to blend anything with anything, with all the blending done in a shader.`,
     content: `
 # Blends and Shaders
 
@@ -640,12 +819,12 @@ It is a projection mapping on tulle fabric representing the evolution of image &
   },
   {
     id: "open-house",
-    year: "2011",
+    year: "2010",
     title: `Open House`,
     category: "Installations",
     tags: ["#sound", "#data-art", "#installation", "#pure-data"],
     thumbnail: "assets/images/openhouse.png",
-    description: `Desktop application for installation / performance / workshop.`,
+    description: `A sound installation turning the activity inside an art gallery, a workplace and a house into soundscapes broadcast in the street.`,
     content: `
 # Open House
 
@@ -666,12 +845,12 @@ This installation is inspired by [Nightingale floors](https://en.wikipedia.org/w
   },
   {
     id: "neurokiff",
-    year: "2016",
+    year: "2013",
     title: `Neurokiff`,
-    category: "Data-art",
+    category: "Data Art",
     tags: ["desktop", "#image", "#data-art", "#simulation", "#processing"],
     thumbnail: "assets/images/neurokiff.png",
-    description: `Desktop application for installation / performance / workshop.`,
+    description: `Exploratory visualisations of EEG signals recorded while people listened to a music playlist.`,
     content: `
 
 # Neurokiff
@@ -700,7 +879,7 @@ This third representation is field-force map. It uses all the data collected and
     category: "Creative Coding, Experiments",
     tags: ["desktop", "#video", "#shaders", "#processing"],
     thumbnail: "assets/images/chronophoto.gif",
-    description: `Desktop application for installation / performance / post processing.`,
+    description: `A small Processing app turning a video into chronophotographs: feed it a video, play with the parameters, save the result.`,
     content: `
 
 # Chronophotography
@@ -739,7 +918,7 @@ We worked with openprocessing 1h per week and in the end we showed an interactiv
     category: "Creative Coding, Experiments, Teaching, Graphics",
     tags: ["web", "#image", "#simulation", "#p5*js", "#typography"],
     thumbnail: "assets/images/typo_3d.png",
-    description: `This repo contains some typographic experiments with p5js and Rune.js ,True`,
+    description: `Typographic experiments with p5js and Rune.js, with explanations and the base code for each one.`,
     content: `# P5js typographic experiments
 
 This repo contains some typographic experiments with p5js and Rune.js, before paths were available in p5js.
@@ -834,7 +1013,7 @@ Images were broken down to 16x16px and upscaled to 4K letting the ml algo guess 
     id: "pi",
     year: "2019",
     title: `PI`,
-    category: "Creative Coding, Data-art",
+    category: "Creative Coding, Data Art",
     tags: ["web", "#p5*js", "#dataviz"],
     thumbnail: "assets/images/PI1.png",
     description: `This is a visualisation of Pi.Decimals are layed out in a grid and if two digits that are next to each other they are joint together.The colors follow a graph...`,
@@ -858,7 +1037,7 @@ The colors follow a grapheme - color synesthesic rule. Code by Pascaline Chevrel
     category: "Creative Coding, Graphics",
     tags: ["web", "#image", "#patterns", "#p5*js"],
     thumbnail: "assets/images/patterns1.png",
-    description: `This repo contains some graphic pattern experiments with p5js ,True`,
+    description: `Graphic pattern experiments with p5js, with explanations and live interactive examples.`,
     content: `
 # P5js patterns fun
 
@@ -916,6 +1095,1046 @@ This repo contains a recode of the pixel spirit deck for p5js adding motion anim
 ![Image](assets/images/psd6.gif)
 `
 
+  },
+
+  // ---- From the old WordPress blog (berengerrecoules.wordpress.com) ----
+  {
+    id: "website-2015",
+    year: "2015",
+    title: `b2renger.github.io (2015 edition)`,
+    category: "Creative Coding",
+    tags: ["web", "#p5js", "#markdown"],
+    thumbnail: "assets/images/thiswebsite6.png",
+    description: `The first version of this site: articles mapped as a kind of "algae" drawn with p5.js; hovering a node parsed the article's markdown into the page.`,
+    content: `# b2renger.github.io : 2015 edition
+
+![The 2015 version of this website](assets/images/thiswebsite6.png)
+
+A new site to publish code and experiment with [p5.js](https://p5js.org). The page was split in two: on the left, a map of the articles drawn as a kind of "algae"; when you hovered a node, the article, written in markdown, was parsed and its HTML built on the right.
+
+It gathered the course material I use to teach Processing and Pure Data, and many web and Android projects and experiments, with all their code on GitHub, mostly under a Creative Commons license.
+
+The node map is available as a standalone example: [p5js_algae_dom](https://github.com/b2renger/p5js_algae_dom).
+`
+  },
+  {
+    id: "fresque-numerique",
+    year: "2014",
+    title: `Fresque numérique`,
+    category: "Installations",
+    tags: ["performance", "#projection-mapping", "#processing", "#pure-data"],
+    thumbnail: "assets/images/fresque_numerique_1.jpg",
+    description: `A projection-mapping performance with Mickaël La Fontaine, here on the castle of Blain.`,
+    content: `# Fresque numérique
+
+A projection-mapping performance made in collaboration with Mickaël La Fontaine, a digital artist specialised in projection mapping and video.
+
+<iframe width="720" height="405" src="https://www.youtube.com/embed/ZF8gi1Ue5z4" title="Blain : le château fort en numérique" frameborder="0" allowfullscreen></iframe>
+
+More of Mickaël's work on [Vimeo](https://vimeo.com/mickaellafontaine/videos).
+`
+  },
+  {
+    id: "processing-sketches-2014",
+    year: "2014",
+    title: `Processing sketches 2014`,
+    category: "Creative Coding, Graphics",
+    tags: ["desktop", "#processing", "#generative", "#noise"],
+    thumbnail: "assets/images/sketches_2014_noisy_1.png",
+    description: `Generative visuals made with Processing (Noisy Works, Snowflakes, Grid, Plante, Spirales, typography) with their source code.`,
+    content: `# Processing sketches 2014
+
+A series of generative visuals made with Processing, published with their source code. In most sketches a key press saves the current frame.
+
+## Noisy Works
+
+Experiments with Perlin noise and polar coordinates: click to generate a new seed. The logo at the top of this site is one of them. You'll need to add your own fonts to run the sketch.
+
+![Noisy Works #1](assets/images/sketches_2014_noisy_1.png)
+![Noisy Works #2](assets/images/sketches_2014_noisy_2.png)
+![Noisy Works #3](assets/images/sketches_2014_noisy_3.png)
+![Noisy Works #4](assets/images/sketches_2014_noisy_4.png)
+
+<details>
+<summary>Processing code</summary>
+
+\`\`\`java
+float edgeX, edgeY;
+float radius =325;
+float noiseF;
+int startTime ;
+
+PFont title, seed, time;
+void setup() {
+  size(700, 700);
+
+  smooth();
+
+  colorMode(HSB, 255, 100, 100, 100);
+  //textMode(CENTER);
+
+  title = createFont("Candara-Bold-16.vlw", 18);
+  seed = createFont("Consolas-16.vlw", 12);
+  time = createFont("Corbel-16.vlw", 12);
+  textAlign(CENTER, CENTER);
+  //textFont(seed);
+  generate();
+}
+
+void draw() {
+  if (mousePressed) {
+    startTime = millis();
+    noiseF = random(5000);
+    println("noiseSeed : " + noiseF);
+    generate();
+  }
+}
+
+void generate() {
+  background(255);
+  translate(width/2, height/2);
+  for (int j = 0 ; j < 320 ; j ++ ) {
+    stroke(0, 255);
+    noFill();
+    beginShape();
+    for (float i = 0 ; i <= TWO_PI + PI/24 ; i += PI/24) {
+      randomSeed(floor(i*100*noiseF));
+      edgeX = (radius-j + map(noise(noiseF, i, 20), 0, 1, -150, 150)) * cos (i);
+      edgeY = (radius-j + map(noise(noiseF, 25, i), 0, 1, -150, 150)) * sin (i);
+      curveVertex(edgeX, edgeY);
+      noiseF += 0.00005;
+    }
+    endShape(CLOSE);
+  }
+  noStroke();
+  fill(0, 210);
+  ellipse(0/2, 0/2, 190, 190);
+  fill(map(noiseF, 0, 5000, 0, 255), 100, 100);
+  ellipse(0/2, 0/2, 170, 170);
+  fill(255);
+  ellipse(0/2, 0/2, 8, 8);
+  fill(255, 0, 100);
+  String s ="-- Noisy Works --";
+  String s1 = " seed :"+noiseF;
+  int endTime = millis();
+  int gentime = endTime - startTime;
+  println(gentime);
+  textFont(title);
+  text(s, 0, -35);
+  textFont(seed);
+  text(s1, 0, 15);
+  textFont(seed);
+  String s2 = " gen. time : 0."+gentime+" s";
+  text(s2, 0, 30);
+}
+void keyPressed() {
+  if (key == 's' || key == 'S') {
+    saveFrame("lps-"+year()+"-"+month()+"-"+day()+"-"+hour()+"h"+minute()+"m"+second()+"s.png");
+  }
+}
+\`\`\`
+
+</details>
+
+## Snowflakes
+
+Based on an [L-system](https://en.wikipedia.org/wiki/L-system) implementation. Press the right arrow to generate a new snowflake, any other key saves the image.
+
+![Snowflake](assets/images/sketches_2014_snowflakes_2.png)
+![Snowflake](assets/images/sketches_2014_snowflakes_4.png)
+![Snowflake](assets/images/sketches_2014_snowflakes_3.png)
+![Snowflake](assets/images/sketches_2014_snowflakes_5.png)
+![A grid of snowflakes](assets/images/sketches_2014_snowflakes_7.png)
+![A grid of snowflakes](assets/images/sketches_2014_snowflakes_8.png)
+
+<details>
+<summary>Processing code</summary>
+
+\`\`\`java
+int maxLevel =10;
+int numChildren =1;
+float angle = PI/4;
+
+Branch trunk;
+
+void keyPressed() {
+  if (key == CODED && keyCode == RIGHT) {
+    maxLevel = int(random(5, 25));
+    angle = PI/(int(random(1, 15))*2);
+    newTree();
+    trunk.siz = random(50, 500);
+  } else {
+    saveFrame("snowFlake-######.png");
+  }
+}
+
+void setup() {
+  size(1280, 766);
+  noFill();
+  smooth();
+  newTree();
+  background(0);
+  stroke(255);
+}
+
+void newTree() {
+  pushMatrix();
+  translate(width/2, height/2);
+  trunk = new Branch(1, 0, 0, 0);
+  trunk.drawMe();
+  popMatrix();
+}
+
+void draw() {
+  noStroke();
+  fill(0, 150);
+  rect(0, 0, width, height);
+  //background(0);
+
+  stroke(255);
+  pushMatrix();
+  translate(width/2, height/2);
+  trunk.updateMe(0, 0);
+  trunk.drawMe();
+  popMatrix();
+}
+
+class Branch {
+  float level, index;
+  float x, y;
+  float endx, endy;
+  float noiseF2;
+
+  float siz =100;
+
+  Branch[] children = new Branch[0]; //
+
+  Branch (float lev, float ind, float ex, float wy) {
+    level =lev;
+    index =ind;
+    updateMe(ex, wy);
+
+    if (level<maxLevel) { // avoid infinite loop
+      children = new Branch[numChildren];
+      for (int i = 0; i<numChildren;i++) {
+        children[i] = new Branch(level+1, i, endx, endy);
+      }
+    }
+  }
+
+  void updateMe(float ex, float wy) {
+    x =ex;
+    y =wy;
+
+    float newsiz =map (maxLevel-level, 0, maxLevel, 1, siz);
+    endx = x;
+    endy = y-newsiz/3;
+    //siz -=10;
+
+    for (int i =0; i<children.length; i++) {
+      children[i].updateMe(endx, endy);
+    }
+  }
+
+  void drawMe() {
+    //siz-=1;
+    float newsiz =map (maxLevel-level+1, 0, maxLevel, 2, siz);
+    for (float i = 0 ; i < TWO_PI ; i+=angle) {
+      rotate(i);
+      strokeWeight(map(maxLevel-level+1, 0, maxLevel, 0.005, 0.5));
+      pushMatrix();
+      beginShape();
+      vertex(x-newsiz, y);
+      vertex(x, y+newsiz*2/3);
+      vertex(x+newsiz, y);
+      vertex(x, y+newsiz*1/3);
+      vertex(x-newsiz, y);
+      endShape();
+      popMatrix();
+    }
+
+    for (int i = 0 ; i<children.length;i++) {
+      //children[i].updateMe();
+      children[i].drawMe();
+    }
+  }
+}
+\`\`\`
+
+</details>
+
+## Grid #1
+
+Rounded squares breathing between circles and stars; click to change the seed.
+
+![Grid #1](assets/images/sketches_2014_grid_1.png)
+![Grid #1](assets/images/sketches_2014_grid_2.png)
+![Grid #1](assets/images/sketches_2014_grid_3.png)
+![Grid #1](assets/images/sketches_2014_grid_4.png)
+
+<details>
+<summary>Processing code</summary>
+
+\`\`\`java
+int size = 80;
+
+float seed;
+
+float rect_round ;
+
+float steps;
+
+color [] colors = {
+  #F5E0A7, #CFA678, #BBD7AF, #56AA9B, #026376
+};
+//color [] colors = { #92EDF0, #12223D, #DE1818, #040505};
+
+void setup() {
+  size(800, 600, P2D);
+  smooth();
+
+  rectMode(CENTER);
+  colorMode(HSB, 360, 100, 100, 255);
+  noStroke();
+
+  frameRate(30);
+}
+
+void draw() {
+
+  steps+=0.035;
+  background(0, 0, 100);
+  randomSeed(floor(seed));
+
+  for (int i = size/2 ; i < 1200 ; i+=size*39/50) {
+    for (int j = size/2 ; j < 600 ; j+=size*36/50) {
+
+      float p = random(100);
+      for (int k = 1 ; k <= colors.length ; k++) {
+        if (p< k*100/colors.length && p>(k-1)*100/colors.length) {
+          fill(colors[k-1], 100);
+        }
+      }
+
+      rect_round = map(sin(steps), -1, 1, -145, 40);
+      pushMatrix();
+      translate(i, j);
+      rotate(PI/4);
+      rect(0, 0, size, size, rect_round);
+      popMatrix();
+    }
+  }
+
+  // saveFrame("/frames/70s-####.tiff");
+}
+void mousePressed() {
+  seed = floor(random(5000));
+  println("seed : " +seed);
+}
+
+void keyPressed() {
+  if (key == 's' || key == 'S') {
+    saveFrame("70s-"+year()+"-"+month()+"-"+day()+"-"+hour()+"h"+minute()+"m"+second()+"s.png");
+  }
+}
+\`\`\`
+
+</details>
+
+## Plante #1
+
+Circles drifting upwards on noise, shrinking as they grow into a plant. Press U to pause the growth.
+
+![Plante #1](assets/images/sketches_2014_plante_1.jpg)
+![Plante #1](assets/images/sketches_2014_plante_2.jpg)
+
+<details>
+<summary>Processing code</summary>
+
+\`\`\`java
+color [] colors = {
+  #C5E0DC, #DAF5F0, #F9E9CC, #FAF6D6,#FFD0C1
+};
+
+Circles[] cir = new Circles [5];
+boolean update = true;
+void setup() {
+  size(800, 600);
+  background(0);
+  frameRate(60);
+  ellipseMode(CENTER);
+  noStroke();
+  //strokeWeight(0.5);
+  smooth();
+
+  //stroke(0, 180);
+  // colorMode(HSB, 360, 100, 100);
+
+  for (int i = 0 ; i < cir.length ; i++) {
+    int size = int(random(25, 50));
+    cir[i] = new Circles (colors[0], width/2, height, size);
+  }
+}
+
+void draw() {
+
+  for (int i = 0 ; i < cir.length ; i++) {
+
+    cir[i].update();
+    cir[i].draw();
+
+    if (frameCount%20==0 && update) {
+
+      if (cir[i].circle_size == 1 ) {
+        int size = int(random(25, 125));
+        cir[i] = new Circles (colors[0], width/2,random(height-50,height), size);
+      }
+    }
+  }
+}
+
+void keyReleased(){
+  if (key == 'u' || key =='U'){
+    update = !update;
+  }
+
+  if (key == 's' || key =='S'){
+    saveFrame("/images/bigorneaux-####.jpg");
+  }
+}
+class Circles {
+
+  int circle_size = 1200;
+  color c;
+
+  float xpos, ypos;
+
+  float noiseF;
+
+  int steps = 0;
+  int max_step=5;
+
+  Circles(color c, float xpos, float ypos, int circle_size) {
+    this.c = c;
+    this.xpos = xpos;
+    this.ypos = ypos;
+    // circle_size = int( random(50, 250));
+    noiseF = random(500);
+    this.circle_size = circle_size;
+    max_step =int(random(2,10));
+    //steps = int(random(15));
+  }
+
+  void update() {
+    if (circle_size > 1) {
+      circle_size--;
+    }
+
+    noiseF += 0.005;
+    xpos += map(noise(noiseF, ypos/100, 25), 0, 1, -8,8);
+    ypos += map(noise(noiseF, xpos/100, 56), 0, 1, -6, 0);
+
+    steps +=1;
+    //noStroke();
+    if (steps == max_step) {
+      int index = int(random(colors.length));
+      c = colors[index];
+      steps = 0;
+      max_step =int(random(2,15));
+      // stroke(0.15);
+    }
+  }
+
+  void draw() {
+    fill(c);
+    ellipse(xpos, ypos, circle_size, circle_size);
+  }
+
+  void setColor (color c) {
+    this.c =c;
+  }
+}
+\`\`\`
+
+</details>
+
+## Spirales
+
+![Spirales](assets/images/sketches_2014_spirales_1.png)
+![Spirales](assets/images/sketches_2014_spirales_2.png)
+![Spirales](assets/images/sketches_2014_spirales_3.png)
+
+<details>
+<summary>Processing code</summary>
+
+\`\`\`java
+float r=0;
+float rand=0;
+
+void setup(){
+  size(1680,945);
+  background(0);
+  smooth();
+  noStroke();
+
+}
+
+void draw(){
+
+  translate(250,150);
+  rand= random(100);
+
+  if (rand<35){
+    fill(200,random(40,80));
+  } else {
+
+    fill(255,random(90,150));
+  }
+
+  rotate(r);
+  float circle_size = random(17,25);
+  ellipse(r+0.1,10,circle_size, circle_size);
+  r = r+0.021;
+
+}
+
+void keyPressed(){
+  save("####.png");
+  println("Image sauvegardée");
+}
+\`\`\`
+
+</details>
+
+## Typography
+
+Generative typography made with Processing and [Geomerative](https://github.com/rikrd/geomerative); part of the code is in the [Journées du code créatif](#project/journees-code-creatif) workshop repository, [stereolux/Workshops-JCC2-](https://github.com/stereolux/Workshops-JCC2-).
+
+![Generative typography: Processing](assets/images/sketches_2014_typo_1.png)
+![Generative typography: Code créatif](assets/images/sketches_2014_typo_2.jpg)
+![Generative typography: particles](assets/images/sketches_2014_typo_3.png)
+![Generative typography: Code créatif](assets/images/sketches_2014_typo_4.png)
+
+![Generative typography: Bigorneaux](assets/images/sketches_2014_typo_5.jpg)
+`
+  },
+  {
+    id: "journees-code-creatif",
+    year: "2012",
+    title: `Journées du code créatif`,
+    category: "Teaching",
+    tags: ["event", "#stereolux", "#pure-data", "#processing"],
+    thumbnail: "assets/images/sketches_2014_typo_1.png",
+    description: `Two days of talks, performances and workshops I designed and programmed with Stereolux: Pure Data in 2012 (with Miller Puckette), Processing in 2014.`,
+    content: `# Journées du code créatif
+
+I took part in designing the format, the artistic and educational programme and the organisation of the *Journées du code créatif* (creative coding days) at Stereolux, Nantes: two days of talks, performances, screenings and workshops, ending with a codelab get-together with all the participants.
+
+## 2012 : Pure Data
+
+The first edition was dedicated to [Pure Data](https://puredata.info). The guests included Miller Puckette, Andy Farnell, Katja Vetter and IOhannes Zmölnig.
+
+## 2014 : Processing
+
+The second edition was dedicated to [Processing](https://processing.org). The workshops' material is on GitHub: [stereolux/Workshops-JCC2-](https://github.com/stereolux/Workshops-JCC2-).
+
+![Generative typography: Processing](assets/images/sketches_2014_typo_1.png)
+![Generative typography: Code créatif](assets/images/sketches_2014_typo_2.jpg)
+
+[Programme (Slideshare)](https://fr.slideshare.net/stereolux/processing-depliant-web) [Processing sketches 2014](#project/processing-sketches-2014)
+`
+  },
+  {
+    id: "dmims-2012",
+    year: "2012",
+    title: `Designing Musical Interaction for Mobile Systems`,
+    category: "Audio, Experiments",
+    tags: ["ios", "#pure-data", "#network", "#research"],
+    thumbnail: "assets/images/dmims_4.jpg",
+    description: `A paper and demos on collaborative music making with networked smartphones, at the DIS 2012 conference in Newcastle.`,
+    content: `# Designing Musical Interaction for Mobile Systems
+
+I took part in *Designing Musical Interaction for Mobile Systems*, a workshop of the international conference DIS 2012 (Designing Interactive Systems, Newcastle). I presented a paper on networked music with smartphones and demonstrated iPhone prototypes, following a residency at Stereolux on a mobile application.
+
+[Paper : Collaborative Music Creation Using Smartphones (PDF)](https://berengerrecoules.wordpress.com/wp-content/uploads/2013/05/collaborative_music_creation_using_smartphones_2012-cr.pdf) [Slides (PDF)](https://berengerrecoules.wordpress.com/wp-content/uploads/2013/05/dmims-talk.pdf)
+
+![The talk](assets/images/dmims_4.jpg)
+![Demonstrating the prototypes](assets/images/dmims_1.jpg)
+![Workshop session](assets/images/dmims_2.jpg)
+![Workshop session](assets/images/dmims_3.jpg)
+![Newcastle](assets/images/dmims_5.jpg)
+![DIS 2012 badge](assets/images/dmims_6.jpg)
+`
+  },
+  {
+    id: "interfaces-neuronales",
+    year: "2012",
+    title: `Journées Interfaces neuronales`,
+    category: "Data Art, Teaching",
+    tags: ["event", "#eeg", "#emotiv", "#processing", "#pure-data"],
+    thumbnail: "assets/images/interfaces_neuronales_1.jpg",
+    description: `Two days about brain-computer interfaces at Stereolux: real-time brainwave visualisations, an Emotiv workshop and an EEG-controlled drawing app.`,
+    content: `# Journées Interfaces neuronales
+
+*Interfaces neuronales : 2 jours dans le vif du cerveau* ("two days in the thick of the brain") at Stereolux, Nantes. I took part in the programming and organisation of the event, and:
+
+- created animated visualisations of brainwaves, projected in real time during the talks;
+- led a one-day workshop on the Emotiv headset and its use with Processing and Pure Data;
+- presented a drawing application controlled by an Emotiv headset.
+
+![Real-time brainwave visualisation](assets/images/interfaces_neuronales_1.jpg)
+
+![Brainwave visualisation](assets/images/interfaces_neuronales_7.jpg)
+![Brainwave visualisation](assets/images/interfaces_neuronales_8.jpg)
+![Drawing with an EEG headset](assets/images/interfaces_neuronales_2.png)
+![Drawing with an EEG headset](assets/images/interfaces_neuronales_3.png)
+![Brainwave timeline](assets/images/interfaces_neuronales_5.png)
+![Brainwave timeline](assets/images/interfaces_neuronales_6.png)
+
+See also [Neurokiff](#project/neurokiff), visualisations of EEG recordings made while listening to music.
+`
+  },
+  {
+    id: "pure-data-smartphones",
+    year: "2011",
+    title: `Pure Data on smartphones`,
+    category: "Audio, Teaching",
+    tags: ["android", "ios", "#pure-data", "#libpd", "#droidparty"],
+    thumbnail: "assets/images/pure_data_smartphones_2.png",
+    description: `A monthly series of tutorials (2011) and a full documentation (2013) on making collaborative music apps for smartphones with Pure Data, with Stereolux.`,
+    content: `# Pure Data on smartphones
+
+From July to December 2011, with the support of Stereolux, I published a monthly article on using Pure Data on mobile platforms: how to build "performance" tools with our smartphones, so that several people can play together. The project relied on [libpd](https://github.com/libpd/libpd) and DroidParty, which had just made it possible to use Pure Data as a programming tool in almost any project, on almost any platform.
+
+![The series on the Scopitone website](assets/images/pure_data_smartphones_1.jpg)
+
+In 2013 it grew into a complete documentation with detailed tutorials for iOS and Android.
+
+[Documentation in English (PDF)](https://berengerrecoules.wordpress.com/wp-content/uploads/2013/06/stereolux-applicationsmobiles-eng.pdf) [Documentation en français (PDF)](https://berengerrecoules.wordpress.com/wp-content/uploads/2013/06/stereolux-applicationsmobiles.pdf)
+
+![A step sequencer patch](assets/images/pure_data_smartphones_2.png)
+![A pad controller patch](assets/images/pure_data_smartphones_3.png)
+![An app running on a phone](assets/images/pure_data_smartphones_4.png)
+![An app running on a phone](assets/images/pure_data_smartphones_5.png)
+
+The patches and examples are archived on [Google Code](https://code.google.com/archive/p/some-pure-data-projects). See also the later [DroidParty tutorials](#project/droidparty-tutorials).
+`
+  },
+  {
+    id: "bd-sonore",
+    year: "2011",
+    title: `BD Sonore`,
+    category: "Teaching, Audio",
+    tags: ["workshop", "#comics", "#sound-design", "#audacity"],
+    thumbnail: "assets/images/bd_sonore_1.jpg",
+    description: `Sound comics written, drawn and sound-designed by a 6th-grade class of collège Auguste Mailloux, with the association l'Olympic.`,
+    content: `# BD Sonore
+
+*Association l'Olympic, collège Auguste Mailloux (Loire-Atlantique)*
+
+*BD sonore* (sound comics) brought a class of pupils from a school marked by economic hardship and cultural isolation into a collective project, through workshops of graphic and sound creation, collaborative writing and scenography. Pupils were involved in every step, creating their own pieces with today's multimedia tools and stories close to their everyday world. The project ended with a CD and an illustrated booklet.
+
+Five stories came out of it:
+
+- ***David***: David is a DJ; coming home from work one night in Marseille, he gets kidnapped…
+- ***La guerre des clans***: when Mr Ver's neighbours throw a party, it's a declaration of war…
+- ***Lola et son rêve mystérieux***: on her way to the supermarket, Lola meets her "friend" Benoît the robot…
+- ***La racaille des bacs à sable***: Railey, a hip-hop dancer, sets off on a shady trip before a competition…
+- ***Steph Cop***: Steph Cop is an alien who has decided to spend his summer holidays on Mars.
+
+<iframe src="https://player.vimeo.com/video/27971503" width="720" height="405" frameborder="0" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://player.vimeo.com/video/27971742" width="720" height="405" frameborder="0" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://player.vimeo.com/video/27971854" width="720" height="405" frameborder="0" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://player.vimeo.com/video/27971820" width="720" height="405" frameborder="0" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://player.vimeo.com/video/27971935" width="720" height="405" frameborder="0" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
+
+With Laure Del Pino; teacher Bruno Pavoni, librarian Françoise Sellin, coordination Mélanie Legrand, and of course the pupils of class 6e E. Some sounds come from [freesound.org](https://freesound.org). Supported by the Conseil Général de Loire-Atlantique.
+
+[Audacity guide (PDF, fr)](https://berengerrecoules.wordpress.com/wp-content/uploads/2011/08/audacity-guide.pdf) [Sound preparation session (PDF, fr)](https://berengerrecoules.wordpress.com/wp-content/uploads/2011/08/seance-prc3a9paratoire-son.pdf)
+`
+  },
+  {
+    id: "ccpp",
+    year: "2011",
+    title: `CCPP`,
+    category: "Installations",
+    tags: ["installation", "#pure-data", "#light", "#sound-design"],
+    thumbnail: "assets/images/ccpp_1.jpg",
+    description: `An interactive sound and light installation for a joint call of the French ministries of Culture, Education and Health.`,
+    content: `# CCPP
+
+An interactive installation produced for a joint call for projects of the French ministries of Culture, Education and Health. It was shown at the école d'architecture de Paris-Belleville, at the Ministry of Culture and at the Beaux-Arts de Paris.
+
+My contribution: creating, programming and setting up the interactive sound and light system, and the overall sound design of the installation.
+
+![CCPP](assets/images/ccpp_1.jpg)
+`
+  },
+  {
+    id: "visual-tracker",
+    year: "2011",
+    title: `Visual Tracker`,
+    category: "Audio",
+    tags: ["desktop", "#pure-data", "#sequencer", "#diy"],
+    thumbnail: "assets/images/visual_tracker_1.png",
+    description: `A timeline sequencer written entirely in Pure Data, open and hackable in real time, presented at the Pure Data Convention 2011 in Weimar.`,
+    content: `# Visual Tracker
+
+Visual Tracker is an abstraction for Pure Data extended to arrange elements along a timeline, like in any music or video sequencing software. Its strength is to be written entirely in Pure Data, so it is completely open and "hackable": you can modify the code at any time, in real time, or adapt it to your needs.
+
+It was presented, with two workshops, at the international Pure Data Convention 2011 in Weimar, organised by the Bauhaus-Universität.
+
+![Visual Tracker](assets/images/visual_tracker_1.png)
+
+A track made only with Visual Tracker and [pdLive!](#project/pdlive):
+
+<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" title="Track made with Visual Tracker" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/21580028&color=%23553832&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+
+[Code (Google Code archive)](https://code.google.com/archive/p/visualtracker/)
+`
+  },
+  {
+    id: "experimental-compositions",
+    year: "2011",
+    title: `Experimental compositions`,
+    category: "Audio",
+    tags: ["#pure-data", "#electroacoustic", "#live"],
+    thumbnail: "assets/images/compositions_cover.png",
+    description: `Electroacoustic pieces and live manipulations with Pure Data.`,
+    content: `# Experimental compositions
+
+## Interférences
+
+Live manipulation with Pure Data.
+
+<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" title="Interférences" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/21464706&color=%23553832&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+
+## Duc
+
+Live sample manipulation and frequency tracking with Pure Data.
+
+<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" title="Duc" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/21464288&color=%23553832&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+
+## Chrysalide magnétique
+
+A small electroacoustic piece based on transformation: each element can modify or introduce another one…
+
+<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" title="Chrysalide magnétique" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/21463927&color=%23553832&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+
+The sound sketch for *Phantom Orchestra* is on the [Ondes de chocs vs Phantom Orchestra](#project/ondes-de-chocs) page.
+`
+  },
+  {
+    id: "sound-commissions",
+    year: "2011",
+    title: `Music & sound design commissions`,
+    category: "Audio",
+    tags: ["#sound-design", "#music", "#commission"],
+    thumbnail: "assets/images/commissions_cover.png",
+    description: `Music and sound ambiances commissioned for a Nespresso e-learning module (Enerjitim) and for MTV Made France (LittleBigProd).`,
+    content: `# Music & sound design commissions
+
+## Nespresso e-learning, for Enerjitim
+
+For an e-learning module made by Enerjitim for Nespresso: the ambiance of a research and development lab, and two pieces of music in Costa Rican and Brazilian styles.
+
+<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" title="Nespresso: lab ambiance" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/21465485%3Fsecret_token%3Ds-rRGmi&color=%23553832&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+
+<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" title="Nespresso: Costa Rica" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/21578709%3Fsecret_token%3Ds-taOYF&color=%23553832&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+
+<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" title="Nespresso: Brazil" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/21465296%3Fsecret_token%3Ds-ILbFM&color=%23553832&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+
+## MTV Made France, for LittleBigProd
+
+Two tracks commissioned by LittleBigProd for season 3 of MTV Made France: *Sad Joy* and *Not a Wall*.
+
+<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" title="Sad Joy" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/21464985&color=%23553832&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+
+<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" title="Not a Wall" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/21464920&color=%23553832&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+`
+  },
+  {
+    id: "ondes-de-chocs",
+    year: "2010",
+    title: `Ondes de chocs vs Phantom Orchestra`,
+    category: "Installations, Audio",
+    tags: ["installation", "#pure-data", "#transducers", "#scopitone"],
+    thumbnail: "assets/images/ondes_de_chocs_12.jpg",
+    description: `Two sound installations in the Blockhaus DY10 for the Scopitone festival: a bunker shaken by sonic shocks, and instruments resonating with electronic sound.`,
+    content: `# Ondes de chocs vs Phantom Orchestra
+
+*Festival Scopitone, Blockhaus DY10, Nantes*
+
+Two sound installations, one in each ground-floor room of the Blockhaus DY10. Both work on making a space or an object resonate, using vibration acoustics to shape a classic electronic signal.
+
+<iframe src="https://player.vimeo.com/video/28310062" width="720" height="405" frameborder="0" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
+
+## Ondes de chocs
+
+*Ondes de chocs* (shock waves) reveals the acoustics of a place. A spatialised sound system emits sonic "jolts" that set the space vibrating for only a few hundredths of a second, creating small shock waves. It refers to Hollywood sound effects and big video-game productions, except that instead of standardised effects, it is the space itself, through its dimensions and its spirit, that gives the deepest effect it can produce. Not a stage effect but the breathing of the place: no spectacular trappings, yet physically striking.
+
+## Phantom Orchestra
+
+*Phantom Orchestra* gives a sonic dimension to seemingly inert objects. Electronic sound is amplified inside the resonating body of musical instruments (a piano, a double bass, a trombone and a microphone) and released into the room, creating a ghostly electroacoustic resonance. The instruments are within reach: visitors can "excite" them too, and microphones pick up their sounds, mixing the electronic processes with the visitors' playing.
+
+The project relies on transducers that make materials vibrate, and favours intimate listening, at volumes that invite you to listen rather than impose themselves.
+
+A sound sketch made while preparing *Phantom Orchestra*:
+
+<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" title="Phantom Orchestra sketch" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/21464478&color=%23553832&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+
+![Phantom Orchestra: a double bass played by electronic sound](assets/images/ondes_de_chocs_12.jpg)
+![Ondes de chocs in the bunker](assets/images/ondes_de_chocs_10.jpg)
+![Phantom Orchestra](assets/images/ondes_de_chocs_11.jpg)
+![Visitors playing the trombone](assets/images/ondes_de_chocs_9.jpg)
+![The Blockhaus DY10](assets/images/ondes_de_chocs_6.jpg)
+![Setting up](assets/images/ondes_de_chocs_4.jpg)
+
+![The Ondes de chocs patch](assets/images/ondes_de_chocs_1.png)
+![The Phantom Orchestra patch](assets/images/ondes_de_chocs_2.png)
+
+Thanks to the Blockhaus DY10, Desevedavy Nantes and l'Olympic.
+`
+  },
+  {
+    id: "pdlive",
+    year: "2010",
+    title: `pdLive!`,
+    category: "Audio",
+    tags: ["desktop", "#pure-data", "#live", "#sampler", "#sequencer"],
+    thumbnail: "assets/images/pdlive_1.jpg",
+    description: `A set of Pure Data patches arranged to be played live: samplers, sequencers, virtual instruments, noises and generative processes synced to a master clock.`,
+    content: `# pdLive!
+
+pdLive! is a set of Pure Data patches, organised and arranged so they can be used live. You'll find samplers, sequencers, virtual instruments, noises, synthesis processes and generative controls, all synchronised to a master metronome.
+
+It still requires a minimum of knowledge about how Pure Data works, especially about sending and receiving signals and data between patches.
+
+![pdLive!](assets/images/pdlive_1.jpg)
+
+[Code (Google Code archive)](https://code.google.com/archive/p/pdlive/) [Visual Tracker](#project/visual-tracker)
+`
+  },
+  {
+    id: "emissions-urbaines",
+    year: "2009",
+    title: `Émissions urbaines`,
+    category: "Teaching, Audio",
+    tags: ["workshop", "#soundscape", "#public-space", "#field-recording"],
+    thumbnail: "assets/images/emissions_urbaines_8.jpg",
+    description: `A "sensitive survey" of the sound environment of three neighbourhoods of Saint-Denis with the Cochenko collective: urban walks and sound workshops with the inhabitants.`,
+    content: `# Émissions urbaines
+
+*Cochenko collective, Saint-Denis (93)*
+
+![Qu'entendez-vous par là ?](assets/images/emissions_urbaines_1.jpg)
+
+The Cochenko collective proposed a "sensitive survey" of the sound environment of the Joliot-Curie, Bel-Air and Franc-Moisin neighbourhoods in Saint-Denis. From September to November 2009, urban walks and sound and visual creation workshops were led with inhabitants, ending with a public presentation on 14 November 2009: soundscapes and inhabitants' voices along a sound and visual trail.
+
+A previous project in the same neighbourhood had shown how much noise, notably from the traffic axes, reinforced the partitioning of the territory. Starting from this negatively experienced sound environment, *Émissions urbaines* was about listening to the city again: paying attention to the routes we no longer see and the sounds we no longer hear out of habit.
+
+- **Recycle the sound of the city**: thinking about the "urban bandwidth", and recording it.
+- **Create links**: foster dialogue between neighbouring areas and understand, by listening, how sound shapes individual and collective behaviour.
+- **Let inhabitants tell their territory**: oral transmission around the memory of places.
+- **Experiment with your close environment**: listen to familiar places in a renewed, even re-enchanted way.
+- **Become the conductor of your environment**: own the sound space through choices and a sharpened awareness.
+- **Mix professional and amateur practice**: recording technique and creation (radio, music) with the support of professionals.
+
+<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" title="Émissions urbaines: teaser" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/21731571&color=%23553832&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+
+<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" title="Émissions urbaines" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/21731647&color=%23553832&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+
+<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" title="Émissions urbaines" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/21731716&color=%23553832&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+
+![Workshop](assets/images/emissions_urbaines_8.jpg)
+![Workshop](assets/images/emissions_urbaines_4.jpg)
+![Urban walk](assets/images/emissions_urbaines_3.jpg)
+![Urban walk](assets/images/emissions_urbaines_7.jpg)
+![Exhibition along the street](assets/images/emissions_urbaines_5.jpg)
+![Exhibition along the street](assets/images/emissions_urbaines_9.jpg)
+`
+  },
+  {
+    id: "basse-continue",
+    year: "2009",
+    title: `Basse continue`,
+    category: "Installations, Teaching",
+    tags: ["installation", "#public-space", "#kids", "#sound"],
+    thumbnail: "assets/images/basse_continue_7.jpg",
+    description: `A travelling sound exhibition created with nursery-school children in Les Lilas: put your ear on a tree, listen to a bush, feel a window vibrate.`,
+    content: `# Basse continue
+
+*Espace Khiasma, Les Lilas (93)*
+
+This travelling exhibition shared seven months of adventures with the pupils of the Courcoux and Calmette nursery schools, discovering sound and sound creation.
+
+Workshop after workshop, with each class and in collaboration with their teachers, the children questioned the place of sound in how they perceive reality, and learned to compose their own sound worlds. Each sound and visual piece is part of this collective experience and was set in the Sentes neighbourhood: from the Courcoux school to the Henri-Dunant centre, the pieces revealed a moving sound image of the two schools and of the secret life that animates them. Designed as a trail, the exhibition drew a sensitive territory where you could put your ear on a tree, listen to a bush, or feel a bay window vibrate!
+
+The *Basse continue* trail was initiated for the Seine-Saint-Denis contemporary art biennial *Art Grandeur Nature 2008* and produced by Khiasma. It was designed and made by Roselyne Burger, Olivier Marboeuf, Kerwin Rolland and Bérenger Recoules.
+
+<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" title="Basse continue" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/21721100&color=%23553832&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+
+<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" title="Basse continue" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/21721356&color=%23553832&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+
+![Listening](assets/images/basse_continue_7.jpg)
+![Listening to a tree](assets/images/basse_continue_8.jpg)
+![Children against the vibrating window](assets/images/basse_continue_2.jpg)
+![A girl against the window](assets/images/basse_continue_4.jpg)
+![Listening on the sound cubes](assets/images/basse_continue_3.jpg)
+![Listening](assets/images/basse_continue_5.jpg)
+`
+  },
+  {
+    id: "mots-publics",
+    year: "2008",
+    title: `Mots publics : Ici, je suis ailleurs`,
+    category: "Installations",
+    tags: ["installation", "#public-space", "#nuit-blanche", "#sound"],
+    thumbnail: "assets/images/mots_publics_1.jpg",
+    description: `Nuit Blanche 2008, square des Cardeurs (Paris 20e): inhabitants' words projected on the façades, and 20 sound pieces hidden in bins, bushes, benches and shop windows.`,
+    content: `# Mots publics : Ici, je suis ailleurs
+
+*Nuit Blanche 2008, square des Cardeurs, Paris 20e*
+
+![Words projected on the façades of the square](assets/images/mots_publics_1.jpg)
+
+*Mots publics* is a set of artistic interventions designed by Malte Martin for the City of Paris, as part of the redevelopment of a large area around the Porte de Montreuil. The 2008 edition was based on orality and exchanges about the urban environment between Malte Martin, mediators and inhabitants, producing stories, testimonies and dialogues, all reused for the Nuit Blanche of 4 October 2008.
+
+Words and testimonies were video-projected on the façades of the buildings around the square, together with sound diffusions of the collected stories. From six months of recordings on the theme *"ici, je suis ailleurs"* ("here, I am elsewhere"), we made 20 small sound pieces, empathetic or offbeat.
+
+The sound installation used many loudspeakers directing sound towards small, circumscribed areas: 3 shop windows, 4 bins, 2 air vents, 6 bushes and trees, 3 public benches, a car-park entrance, a letterbox and 2 lawns. Entering the square, people could not hear all the sounds at once, but saw the ballet of the audience walking from one listening spot to the next, in a game of discovery.
+
+<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" title="Ici, je suis ailleurs" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/21731785&color=%23553832&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+
+<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" title="Ici, je suis ailleurs" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/21731837&color=%23553832&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+
+![The projections](assets/images/mots_publics_2.jpg)
+![Listening at night](assets/images/mots_publics_4.jpg)
+![The square at night](assets/images/mots_publics_6.jpg)
+![Projection on a building](assets/images/mots_publics_7.jpg)
+![Projection on a building](assets/images/mots_publics_5.jpg)
+![Projection on a building](assets/images/mots_publics_8.jpg)
+
+Designed and made by Bérenger Recoules, Kerwin Rolland, Malte Martin, David Séchaud, Valentin Adam, Cédric Andrzejczak, Marion Mieze and Alice Leborgne.
+
+[Presentation (PDF, fr)](https://berengerrecoules.wordpress.com/wp-content/uploads/2008/10/mp08_presentation_ici_je_suis_ailleurs.pdf)
+`
+  },
+  {
+    id: "silence-plateau",
+    year: "2008",
+    title: `Silence plateau ?`,
+    category: "Audio, Experiments",
+    tags: ["residency", "#psychoacoustics", "#listening", "#field-recording"],
+    thumbnail: "assets/images/silence_plateau_6.jpg",
+    description: `A two-month residency on the Millevaches plateau, studying how inhabitants perceive, remember and put into words the sounds of their territory.`,
+    content: `# Silence plateau ?
+
+*Association Appelboom, La Pommerie (Corrèze)*
+
+A study of the psychoacoustic relationship between the sounds of the Millevaches plateau and its inhabitants, made during a two-month artist residency (July and August 2008) organised by Appelboom at La Pommerie, in the heart of the Millevaches regional natural park.
+
+We interviewed inhabitants of the plateau (local associations, volunteers or chance encounters, of different ages and occupations) with a very open questionnaire about how they perceive the sound of the places they live in. We then confronted this remembered listening, the idea they have of certain soundscapes, with listening in situ. The idea was also to see how language structures listening, and the other way round, both in the memory of sound scenes and in a real situation, on a given territory.
+
+The aim was a sensitive study that moves inhabitants towards remarkable listening points: a way of activating a territory through a topology rarely represented, that of sound perception.
+
+![Listening map](assets/images/silence_plateau_1.jpg)
+![Listening map](assets/images/silence_plateau_2.jpg)
+![Listening map](assets/images/silence_plateau_3.jpg)
+![The plateau](assets/images/silence_plateau_6.jpg)
+
+![A listening point](assets/images/silence_plateau_4.jpg)
+![A listening point](assets/images/silence_plateau_5.jpg)
+![A listening point](assets/images/silence_plateau_7.jpg)
+![A listening point](assets/images/silence_plateau_8.jpg)
+
+Project written by Kerwin Rolland, made by Kerwin Rolland and Bérenger Recoules.
+
+[Presentation of the work (PDF, fr)](https://berengerrecoules.wordpress.com/wp-content/uploads/2008/11/k_rollandb_recoules_silenceplateau_presresid_appelboom_08_kr081013.pdf)
+`
+  },
+  {
+    id: "theodore-de-banville",
+    year: "2007",
+    title: `Exposition Théodore de Banville`,
+    category: "Audio, Installations",
+    tags: ["exhibition", "#sound-design", "#museography"],
+    thumbnail: "assets/images/theodore_de_banville_1.jpg",
+    description: `Sound design for the exhibition "Théodore de Banville et le théâtre" at the Centre national du costume de scène in Moulins.`,
+    content: `# Exposition Théodore de Banville
+
+*Centre national du costume de scène, Moulins (03)*
+
+Sound design for the museography of the exhibition *Théodore de Banville et le théâtre*.
+
+![The exhibition poster](assets/images/theodore_de_banville_1.jpg)
+`
+  },
+  {
+    id: "writings-on-sound",
+    year: "2006",
+    title: `Writings on sound`,
+    category: "Audio, Teaching",
+    tags: ["research", "#sound-design", "#cognition", "#psychoacoustics"],
+    thumbnail: "assets/images/writings_cover.png",
+    description: `Research papers on sound design and auditory cognition: a methodology for sound installations, the forms of sound, cognition and emotion, perceptive vs functional analysis.`,
+    content: `# Writings on sound
+
+Research documents written between 2006 and 2008, between sound design and the cognitive sciences (in French).
+
+## Support théorique aux installations sonores (2006)
+
+A methodology for approaching a sound-installation project. First, analyse and characterise the sound space itself: its acoustics and architecture, and our perception of it, as objectively as possible. Then, a conceptual approach to an "environmental music" for sound installations, splitting the action on the sound space into conditioning and articulation. Finally, a list of acoustic phenomena (physical, psychoacoustic, architectural and physiological) with their possible applications, explained as simply as possible and gathered in a summary table.
+
+[Read (PDF)](https://berengerrecoules.wordpress.com/wp-content/uploads/2008/11/supporttheoriqueauxinstallationssonores_br_060725.pdf) [Summary table (PDF)](https://berengerrecoules.wordpress.com/wp-content/uploads/2008/11/tableau-recapitulatifbr-25_07_2006.pdf)
+
+## Entre cognition et émotion, comment classer les sons ? (2007)
+
+A reflection built across music and musicology, the cognitive sciences (memorisation and perception processes) and the psychology of emotions. It formalises a set of readings, not only scientific articles but also musicology courses and personal and professional experiences.
+
+[Read (PDF)](https://berengerrecoules.wordpress.com/wp-content/uploads/2008/11/cognitionvsemotion_br070513.pdf)
+
+## Les différentes formes du son (2007)
+
+A reflection on the different "forms" that have been given to sound in order to better interpret it.
+
+[Read (PDF)](https://berengerrecoules.wordpress.com/wp-content/uploads/2008/11/lesformesduson_br_071123c2a0.pdf)
+
+## Comparaison entre analyse perceptive et analyse fonctionnelle (2008)
+
+A master's research thesis critiquing sound-design methods in industry. It argues that a design study should also evaluate with purely subjective criteria, showing the role of emotions in a global perceptive approach; otherwise subjects lock themselves into categorisation tasks that don't reflect what they feel.
+
+[Read (PDF)](https://berengerrecoules.wordpress.com/wp-content/uploads/2008/11/m2r_memoire_br_080616.pdf)
+`
+  },
+  {
+    id: "toujours-lorage",
+    year: "2006",
+    title: `Toujours l'orage`,
+    category: "Audio",
+    tags: ["theatre", "#sound-design", "#clarinet", "#double-bass", "#improvisation"],
+    thumbnail: "assets/images/toujours_lorage_1.jpg",
+    description: `Sound creation for Enzo Cormann's play, staged by the Compagnie l'Alchimiste in Colmar.`,
+    content: `# Toujours l'orage
+
+*Compagnie l'Alchimiste, Colmar (68)*
+
+Sound creation for *Toujours l'orage* by Enzo Cormann. At the end of the 20th century, on a cold night, Nathan Goldring, a young Austrian director, comes to ask Theo Steiner, a mythical figure of post-war Viennese theatre, to end 25 years of silence and exile and play Lear on a Berlin stage. Both haunted by the shadow of Lear, they lock themselves in a huis clos punctuated by the incessant return of the storm and fragments of Shakespeare's text.
+
+A revisiting of Shakespeare, a cruel meditation on history and the Holocaust, a ferocious game of verbal chess: *"un théâtre de la parole, méditatif […] un théâtre de mémoire ; un théâtre pensif"* (E. Cormann, H. Bornstein).
+
+![Toujours l'orage](assets/images/toujours_lorage_1.jpg)
+
+<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" title="Toujours l'orage 1" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/21469986&color=%23553832&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+
+<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" title="Toujours l'orage 2" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/21470031&color=%23553832&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+
+<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" title="Toujours l'orage 3" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/21470068&color=%23553832&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+
+<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" title="Toujours l'orage 4" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/21470120&color=%23553832&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+
+Sound creation and production: Romain Drogoul and Bérenger Recoules.
+`
   },
 ];
 

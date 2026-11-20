@@ -158,6 +158,64 @@ The README is written for beginners: how to fork the repository, test on your ph
 `
   },
   {
+    id: "strudel-companion",
+    year: "2026",
+    title: `Strudel companion`,
+    category: "Audio, IA, Creative Coding",
+    tags: ["web", "#strudel", "#live-coding", "#webllm", "#waa", "#vibecoding"],
+    thumbnail: "assets/images/strudel_companion_1.png",
+    description: `A live-coding music studio in the browser: describe a groove in plain words, get a Strudel pattern, then tweak it, vary it and learn how it is written.`,
+    content: `# Strudel companion
+
+A browser studio for live-coding music with [Strudel](https://strudel.cc), the JavaScript port of TidalCycles. You write a pattern in mini-notation, press Eval and hear it, with an AI copilot that can write, explain, tweak and vary patterns for you. It was vibe-coded on a phone.
+
+Everything runs in the browser: no backend, no account, no telemetry. Once loaded it works offline, and it installs as an app on a desktop or a phone.
+
+![The studio playing a pattern generated from a prompt, with the waveform, spectrum and cycle visualisers](assets/images/strudel_companion_1.png)
+
+## Describe it, then play with it
+
+- **Generate**: describe the music in plain words ("dark hypnotic techno at 130 BPM with acid bass"), pick a style and a level (beginner, intermediate, advanced), and get a layered pattern of drums, bass, chords and melody. A tempo named in the prompt wins over the slider.
+- **Tweak**: ask in words ("add swing", "transpose up 2 semitones") or tap a ready-made tweak: half-time, Euclidean hi-hats, switch to a minor key.
+- **DJ variations**: variations of what is playing right now (mute a layer, one layer at double speed, one note an octave up) to switch between live, with the original one click away.
+- **Explain**: a line-by-line breakdown of the code and a music theory note.
+
+![The editor and the copilot: instant tweaks and DJ variations of the pattern that is playing](assets/images/strudel_companion_2.png)
+
+## Touching the code
+
+The editor has a touch mode made for phones: every note, sound, subdivision and effect becomes a chip. Tap it to change it, **+** adds a block after it, **×** removes it. A row of symbols and quick tokens saves typing brackets on a small keyboard, and the code exports to the strudel.cc REPL.
+
+![Touch mode: each token is a chip you can edit, next to the code breakdown](assets/images/strudel_companion_3.png)
+
+## Four AI engines
+
+They are different trade-offs, not tiers of the same thing:
+
+- **Built-in pattern rules** (the default) is not a language model. It reads genre keywords and composes a pattern: a root and a mode, a chord progression, a kick and snare feel, and a bassline derived from the harmony. Instant, offline, and everything it writes plays.
+- **A local model on your GPU**: a small language model (Gemma 3 1B, Qwen 2.5 Coder, Llama 3.2, SmolLM2) runs in a Web Worker through WebGPU with [web-llm](https://github.com/mlc-ai/web-llm). The app probes the device and only offers what will run; the weights are downloaded once and cached. Generation is held to a Strudel grammar built from the sounds the engine can play, so the model cannot write a sound that stays silent.
+- **Chrome built-in AI**: Gemini Nano through Chrome's LanguageModel API, on desktop.
+- **Gemini with your own key**: a second or two per pattern and the best musical results, but the only engine that needs the network, and your prompt goes to Google.
+
+Every result is labelled with the engine that really wrote it, and a fallback says so.
+
+![Choosing how the AI runs: what each engine downloads, how fast it is, and what leaves the device](assets/images/strudel_companion_4.png)
+
+## Sound
+
+Playback is a custom Web Audio synthesiser rather than Strudel itself, so no samples are downloaded and the sound works offline. Strudel's own transpiler validates the code, so what you export to strudel.cc is code strudel.cc accepts. A library of starter tracks covers synthwave, lo-fi, techno, UK garage, ambient and jungle.
+
+![The pattern library: starter tracks by genre and level, each with a theory note](assets/images/strudel_companion_5.png)
+
+On a phone:
+
+![On a phone: the prompt bar and the transport](assets/images/strudel_companion_6.png)
+![On a phone: the visualisers while a pattern plays](assets/images/strudel_companion_7.png)
+
+[Open the studio](https://b2renger.github.io/Strudel-companion/) [Code](https://github.com/b2renger/Strudel-companion)
+`
+  },
+  {
     id: "Chromatika",
     year: "2026",
     title: `Chromatika `,
